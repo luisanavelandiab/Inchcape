@@ -44,10 +44,12 @@
       display: flex; align-items: center; gap: 12px;
     }
     .nav-logo img {
-      height: 32px; width: auto;
+      height: 48px; width: auto;
+      max-width: 160px;
+      border-radius: 4px;
     }
     .nav-divider {
-      width: 1px; height: 22px;
+      width: 1px; height: 28px;
       background: rgba(255,255,255,0.2);
     }
     .nav-tagline {
@@ -133,9 +135,9 @@
 
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(186,207,0,.12);
-      border: 1px solid rgba(186,207,0,.28);
-      color: var(--verde);
+      background: rgba(165,97,171,.12);
+      border: 1px solid rgba(165,97,171,.28);
+      color: var(--lila);
       font-size: 10px; font-weight: 500;
       text-transform: uppercase; letter-spacing: 2px;
       padding: 6px 16px; border-radius: 30px;
@@ -144,7 +146,7 @@
     }
     .badge-dot {
       width: 6px; height: 6px; border-radius: 50%;
-      background: var(--verde);
+      background: var(--lila);
       animation: pulse 2s infinite;
     }
     @keyframes pulse {
@@ -168,9 +170,9 @@
     }
 
     .hero-sub {
-      font-size: 15px; font-weight: 300;
-      color: rgba(255,255,255,.6);
-      max-width: 480px; line-height: 1.8;
+      font-size: 20px; font-weight: 300;
+      color: rgba(255,255,255,.95);
+      max-width: 520px; line-height: 1.8;
       margin-bottom: 40px;
       animation: fadeUp .7s .2s ease both;
     }
@@ -217,8 +219,8 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 14px; flex-shrink: 0;
     }
-    .pill-text strong { display: block; font-size: 11px; font-weight: 500; color: var(--blanco); }
-    .pill-text span   { font-size: 10px; color: rgba(255,255,255,.45); }
+    .pill-text strong { display: block; font-size: 13px; font-weight: 500; color: var(--blanco); }
+    .pill-text span   { font-size: 12px; color: rgba(255,255,255,.75); }
 
     /* stats bar */
     .hero-stats {
@@ -237,7 +239,7 @@
       color: var(--celeste);
     }
     .stat-lbl {
-      font-size: 10px; color: rgba(255,255,255,.4);
+      font-size: 12px; color: rgba(255,255,255,.7);
       margin-top: 4px; line-height: 1.4;
     }
 
@@ -297,8 +299,8 @@
     }
     .section-title span { color: var(--lila); }
     .section-text {
-      font-size: 14px; font-weight: 300;
-      color: #445; line-height: 1.85;
+      font-size: 16px; font-weight: 300;
+      color: #222; line-height: 1.85;
       margin-bottom: 28px;
     }
     .prop-law {
@@ -335,11 +337,11 @@
     }
     .prop-body h4 {
       font-family: 'Syne', sans-serif;
-      font-size: 13px; font-weight: 600;
+      font-size: 15px; font-weight: 600;
       color: var(--azul); margin-bottom: 5px;
     }
     .prop-body p {
-      font-size: 11px; color: #667; line-height: 1.65;
+      font-size: 13px; color: #333; line-height: 1.65;
     }
 
     /* ═══════════════════════════════
@@ -390,14 +392,14 @@
     .cifra-card:nth-child(2) .cifra-num { color: var(--verde); }
     .cifra-card:nth-child(3) .cifra-num { color: var(--lila); }
     .cifra-lbl {
-      font-size: 12px; font-weight: 500;
-      color: rgba(255,255,255,.85); margin-bottom: 8px;
+      font-size: 14px; font-weight: 500;
+      color: rgba(255,255,255,.95); margin-bottom: 8px;
     }
     .cifra-desc {
-      font-size: 10px; color: rgba(255,255,255,.4); line-height: 1.6;
+      font-size: 12px; color: rgba(255,255,255,.7); line-height: 1.6;
     }
     .cifra-source {
-      font-size: 9px; color: rgba(255,255,255,.25);
+      font-size: 12px; color: rgba(255,255,255,.85);
       margin-top: 10px; font-style: italic;
     }
 
@@ -579,6 +581,288 @@
     }
 
     /* ═══════════════════════════════
+       FOOTER (override dinámico)
+    ═══════════════════════════════ */
+    .footer {
+      background: var(--azul) !important;
+      padding: 0 !important;
+    }
+    
+    /* CTA LILA */
+    .footer-cta {
+      background: linear-gradient(135deg, rgba(165,97,171,.85), rgba(165,97,171,.7)) !important;
+      border: none !important;
+      margin: 0 !important;
+      padding: 40px 48px !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      gap: 40px !important;
+    }
+    .footer-cta .cta-text {
+      flex: 1;
+    }
+    .footer-cta .cta-text h3 {
+      color: var(--blanco) !important;
+      font-size: 24px !important;
+      margin-bottom: 8px !important;
+    }
+    .footer-cta .cta-text p {
+      color: rgba(255,255,255,.85) !important;
+      font-size: 14px !important;
+    }
+    .cta-button {
+      background: var(--blanco) !important;
+      color: var(--lila) !important;
+      font-weight: 700 !important;
+      padding: 12px 24px !important;
+      border-radius: 6px !important;
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+    }
+    .cta-button:hover {
+      background: rgba(255,255,255,.9) !important;
+    }
+    
+    /* CONTACTO DIRECTO */
+    .footer-contact {
+      background: rgba(21,189,230,.08) !important;
+      padding: 28px 48px !important;
+      border-bottom: 1px solid rgba(21,189,230,.15) !important;
+    }
+    .contact-title {
+      color: rgba(255,255,255,.5) !important;
+      font-size: 10px !important;
+      font-weight: 700 !important;
+      letter-spacing: 1.5px !important;
+      text-transform: uppercase !important;
+      margin-bottom: 20px !important;
+    }
+    .contact-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 24px !important;
+      max-width: 1100px !important;
+      margin: 0 auto !important;
+    }
+    .contact-item {
+      display: flex !important;
+      gap: 12px !important;
+      align-items: flex-start !important;
+    }
+    .contact-icon {
+      font-size: 24px !important;
+      flex-shrink: 0 !important;
+    }
+    .contact-item strong {
+      color: var(--blanco) !important;
+      font-size: 13px !important;
+      display: block !important;
+    }
+    .contact-item p {
+      color: rgba(255,255,255,.6) !important;
+      font-size: 11px !important;
+      margin-top: 2px !important;
+    }
+    
+    /* FOOTER MAIN */
+    .footer-main {
+      max-width: 1100px !important;
+      margin: 0 auto !important;
+      display: grid !important;
+      grid-template-columns: 2fr 1fr 1fr 1fr !important;
+      gap: 48px !important;
+      padding: 48px !important;
+      border-bottom: 1px solid rgba(255,255,255,.08) !important;
+    }
+    
+    /* FOOTER BRAND */
+    .footer-brand {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 12px !important;
+    }
+    .footer-logo {
+      width: 80px !important;
+      height: auto !important;
+    }
+    .brand-tagline {
+      color: var(--celeste) !important;
+      font-size: 12px !important;
+      font-weight: 500 !important;
+    }
+    .brand-desc {
+      color: rgba(255,255,255,.6) !important;
+      font-size: 12px !important;
+      line-height: 1.6 !important;
+      margin: 8px 0 !important;
+    }
+    .social-links {
+      display: flex !important;
+      gap: 8px !important;
+      margin-top: 8px !important;
+    }
+    .social-links a {
+      width: 28px !important;
+      height: 28px !important;
+      border-radius: 6px !important;
+      background: rgba(255,255,255,.08) !important;
+      color: rgba(255,255,255,.5) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 11px !important;
+      font-weight: 600 !important;
+      text-decoration: none !important;
+      transition: all .2s !important;
+    }
+    .social-links a:hover {
+      background: var(--celeste) !important;
+      color: var(--azul) !important;
+    }
+    .verified-badge {
+      background: rgba(21,189,230,.15) !important;
+      border: 1px solid rgba(21,189,230,.3) !important;
+      border-radius: 6px !important;
+      padding: 8px 12px !important;
+      color: var(--celeste) !important;
+      font-size: 10px !important;
+      line-height: 1.5 !important;
+      margin-top: 8px !important;
+    }
+    
+    /* FOOTER LINKS */
+    .footer-links {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 8px !important;
+    }
+    .footer-links h4 {
+      color: var(--blanco) !important;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      margin-bottom: 12px !important;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,.55) !important;
+      font-size: 12px !important;
+      text-decoration: none !important;
+      transition: color .2s !important;
+      display: inline-flex !important;
+      gap: 6px !important;
+      align-items: center !important;
+    }
+    .footer-links a:hover {
+      color: var(--celeste) !important;
+    }
+    .badge {
+      background: rgba(186,207,0,.2) !important;
+      color: var(--verde) !important;
+      font-size: 9px !important;
+      padding: 2px 6px !important;
+      border-radius: 4px !important;
+      font-weight: 600 !important;
+    }
+    
+    /* CONFIDENCIALIDAD */
+    .footer-conf {
+      background: rgba(165,97,171,.12) !important;
+      border-top: 1px solid rgba(165,97,171,.2) !important;
+      border-bottom: 1px solid rgba(165,97,171,.2) !important;
+      color: rgba(255,255,255,.85) !important;
+      padding: 24px 48px !important;
+      display: flex !important;
+      gap: 16px !important;
+      align-items: flex-start !important;
+    }
+    .conf-icon {
+      font-size: 20px !important;
+      flex-shrink: 0 !important;
+    }
+    .conf-text strong {
+      display: block !important;
+      color: var(--blanco) !important;
+      margin-bottom: 4px !important;
+      font-size: 13px !important;
+    }
+    .conf-text p {
+      font-size: 12px !important;
+      line-height: 1.6 !important;
+    }
+    
+    /* FOOTER BOTTOM */
+    .footer-bottom {
+      background: rgba(0,0,0,.2) !important;
+      padding: 16px 48px !important;
+      max-width: 1100px !important;
+      margin: 0 auto !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      flex-wrap: wrap !important;
+      gap: 16px !important;
+    }
+    .footer-copy {
+      color: rgba(255,255,255,.4) !important;
+      font-size: 11px !important;
+    }
+    .footer-links-bottom {
+      display: flex !important;
+      gap: 16px !important;
+      flex-wrap: wrap !important;
+    }
+    .footer-links-bottom a {
+      color: rgba(255,255,255,.35) !important;
+      font-size: 11px !important;
+      text-decoration: none !important;
+      transition: color .2s !important;
+    }
+    .footer-links-bottom a:hover {
+      color: var(--celeste) !important;
+    }
+    
+    /* RESPONSIVE FOOTER */
+    @media (max-width: 900px) {
+      .footer-cta {
+        flex-direction: column !important;
+        gap: 20px !important;
+        text-align: center !important;
+      }
+      .footer-cta .cta-text h3 {
+        font-size: 18px !important;
+      }
+      .footer-cta .cta-button {
+        width: 100% !important;
+      }
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      .footer-main {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 32px !important;
+      }
+      .footer-bottom {
+        flex-direction: column !important;
+        text-align: center !important;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .contact-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .footer-main {
+        grid-template-columns: 1fr !important;
+      }
+      .footer-cta {
+        padding: 24px !important;
+      }
+      .footer-contact {
+        padding: 20px 24px !important;
+      }
+    }
+
+    /* ═══════════════════════════════
        ANIMACIONES
     ═══════════════════════════════ */
     @keyframes fadeUp {
@@ -610,15 +894,13 @@
   <nav>
     <div class="nav-logo">
       <!-- Reemplazar src con la ruta real del logo -->
-      <img src="logo-inchcape.png" alt="Inchcape" />
+      <img src="assets/images/logo.jpg" alt="Inchcape" />
       <div class="nav-divider"></div>
       <span class="nav-tagline">Respeto en la Industria</span>
     </div>
     <div class="nav-links">
-      <a href="#proposito">Propósito</a>
-      <a href="#problema">El problema</a>
-      <a href="#hacemos">Lo que hacemos</a>
-      <a href="#reportar">Reportar</a>
+      <a href="#informate">Informate</a>
+      <a href="#hacemos">Nosotros</a>
       <a href="#reportar" class="nav-cta">Quiero reportar</a>
     </div>
   </nav>
@@ -634,7 +916,7 @@
     <div class="hero-content">
       <div class="hero-badge">
         <div class="badge-dot"></div>
-        Inchcape Peru · Programa de Inclusión 2025
+        Inchcape Perú
       </div>
 
       <h1 class="hero-title">
@@ -643,13 +925,11 @@
       </h1>
 
       <p class="hero-sub">
-        Trabajamos juntos para construir entornos laborales seguros,
-        libres de acoso y discriminación en la industria automotriz.
-      </p>
+Conduciendo el cambio hacia entornos laborales donde el respeto guía el camino y cada persona puede crecer libre de acoso y discriminación.      </p>
 
       <div class="hero-btns">
         <button class="btn-main" onclick="document.getElementById('proposito').scrollIntoView({behavior:'smooth'})">
-          Conocer más
+          Informate y únete al cambio
         </button>
         <button class="btn-ghost" onclick="document.getElementById('reportar').scrollIntoView({behavior:'smooth'})">
           Quiero reportar algo
@@ -720,11 +1000,9 @@
           <span>trabajar con dignidad</span>
         </h2>
         <p class="section-text">
-          El acoso laboral y la discriminación no son inevitables. Son conductas que se pueden prevenir, identificar y erradicar cuando todos los integrantes de una organización conocen sus derechos y asumen su responsabilidad.
-        </p>
+Un entorno laboral seguro no ocurre por casualidad; se construye con decisiones, respeto y compromiso diario. Prevenir el acoso y la discriminación es una responsabilidad compartida que empieza por reconocer nuestros derechos y actuar con integridad en cada interacción.        </p>
         <p class="section-text">
-          En Inchcape entendemos que un entorno industrial con predominancia masculina requiere un esfuerzo consciente y sostenido para garantizar que cada colaborador — independientemente de su género, edad, origen o condición — pueda desarrollarse con respeto y seguridad.
-        </p>
+En Inchcape, trabajamos para crear espacios donde cada persona se sienta valorada, escuchada y protegida. Porque cuando el respeto es la base, el talento crece con confianza, las ideas fluyen sin miedo y el verdadero potencial de cada equipo se hace visible.        </p>
         <div class="prop-law">
           ⚖️ &nbsp; Alineado con la <strong>&nbsp;Ley N° 27942&nbsp;</strong> y normativa peruana vigente
         </div>
@@ -815,7 +1093,7 @@
         <div class="sec-card" onclick="document.getElementById('problema').scrollIntoView({behavior:'smooth'})">
           <div class="sec-card-top bg1">🧠</div>
           <div class="sec-card-body">
-            <h3>Entendiendo el problema</h3>
+            <h3>Informate</h3>
             <p>Definiciones claras, ejemplos reales del sector industrial y el formato "Esto sí es / Esto no es" para que no queden dudas.</p>
             <a class="sec-link" href="#problema">Explorar →</a>
           </div>
@@ -823,7 +1101,7 @@
         <div class="sec-card" onclick="document.getElementById('hacemos').scrollIntoView({behavior:'smooth'})">
           <div class="sec-card-top bg2">🏢</div>
           <div class="sec-card-body">
-            <h3>Lo que estamos haciendo</h3>
+            <h3>Nosotros</h3>
             <p>Políticas implementadas, capacitaciones, avances y compromisos concretos de Inchcape con sus colaboradores.</p>
             <a class="sec-link" href="#hacemos">Ver avances →</a>
           </div>
@@ -831,7 +1109,7 @@
         <div class="sec-card" onclick="document.getElementById('reportar').scrollIntoView({behavior:'smooth'})">
           <div class="sec-card-top bg3">🚨</div>
           <div class="sec-card-body">
-            <h3>Atención y reporte</h3>
+            <h3>Reportar</h3>
             <p>Experiencia guiada paso a paso para identificar tu situación y ser dirigido al canal oficial correspondiente.</p>
             <a class="sec-link" href="#reportar">Ir al reporte →</a>
           </div>
@@ -896,6 +1174,15 @@
       el.style.transition = 'opacity .5s ease, transform .5s ease';
       observer.observe(el);
     });
+  </script>
+
+  <!-- Footer dinamico -->
+  <div id="footer-container"></div>
+
+  <script>
+    fetch('components/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('footer-container').innerHTML = html);
   </script>
 </body>
 </html>

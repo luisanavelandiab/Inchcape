@@ -127,84 +127,205 @@ body {
     grid-template-columns: 1fr;
   }
 }
-/* FOOTER */
+/*FOOTER*/
+/* RESET BÁSICO */
+.footer * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* FOOTER BASE */
 .footer {
-  background: #152C47;
-  color: white;
-  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0a0f1c, #111827);
+  color: #e5e7eb;
+  font-family: 'DM Sans', sans-serif;
+  padding-top: 40px;
 }
 
 /* CTA */
 .footer-cta {
-  background: #A561AB;
-  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 0 40px;
+  padding: 25px 30px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.footer-cta button {
-  background: white;
-  color: #A561AB;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
+.footer-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* CONTACTO */
-.footer-contact {
-  display: flex;
-  gap: 20px;
-  padding: 15px;
-  background: #1e3f68;
+.cta-text h3 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
 }
 
-.contact-item {
-  font-size: 14px;
+.cta-text p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* BOTÓN CTA */
+.cta-button {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255,255,255,0.15);
+  transition: width 0.3s ease;
+}
+
+.cta-button:hover::after {
+  width: 100%;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
 }
 
 /* MAIN */
 .footer-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+  padding: 50px 40px;
+}
+
+/* BRAND */
+.footer-brand {
   display: flex;
-  justify-content: space-around;
-  padding: 30px;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .footer-logo {
-  height: 50px;
-  margin-bottom: 10px;
+  width: 140px;
+  filter: brightness(1.2);
 }
 
-.footer-links {
-  display: flex;
-  flex-direction: column;
+.footer-brand p {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* LINKS */
+.footer-links h4 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #ffffff;
 }
 
 .footer-links a {
-  color: #ccc;
+  display: block;
   text-decoration: none;
-  margin: 5px 0;
+  color: #9ca3af;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* animación underline elegante */
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1.5px;
+  bottom: -2px;
+  left: 0;
+  background: #3b82f6;
+  transition: width 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #15BDE6;
+  color: #ffffff;
 }
 
-/* CONF */
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+/* CONFIDENCIALIDAD */
 .footer-conf {
-  padding: 15px;
-  background: #0f2238;
-  font-size: 12px;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+  background: rgba(255,255,255,0.03);
+  opacity: 0.8;
 }
 
 /* COPY */
 .footer-bottom {
   text-align: center;
-  padding: 10px;
-  font-size: 12px;
-  background: #0b1a2b;
+  padding: 15px;
+  font-size: 0.8rem;
+  background: rgba(0,0,0,0.3);
+  opacity: 0.6;
 }
 
+/* ANIMACIÓN ENTRADA (fade + slide) */
+.footer {
+  animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .footer-cta {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    padding: 40px 20px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .footer-main {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-cta {
+    margin: 0 20px;
+  }
+
+}
 /* NAVBAR */
 .navbar {
   position: fixed;
