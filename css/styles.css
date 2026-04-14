@@ -1,0 +1,301 @@
+:root {
+  --azul: #152C47;
+  --azul2: #1a3a5c;
+  --celeste: #15BDE6;
+  --lila: #A561AB;
+  --verde: #BACF00;
+  --gris: #D9D9D9;
+  --blanco: #ffffff;
+  --off: #f5f7fa;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--blanco);
+  color: var(--azul);
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background: var(--azul);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(21,189,230,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21,189,230,.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 48px 60px;
+}
+
+.hero-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 800;
+  color: white;
+}
+
+/* PROPÓSITO */
+.proposito {
+  background: var(--off);
+  padding: 96px 48px;
+}
+
+.proposito-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+/* CIFRAS */
+.cifras {
+  background: var(--azul);
+  padding: 80px 48px;
+}
+
+.cifras-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+/* SECCIONES */
+.secciones {
+  padding: 96px 48px;
+}
+
+.secciones-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+/* COMPROMISO */
+.compromiso {
+  background: var(--celeste);
+  padding: 72px 48px;
+}
+
+/* FAB */
+.fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: var(--lila);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .proposito-inner {
+    grid-template-columns: 1fr;
+  }
+  .cifras-grid,
+  .secciones-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* FOOTER */
+.footer {
+  background: #152C47;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* CTA */
+.footer-cta {
+  background: #A561AB;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-cta button {
+  background: white;
+  color: #A561AB;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+/* CONTACTO */
+.footer-contact {
+  display: flex;
+  gap: 20px;
+  padding: 15px;
+  background: #1e3f68;
+}
+
+.contact-item {
+  font-size: 14px;
+}
+
+/* MAIN */
+.footer-main {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+.footer-logo {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 5px 0;
+}
+
+.footer-links a:hover {
+  color: #15BDE6;
+}
+
+/* CONF */
+.footer-conf {
+  padding: 15px;
+  background: #0f2238;
+  font-size: 12px;
+}
+
+/* COPY */
+.footer-bottom {
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  background: #0b1a2b;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 65px;
+  background: #152C47;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.logo {
+  color: #15BDE6;
+  font-weight: bold;
+}
+
+.tagline {
+  font-size: 10px;
+  color: #ccc;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.nav-cta {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-ghost {
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 6px 12px;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-main {
+  background: #BACF00;
+  padding: 6px 14px;
+  color: #152C47;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hamburger {
+  display: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile */
+.mobile-menu {
+  display: none;
+  background: #152C47;
+  padding: 15px;
+  flex-direction: column;
+}
+
+.mobile-menu a {
+  color: white;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+@media(max-width: 768px) {
+  .nav-links, .nav-cta {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+}
