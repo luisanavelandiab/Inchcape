@@ -1187,15 +1187,17 @@ En Inchcape, asumimos este reto impulsando una cultura donde cada persona, espec
         document.getElementById('navbar-container').innerHTML = html;
         // Ejecutar el script del navbar tras cargarlo
         const nav = document.querySelector('nav');
-        window.addEventListener('scroll', () => {
-          if (window.scrollY > 40) {
-            nav.style.background = 'rgba(21,44,71,0.99)';
-            nav.style.boxShadow = '0 2px 24px rgba(0,0,0,.25)';
-          } else {
-            nav.style.background = 'rgba(21,44,71,0.97)';
-            nav.style.boxShadow = 'none';
-          }
-        });
+        if (nav) {
+          window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+              nav.style.background = 'rgba(21,44,71,0.99)';
+              nav.style.boxShadow = '0 2px 24px rgba(0,0,0,.25)';
+            } else {
+              nav.style.background = 'rgba(21,44,71,0.97)';
+              nav.style.boxShadow = 'none';
+            }
+          });
+        }
       });
 
     // Scroll reveal
@@ -1216,7 +1218,7 @@ En Inchcape, asumimos este reto impulsando una cultura donde cada persona, espec
     });
   </script>
 
-  <!-- Footer dinamico -->
+  <!-- Footer dinámico -->
   <div id="footer-container"></div>
 
   <script>
