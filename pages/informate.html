@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entendiendo el problema · Inchcape</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+<div class="section-wrap">
+
+  <!-- ── ENCABEZADO CON TABS ── -->
+  <div class="sec-header">
+    <div class="sec-header-bg"></div>
+    <div class="sec-header-circle"></div>
+    <div class="header-inner">
+      <div class="eyebrow"><div class="eyebrow-dot"></div>Entendiendo el problema</div>
+      <h2 class="sec-title">¿Qué es acoso y qué es<br><span>discriminación?</span></h2>
+      <p class="sec-sub">Identificar estas situaciones es el primer paso para cambiarlas. Aquí te lo explicamos con definiciones claras y ejemplos reales del sector automotriz e industrial.</p>
+    </div>
+    <div class="tab-row">
+      <button class="tab-btn on" onclick="switchTab('acoso', this)">
+        <span class="tab-icon">🚨</span>Acoso laboral
+      </button>
+      <button class="tab-btn" onclick="switchTab('discriminacion', this)">
+        <span class="tab-icon">⚖️</span>Discriminación
+      </button>
+      <button class="tab-btn" onclick="switchTab('casos', this)">
+        <span class="tab-icon">👷</span>Casos del sector
+      </button>
+      <button class="tab-btn" onclick="switchTab('quiz', this)">
+        <span class="tab-icon">🧠</span>¿Lo identificas?
+      </button>
+    </div>
+  </div>
+
+  <div class="content-area">
+
+    <!-- ── TAB: ACOSO ── -->
+    <div id="panel-acoso" class="tab-panel show">
+
+      <div class="def-section">
+        <div class="def-grid">
+          <div class="def-card">
+            <div class="def-label">Definición legal</div>
+            <div class="def-title">¿Qué es el acoso laboral?</div>
+            <div class="def-text">Es cualquier conducta que cause daño moral o psicológico al trabajador, ejercida de forma repetida por un superior o compañero. Puede ser verbal, físico o psicológico.</div>
+            <div class="def-law">⚖️ Ley N° 27942 – Art. 6</div>
+          </div>
+          <div class="def-card celeste">
+            <div class="def-label">¿Cómo se manifiesta?</div>
+            <div class="def-title">Formas frecuentes en el sector</div>
+            <div class="def-text">Burlas, humillaciones públicas, asignación de tareas degradantes, aislamiento del equipo, amenazas o presiones para obtener favores a cambio de beneficios laborales.</div>
+            <div class="def-law">📋 Entorno industrial y automotriz</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sino-section">
+        <div class="sino-header">
+          <div class="sino-title">¿Esto es acoso o no?</div>
+          <div class="sino-legend">
+            <div class="legend-item"><div class="legend-dot-s"></div>Sí es acoso</div>
+            <div class="legend-item"><div class="legend-dot-n"></div>No es acoso</div>
+          </div>
+        </div>
+        <div class="sino-grid">
+
+          <div class="sino-card card-si">
+            <div class="sino-icon-wrap">🛑</div>
+            <div class="sino-body">
+              <div class="sino-label"><div class="sino-label-dot-s"></div>Esto SÍ es acoso</div>
+              <div class="sino-text">Tu supervisor te asigna las tareas más pesadas como castigo por negarte a hacer algo que no era tu responsabilidad.</div>
+              <span class="sino-tag tag-acoso">Acoso vertical</span>
+            </div>
+          </div>
+
+          <div class="sino-card card-no">
+            <div class="sino-icon-wrap">✓</div>
+            <div class="sino-body">
+              <div class="sino-label"><div class="sino-label-dot-n"></div>Esto NO es acoso</div>
+              <div class="sino-text">Tu jefe te llama la atención en privado por no cumplir el procedimiento de seguridad establecido en el taller.</div>
+              <span class="sino-tag tag-ok">Corrección legítima</span>
+            </div>
+          </div>
+
+          <div class="sino-card card-si">
+            <div class="sino-icon-wrap">🛑</div>
+            <div class="sino-body">
+              <div class="sino-label"><div class="sino-label-dot-s"></div>Esto SÍ es acoso</div>
+              <div class="sino-text">Un compañero te hace comentarios repetidos sobre tu cuerpo, género o edad frente a otros trabajadores del almacén.</div>
+              <span class="sino-tag tag-acoso">Acoso horizontal</span>
+            </div>
+          </div>
+
+          <div class="sino-card card-no">
+            <div class="sino-icon-wrap">✓</div>
+            <div class="sino-body">
+              <div class="sino-label"><div class="sino-label-dot-n"></div>Esto NO es acoso</div>
+              <div class="sino-text">Tu supervisor te evalúa con criterios exigentes porque el trabajo requiere alta precisión y seguridad operativa.</div>
+              <span class="sino-tag tag-ok">Evaluación de desempeño</span>
+            </div>
+          </div>
+
+          <div class="sino-card card-si">
+            <div class="sino-icon-wrap">🛑</div>
+            <div class="sino-body">
+              <div class="sino-label"><div class="sino-label-dot-s"></div>Esto SÍ es acoso</div>
+              <div class="sino-text">Te presionan para que hagas horas extra sin pago a cambio de no ser trasladado a otra área o no perder tu puesto.</div>
+              <span class="sino-tag tag-acoso">Acoso laboral grave</span>
+            </div>
+          </div>
+
+          <div class="sino-card card-no">
+            <div class="sino-icon-wrap">✓</div>
+            <div class="sino-body">
+              <div class="sino-label"><div class="sino-label-dot-n"></div>Esto NO es acoso</div>
+              <div class="sino-text">Te piden que corrijas un informe dos veces porque no cumplía con los estándares técnicos requeridos.</div>
+              <span class="sino-tag tag-ok">Exigencia profesional</span>
+            </div>
+          </div>
+          <!-- ── IDENTIFICAR ACOSO ── -->
+<div class="detect-section">
+  <div class="detect-title">¿Cómo identificar el acoso laboral?</div>
+  <div class="detect-sub">No siempre es evidente. Estas señales son alertas clave en entornos laborales.</div>
+
+  <ul class="detect-list">
+    <li>Te humillan o ridiculizan frente a otros de forma repetida.</li>
+    <li>Te asignan tareas innecesarias, degradantes o imposibles como castigo.</li>
+    <li>Recibes críticas constantes sin justificación o sin posibilidad de mejora.</li>
+    <li>Te aíslan del equipo o te excluyen intencionalmente.</li>
+    <li>Sientes miedo, ansiedad o presión constante al interactuar con una persona específica.</li>
+    <li>Te amenazan directa o indirectamente con perder tu puesto.</li>
+  </ul>
+</div>
+
+<!-- ── FRASES QUE NORMALIZAN EL ACOSO ── -->
+<div class="frases-section">
+  <div class="frases-title">Frases que normalizan el acoso 🚩</div>
+  <div class="frases-sub">Si suenan familiares… ojo, no es cultura laboral, es problema estructural.</div>
+
+  <div class="frases-grid">
+    <div class="frase-card">“Aquí siempre se ha trabajado así.”</div>
+    <div class="frase-card">“Si no aguantas presión, este trabajo no es para ti.”</div>
+    <div class="frase-card">“Solo es broma, no exageres.”</div>
+    <div class="frase-card">“Te trato así porque quiero que mejores.”</div>
+    <div class="frase-card">“Así me trataron a mí cuando empecé.”</div>
+    <div class="frase-card">“Deberías agradecer que tienes trabajo.”</div>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TAB: DISCRIMINACIÓN ── -->
+    <div id="panel-discriminacion" class="tab-panel">
+
+      <div class="def-section">
+        <div class="def-grid">
+          <div class="def-card">
+            <div class="def-label">Definición legal</div>
+            <div class="def-title">¿Qué es la discriminación laboral?</div>
+            <div class="def-text">Es tratar a alguien de forma desventajosa por características como género, edad, origen, religión, discapacidad u orientación sexual, sin que exista justificación objetiva.</div>
+            <div class="def-law">⚖️ Constitución Art. 2 · Ley N° 26772</div>
+          </div>
+          <div class="def-card celeste">
+            <div class="def-label">¿Cómo se manifiesta?</div>
+            <div class="def-title">Formas frecuentes en la industria</div>
+            <div class="def-text">Exclusión de capacitaciones, diferencias salariales injustificadas, negativa de ascensos, repartición desigual de turnos o tareas por razones personales y no técnicas.</div>
+            <div class="def-law">📋 Sector automotriz e industrial</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sino-section">
+        <div class="sino-header">
+          <div class="sino-title">¿Esto es discriminación o no?</div>
+          <div class="sino-legend">
+            <div class="legend-item"><div class="legend-dot-s"></div>Sí es discriminación</div>
+            <div class="legend-item"><div class="legend-dot-n"></div>No lo es</div>
+          </div>
+        </div>
+        <div class="sino-grid">
+
+          <div class="sino-card card-si">
+            <div class="sino-icon-wrap">🛑</div>
+            <div class="sino-body">
+              <div class="sino-label"><div class="sino-label-dot-s"></div>Esto SÍ es discriminación</div>
+              <div class="sino-text">No te incluyen en la capacitación de nuevos equipos porque "eso es para los hombres" o "ya estás muy mayor para aprender eso".</div>
+              <span class="sino-tag tag-disc">Por género / edad</span>
+            </div>
+          </div>
+
+          <div class="sino-card card-no">
+            <div class="sino-icon-wrap">✓</div>
+            <div class="sino-body">
+              <div class="sino-label"><div class="sino-label-dot-n"></div>Esto NO es discriminación</div>
+              <div class="sino-text">Te asignan a otra área porque hay una vacante disponible y tu perfil técnico encaja mejor con ese puesto.</div>
+              <span class="sino-tag tag-ok">Decisión técnica</span>
+            </div>
+          </div>
+
+          <div class="sino-card card-si">
+            <div class="sino-icon-wrap">🛑</div>
+            <div class="sino-body">
+              <div class="sino-label"><div class="sino-label-dot-s"></div>Esto SÍ es discriminación</div>
+              <div class="sino-text">Te pagan menos que un compañero con el mismo cargo y experiencia sin ninguna justificación formal documentada.</div>
+              <span class="sino-tag tag-disc">Brecha salarial</span>
+            </div>
+          </div>
+
+          <div class="sino-card card-no">
+            <div class="sino-icon-wrap">✓</div>
+            <div class="sino-body">
+              <div class="sino-label"><div class="sino-label-dot-n"></div>Esto NO es discriminación</div>
+              <div class="sino-text">Un compañero tiene mayor salario porque tiene certificaciones técnicas adicionales que tú aún no has obtenido.</div>
+              <span class="sino-tag tag-ok">Diferencia objetiva</span>
+            </div>
+          </div>
+          <!-- ── IDENTIFICAR DISCRIMINACIÓN ── -->
+<div class="detect-section">
+  <div class="detect-title">¿Cómo identificar la discriminación?</div>
+  <div class="detect-sub">No siempre es explícita. A veces se esconde en decisiones “normales”.</div>
+
+  <ul class="detect-list">
+    <li>No tienes acceso a oportunidades que otros sí, sin razón clara.</li>
+    <li>Recibes un trato diferente por tu género, edad, origen o apariencia.</li>
+    <li>Te excluyen de capacitaciones o reuniones importantes.</li>
+    <li>Existen diferencias salariales sin justificación objetiva.</li>
+    <li>Te asignan tareas o roles basados en estereotipos.</li>
+    <li>Sientes que necesitas demostrar más que otros para obtener lo mismo.</li>
+  </ul>
+</div>
+
+<!-- ── FRASES QUE NORMALIZAN LA DISCRIMINACIÓN ── -->
+<div class="frases-section">
+  <div class="frases-title">Frases que normalizan la discriminación 🚩</div>
+  <div class="frases-sub">Cuando la desigualdad se disfraza de lógica empresarial…</div>
+
+  <div class="frases-grid">
+    <div class="frase-card">“Ese puesto no es para mujeres.”</div>
+    <div class="frase-card">“Buscamos gente más joven para ese rol.”</div>
+    <div class="frase-card">“Él gana más porque tiene más presencia.”</div>
+    <div class="frase-card">“Tú encajas mejor en tareas más simples.”</div>
+    <div class="frase-card">“Es que tú eres muy sensible para ese tipo de trabajo.”</div>
+    <div class="frase-card">“Es que así funciona la industria.”</div>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TAB: CASOS ── -->
+    <div id="panel-casos" class="tab-panel">
+      <div class="casos-section">
+        <div class="caso-title">Situaciones reales</div>
+        <div class="caso-cards">
+
+          <div class="caso-card">
+            <div class="caso-avatar" style="background:#f5edf6;">👩</div>
+            <div class="caso-body">
+              <div class="caso-name">Ana M. · Técnica de taller</div>
+              <div class="caso-role">Área de mantenimiento</div>
+              <div class="caso-quote">Mi supervisor me decía frente a todos que las mujeres no servían para el taller. Pensé que era normal hasta que una compañera me habló del canal de denuncia.</div>
+            </div>
+            <div class="caso-side">
+              <span class="caso-badge badge-resuelto">Resuelto</span>
+              <div class="caso-tipo">Acoso laboral<br>vertical</div>
+            </div>
+          </div>
+
+          <div class="caso-card">
+            <div class="caso-avatar" style="background:#e6f9fd;">👨</div>
+            <div class="caso-body">
+              <div class="caso-name">Carlos R. · Operario de almacén</div>
+              <div class="caso-role">Área de logística</div>
+              <div class="caso-quote">Siempre me dejaban fuera de las reuniones de equipo y nunca me avisaban de las capacitaciones. Me enteré de los cambios por terceros.</div>
+            </div>
+            <div class="caso-side">
+              <span class="caso-badge badge-resuelto">Resuelto</span>
+              <div class="caso-tipo">Discriminación<br>laboral</div>
+            </div>
+          </div>
+
+          <div class="caso-card">
+            <div class="caso-avatar" style="background:#f5edf6;">👩</div>
+            <div class="caso-body">
+              <div class="caso-name">Lucía T. · Asistente administrativa</div>
+              <div class="caso-role">Área comercial</div>
+              <div class="caso-quote">Un compañero me enviaba mensajes fuera del horario laboral con comentarios inapropiados. Cuando lo reporté, RRHH actuó de inmediato.</div>
+            </div>
+            <div class="caso-side">
+              <span class="caso-badge badge-proceso">En seguimiento</span>
+              <div class="caso-tipo">Acoso<br>horizontal</div>
+            </div>
+          </div>
+          <div class="caso-card">
+  <div class="caso-avatar" style="background:#f5edf6;">👩</div>
+  <div class="caso-body">
+    <div class="caso-name">Natalia S. · Ingeniera</div>
+    <div class="caso-role">Energía</div>
+    <div class="caso-quote">En reuniones técnicas, ignoraban mis aportes y luego eran retomados por compañeros hombres como si fueran ideas nuevas.</div>
+  </div>
+  <div class="caso-side">
+    <span class="caso-badge badge-proceso">En seguimiento</span>
+    <div class="caso-tipo">Discriminación<br>por género</div>
+  </div>
+</div>
+          <div class="caso-card">
+  <div class="caso-avatar" style="background:#f5edf6;">👷‍♀️</div>
+  <div class="caso-body">
+    <div class="caso-name">María L. · Ingeniera de obra</div>
+    <div class="caso-role">Construcción</div>
+    <div class="caso-quote">El jefe de obra hacía comentarios sarcásticos cada vez que yo daba una indicación técnica. Decía “mejor que lo confirme un ingeniero de verdad”.</div>
+  </div>
+  <div class="caso-side">
+    <span class="caso-badge badge-proceso">En seguimiento</span>
+    <div class="caso-tipo">Acoso laboral<br>vertical</div>
+  </div>
+</div>
+<div class="caso-card">
+  <div class="caso-avatar" style="background:#f5edf6;">👩‍🏭</div>
+  <div class="caso-body">
+    <div class="caso-name">Elena P. · Operaria</div>
+    <div class="caso-role">Industria alimentaria</div>
+    <div class="caso-quote">No me permitían rotar a otras áreas porque asumían que no podría con el ritmo físico, sin siquiera evaluarme.</div>
+  </div>
+  <div class="caso-side">
+    <span class="caso-badge badge-proceso">En seguimiento</span>
+    <div class="caso-tipo">Discriminación<br>por estereotipo</div>
+  </div>
+</div>
+
+<div class="caso-card">
+  <div class="caso-avatar" style="background:#e6f9fd;">👨</div>
+  <div class="caso-body">
+    <div class="caso-name">Diego P. · Técnico de mantenimiento</div>
+    <div class="caso-role">Industria minera</div>
+    <div class="caso-quote">Mis compañeros me escondían herramientas y luego se burlaban cuando no podía terminar el trabajo a tiempo.</div>
+  </div>
+  <div class="caso-side">
+    <span class="caso-badge badge-resuelto">Resuelto</span>
+    <div class="caso-tipo">Acoso<br>horizontal</div>
+  </div>
+</div>
+<div class="caso-card">
+  <div class="caso-avatar" style="background:#f5edf6;">👩</div>
+  <div class="caso-body">
+    <div class="caso-name">Rosa M. · Supervisora</div>
+    <div class="caso-role">Logística</div>
+    <div class="caso-quote">Cuando regresé de licencia de maternidad, me asignaron tareas de menor responsabilidad sin explicación.</div>
+  </div>
+  <div class="caso-side">
+    <span class="caso-badge badge-proceso">En seguimiento</span>
+    <div class="caso-tipo">Discriminación<br>por maternidad</div>
+  </div>
+</div>
+
+<div class="caso-card">
+  <div class="caso-avatar" style="background:#f5edf6;">👩</div>
+  <div class="caso-body">
+    <div class="caso-name">Valeria S. · Programadora</div>
+    <div class="caso-role">Tecnología</div>
+    <div class="caso-quote">Un compañero revisaba mi código en público solo para criticarlo, incluso cuando estaba correcto. Lo hacía constantemente frente al equipo.</div>
+  </div>
+  <div class="caso-side">
+    <span class="caso-badge badge-proceso">En seguimiento</span>
+    <div class="caso-tipo">Acoso<br>horizontal</div>
+  </div>
+</div>
+<div class="caso-card">
+  <div class="caso-avatar" style="background:#e6f9fd;">👨</div>
+  <div class="caso-body">
+    <div class="caso-name">Daniel C. · Analista</div>
+    <div class="caso-role">Finanzas</div>
+    <div class="caso-quote">No fui incluido en un proyecto clave porque mi jefe prefería trabajar con personas de su misma universidad.</div>
+  </div>
+  <div class="caso-side">
+    <span class="caso-badge badge-proceso">En seguimiento</span>
+    <div class="caso-tipo">Discriminación<br>por afinidad</div>
+  </div>
+</div>
+
+<div class="caso-card">
+  <div class="caso-avatar" style="background:#e6f9fd;">👨</div>
+  <div class="caso-body">
+    <div class="caso-name">Luis G. · Operador de maquinaria</div>
+    <div class="caso-role">Logística</div>
+    <div class="caso-quote">Mi supervisor me asignaba turnos nocturnos constantemente como castigo por no aceptar quedarme horas extra sin pago.</div>
+  </div>
+  <div class="caso-side">
+    <span class="caso-badge badge-resuelto">Resuelto</span>
+    <div class="caso-tipo">Acoso laboral<br>vertical</div>
+  </div>
+</div>
+<div class="caso-card">
+  <div class="caso-avatar" style="background:#f5edf6;">👩‍💻</div>
+  <div class="caso-body">
+    <div class="caso-name">Paula V. · Desarrolladora junior</div>
+    <div class="caso-role">Tecnología</div>
+    <div class="caso-quote">A pesar de tener el mismo rendimiento que mis compañeros, no me asignaban proyectos importantes porque decían que “aún me faltaba confianza”.</div>
+  </div>
+  <div class="caso-side">
+    <span class="caso-badge badge-proceso">En seguimiento</span>
+    <div class="caso-tipo">Discriminación<br>laboral</div>
+  </div>
+</div>
+
+<div class="caso-card">
+  <div class="caso-avatar" style="background:#e6f9fd;">👨</div>
+  <div class="caso-body">
+    <div class="caso-name">Fernando D. · Operario</div>
+    <div class="caso-role">Manufactura</div>
+    <div class="caso-quote">No me consideraron para un ascenso porque dijeron que mi acento no era adecuado para tratar con clientes.</div>
+  </div>
+  <div class="caso-side">
+    <span class="caso-badge badge-proceso">En seguimiento</span>
+    <div class="caso-tipo">Discriminación<br>por origen</div>
+  </div>
+</div>
+
+
+
+<div class="caso-card">
+  <div class="caso-avatar" style="background:#e6f9fd;">👨‍🔧</div>
+  <div class="caso-body">
+    <div class="caso-name">Hugo R. · Técnico mecánico</div>
+    <div class="caso-role">Automotriz</div>
+    <div class="caso-quote">Siempre asignaban las capacitaciones internacionales a los mismos trabajadores, dejando fuera a otros sin criterios claros.</div>
+  </div>
+  <div class="caso-side">
+    <span class="caso-badge badge-proceso">En seguimiento</span>
+    <div class="caso-tipo">Discriminación<br>laboral</div>
+  </div>
+</div>
+
+        </div>
+
+        <div class="caso-nota">
+          <strong>Nota:</strong> Los nombres son ficticios pero las situaciones representan casos reales del entorno industrial. Todos los reportes en Inchcape son tratados con total confidencialidad.
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TAB: QUIZ ── -->
+    <div id="panel-quiz" class="tab-panel">
+      <div class="quiz-section">
+        <div class="quiz-box">
+          <div class="quiz-bg"></div>
+          <div class="quiz-inner">
+
+            <div id="quiz-game">
+              <div class="quiz-eyebrow">Quiz — ¿Lo identificas?</div>
+              <div class="quiz-q" id="qTitle">Pregunta 1 de 4</div>
+              <div class="quiz-sub" id="qText"></div>
+              <div class="quiz-progress"><div class="quiz-fill" id="qBar" style="width:25%"></div></div>
+              <div class="quiz-options" id="qOpts"></div>
+              <div class="quiz-feedback" id="qFeedback"></div>
+              <div class="quiz-nav">
+                <span class="quiz-counter" id="qCounter">Pregunta 1 / 4</span>
+                <button class="quiz-next" id="qNext" onclick="nextQuestion()">Siguiente →</button>
+              </div>
+            </div>
+
+            <div class="quiz-result" id="quiz-result">
+              <div class="result-score" id="rScore"></div>
+              <div class="result-msg" id="rMsg"></div>
+              <button class="quiz-restart" onclick="restartQuiz()">Volver a intentarlo</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /content-area -->
+</div><!-- /section-wrap -->
+
+<script>
+// ── TABS ──
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('show'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('on'));
+  document.getElementById('panel-' + id).classList.add('show');
+  btn.classList.add('on');
+}
+
+// ── QUIZ ──
+const questions = [
+  {
+    q: "Tu jefe te grita frente a todo el equipo del taller cuando cometes un error, y lo hace casi todos los días. ¿Es acoso laboral?",
+    opts: ["Sí, es acoso laboral", "No, es una corrección normal", "Depende del error cometido"],
+    correct: 0,
+    feedback: "Las humillaciones públicas repetidas constituyen acoso laboral según la Ley N° 27942, independientemente del motivo."
+  },
+  {
+    q: "No te invitan a la capacitación de nuevos equipos porque 'ya tienes muchos años en la empresa'. ¿Es discriminación?",
+    opts: ["No, es una decisión de la empresa", "Sí, es discriminación por edad", "Solo si se repite varias veces"],
+    correct: 1,
+    feedback: "Excluir a alguien de capacitaciones por edad es discriminación laboral, protegida por la Constitución y la Ley N° 26772."
+  },
+  {
+    q: "Tu supervisor te pide que corrijas un informe técnico tres veces porque no cumple los estándares de seguridad. ¿Es acoso?",
+    opts: ["Sí, es hostigamiento", "No, es exigencia laboral legítima", "Sí, si lo hace con mala actitud"],
+    correct: 1,
+    feedback: "Exigir calidad en el trabajo no es acoso. El acoso implica conductas que dañan la dignidad, no la exigencia profesional justificada."
+  },
+  {
+    q: "Un compañero te hace comentarios sobre tu apariencia física en el taller de forma repetida aunque le has pedido que pare. ¿Qué es?",
+    opts: ["Es un tema personal, no laboral", "Es acoso laboral horizontal", "Solo es acoso si lo hace el jefe"],
+    correct: 1,
+    feedback: "El acoso puede ser horizontal (entre compañeros). Comentarios sobre la apariencia tras haber pedido que paren constituyen acoso."
+  }
+];
+
+let current = 0, score = 0, answered = false;
+
+function renderQ() {
+  const q = questions[current];
+  document.getElementById('qTitle').textContent = `Pregunta ${current + 1} de ${questions.length}`;
+  document.getElementById('qText').textContent = q.q;
+  document.getElementById('qBar').style.width = `${((current + 1) / questions.length) * 100}%`;
+  document.getElementById('qCounter').textContent = `Pregunta ${current + 1} / ${questions.length}`;
+  const optsEl = document.getElementById('qOpts');
+  optsEl.innerHTML = '';
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-opt';
+    btn.textContent = opt;
+    btn.onclick = () => answer(btn, i === q.correct, q.feedback);
+    optsEl.appendChild(btn);
+  });
+  const fb = document.getElementById('qFeedback');
+  fb.className = 'quiz-feedback';
+  fb.textContent = '';
+  document.getElementById('qNext').classList.remove('show');
+  answered = false;
+}
+
+function answer(btn, correct, feedback) {
+  if (answered) return;
+  answered = true;
+  btn.classList.add('selected');
+  if (correct) {
+    score++;
+  }
+  const fb = document.getElementById('qFeedback');
+  fb.textContent = feedback;
+  fb.className = 'quiz-feedback show';
+  document.querySelectorAll('.quiz-opt').forEach(b => b.style.pointerEvents = 'none');
+  const next = document.getElementById('qNext');
+  next.classList.add('show');
+  next.textContent = current < questions.length - 1 ? 'Siguiente →' : 'Ver resultado';
+}
+
+function nextQuestion() {
+  current++;
+  if (current < questions.length) {
+    renderQ();
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  document.getElementById('quiz-game').style.display = 'none';
+  const res = document.getElementById('quiz-result');
+  res.classList.add('show');
+  document.getElementById('rScore').textContent = `${score} / ${questions.length}`;
+  const msgs = [
+    "Aún hay situaciones que pueden confundirte. Te recomendamos explorar la sección de definiciones y ejemplos.",
+    "Vas bien, pero hay situaciones del entorno industrial que vale la pena repasar con calma.",
+    "¡Muy bien! Identificas la mayoría de situaciones. Comparte este quiz con tu equipo.",
+    "¡Excelente! Tienes muy claro qué es acoso y qué no. Eres parte del cambio en Inchcape."
+  ];
+  document.getElementById('rMsg').textContent = msgs[Math.min(score, 3)];
+}
+
+function restartQuiz() {
+  current = 0; score = 0; answered = false;
+  document.getElementById('quiz-game').style.display = 'block';
+  document.getElementById('quiz-result').classList.remove('show');
+  renderQ();
+}
+
+renderQ();
+</script>
+</body>
+</html>
