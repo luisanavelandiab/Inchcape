@@ -9,9 +9,9 @@
     :root {
       --azul:    #152C47;
       --azul2:   #1a3a5c;
+      --azul3:   #3c85c2;
       --celeste: #15BDE6;
       --lila:    #A561AB;
-      --verde:   #BACF00;
       --gris:    #D9D9D9;
       --blanco:  #ffffff;
       --off:     #f5f7fa;
@@ -70,7 +70,7 @@
     }
     .nav-links a:hover { color: var(--blanco); }
     .nav-cta {
-      background: var(--verde);
+      background: var(--lila);
       color: var(--azul) !important;
       font-weight: 500 !important;
       padding: 8px 20px;
@@ -183,7 +183,7 @@
       animation: fadeUp .7s .3s ease both;
     }
     .btn-main {
-      background: var(--verde); color: var(--azul);
+      background: var(--lila); color: var(--blanco);
       font-family: 'DM Sans', sans-serif;
       font-size: 13px; font-weight: 500;
       padding: 13px 28px; border-radius: 8px;
@@ -281,7 +281,6 @@
       max-width: 1100px; margin: 0 auto;
       display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
     }
-    .prop-left {}
     .section-eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 12px; font-weight: 600;
@@ -328,8 +327,8 @@
       box-shadow: 0 8px 32px rgba(21,44,71,.08);
     }
     .prop-card.c1 { border-left-color: var(--celeste); }
-    .prop-card.c2 { border-left-color: var(--lila); }
-    .prop-card.c3 { border-left-color: var(--verde); }
+    .prop-card.c2 { border-left-color: var(--azul3); }
+    .prop-card.c3 { border-left-color: var(--lila); }
     .prop-icon {
       width: 42px; height: 42px; border-radius: 12px;
       display: flex; align-items: center; justify-content: center;
@@ -366,8 +365,8 @@
     .cifras-header {
       text-align: center; margin-bottom: 52px;
     }
-    .cifras-header .section-eyebrow { color: var(--verde); justify-content: center; }
-    .cifras-header .eyebrow-line { background: var(--verde); }
+    .cifras-header .section-eyebrow { color: var(--lila); justify-content: center; }
+    .cifras-header .eyebrow-line { background: var(--lila); }
     .cifras-header .section-title { color: var(--blanco); }
     .cifras-header .section-title span { color: var(--celeste); }
     .cifras-header .section-text { color: rgba(255,255,255,.55); max-width: 480px; margin: 0 auto 0; }
@@ -389,7 +388,7 @@
       line-height: 1; margin-bottom: 8px;
     }
     .cifra-card:nth-child(1) .cifra-num { color: var(--celeste); }
-    .cifra-card:nth-child(2) .cifra-num { color: var(--verde); }
+    .cifra-card:nth-child(2) .cifra-num { color: var(--azul3); }
     .cifra-card:nth-child(3) .cifra-num { color: var(--lila); }
     .cifra-lbl {
       font-size: 14px; font-weight: 500;
@@ -524,9 +523,9 @@
     .ft-law-pill {
       display: inline-block;
       font-size: 9px; padding: 4px 10px; border-radius: 10px;
-      background: rgba(186,207,0,.12);
-      border: 1px solid rgba(186,207,0,.25);
-      color: var(--verde);
+      background: rgba(165,97,171,.12);
+      border: 1px solid rgba(165,97,171,.25);
+      color: var(--lila);
     }
     .ft-col h5 {
       font-family: 'Syne', sans-serif;
@@ -576,7 +575,7 @@
     }
     .fab-dot {
       width: 7px; height: 7px; border-radius: 50%;
-      background: var(--verde);
+      background: var(--lila);
       animation: pulse 2s infinite;
     }
 
@@ -685,6 +684,7 @@
     .footer-logo {
       width: 80px !important;
       height: auto !important;
+      border-radius: 4px !important;
     }
     .brand-tagline {
       color: var(--celeste) !important;
@@ -756,8 +756,8 @@
       color: var(--celeste) !important;
     }
     .badge {
-      background: rgba(186,207,0,.2) !important;
-      color: var(--verde) !important;
+      background: rgba(165,97,171,.2) !important;
+      color: var(--lila) !important;
       font-size: 9px !important;
       padding: 2px 6px !important;
       border-radius: 4px !important;
@@ -916,10 +916,10 @@
 Conduciendo el cambio hacia entornos laborales donde el respeto guía el camino y cada persona puede crecer libre de acoso y discriminación.      </p>
 
       <div class="hero-btns">
-        <button class="btn-main" onclick="document.getElementById('proposito').scrollIntoView({behavior:'smooth'})">
+        <button class="btn-main" onclick="window.location.href='pages/informate.html'">
           Informate y únete al cambio
         </button>
-        <button class="btn-ghost" onclick="document.getElementById('reportar').scrollIntoView({behavior:'smooth'})">
+        <button class="btn-ghost" onclick="window.location.href='pages/reportar.html'">
           Quiero reportar algo
         </button>
       </div>
@@ -1004,7 +1004,7 @@ En Inchcape, asumimos este reto impulsando una cultura donde cada persona, espec
           </div>
         </div>
         <div class="prop-card c2">
-          <div class="prop-icon" style="background:rgba(165,97,171,.1);">🔒</div>
+          <div class="prop-icon" style="background:rgba(91,163,220,.1);">🔒</div>
           <div class="prop-body">
             <h4>Reportar sin miedo</h4>
             <p>Contamos con canales confidenciales y seguros para que puedas reportar cualquier situación sin temor a represalias. Tu bienestar es nuestra prioridad.</p>
@@ -1118,34 +1118,34 @@ En Inchcape, asumimos este reto impulsando una cultura donde cada persona, espec
         </h2>
       </div>
       <div class="secciones-grid">
-        <div class="sec-card" onclick="document.getElementById('problema').scrollIntoView({behavior:'smooth'})">
+        <div class="sec-card" onclick="window.location.href='pages/informate.html'">
           <div class="sec-card-top bg1">
             <img src="assets/images/informate.png" alt="Informate" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div class="sec-card-body">
             <h3>Informate</h3>
             <p>Definiciones claras, ejemplos reales del sector industrial y el formato "Esto sí es / Esto no es" para que no queden dudas.</p>
-            <a class="sec-link" href="#problema">Explorar →</a>
+            <a class="sec-link" href="pages/informate.html">Explorar →</a>
           </div>
         </div>
-        <div class="sec-card" onclick="document.getElementById('hacemos').scrollIntoView({behavior:'smooth'})">
+        <div class="sec-card" onclick="window.location.href='pages/nosotros.html'">
           <div class="sec-card-top bg2">
             <img src="assets/images/nosotros.png" alt="Nosotros" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div class="sec-card-body">
             <h3>Nosotros</h3>
             <p>Políticas implementadas, capacitaciones, avances y compromisos concretos de Inchcape con sus colaboradores.</p>
-            <a class="sec-link" href="#hacemos">Ver avances →</a>
+            <a class="sec-link" href="pages/nosotros.html">Ver avances →</a>
           </div>
         </div>
-        <div class="sec-card" onclick="document.getElementById('reportar').scrollIntoView({behavior:'smooth'})">
+        <div class="sec-card" onclick="window.location.href='pages/reportar.html'">
           <div class="sec-card-top bg3">
             <img src="assets/images/reportes.png" alt="Reportar" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
           <div class="sec-card-body">
             <h3>Reportar</h3>
             <p>Experiencia guiada paso a paso para identificar tu situación y ser dirigido al canal oficial correspondiente.</p>
-            <a class="sec-link" href="#reportar">Ir al reporte →</a>
+            <a class="sec-link" href="pages/reportar.html">Ir al reporte →</a>
           </div>
         </div>
       </div>
@@ -1161,10 +1161,10 @@ En Inchcape, asumimos este reto impulsando una cultura donde cada persona, espec
         <p>No tienes que enfrentarlo solo. Tenemos canales seguros, confidenciales y protegidos por la Ley N° 27942 para escucharte y acompañarte en cada paso.</p>
       </div>
       <div class="comp-btns">
-        <button class="btn-dark" onclick="document.getElementById('reportar').scrollIntoView({behavior:'smooth'})">
+        <button class="btn-dark" onclick="window.location.href='pages/reportar.html'">
           Reportar ahora
         </button>
-        <button class="btn-outline-dark" onclick="document.getElementById('problema').scrollIntoView({behavior:'smooth'})">
+        <button class="btn-outline-dark" onclick="window.location.href='pages/informate.html'">
           Quiero entender más
         </button>
       </div>
@@ -1174,7 +1174,7 @@ En Inchcape, asumimos este reto impulsando una cultura donde cada persona, espec
 
 
   <!-- FAB -->
-  <button class="fab" onclick="document.getElementById('reportar').scrollIntoView({behavior:'smooth'})">
+  <button class="fab" onclick="window.location.href='pages/reportar.html'">
     <div class="fab-dot"></div>
     Reportar ahora
   </button>

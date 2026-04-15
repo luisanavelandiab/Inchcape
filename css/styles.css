@@ -1,9 +1,9 @@
 :root {
   --azul: #152C47;
   --azul2: #1a3a5c;
+  --azul3: #3c85c2;
   --celeste: #15BDE6;
   --lila: #A561AB;
-  --verde: #BACF00;
   --gris: #D9D9D9;
   --blanco: #ffffff;
   --off: #f5f7fa;
@@ -221,6 +221,7 @@ body {
 .footer-logo {
   width: 140px;
   filter: brightness(1.2);
+  border-radius: 4px;
 }
 
 .footer-brand p {
@@ -420,5 +421,3 @@ body {
     display: block;
   }
 }
-
-/*MUJERES EN LIDERAZGO - Ahora usa estilos de cifras*/
