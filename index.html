@@ -891,19 +891,7 @@
 <body>
 
   <!-- ═══ NAVBAR ═══ -->
-  <nav>
-    <div class="nav-logo">
-      <!-- Reemplazar src con la ruta real del logo -->
-      <img src="assets/images/logo.jpg" alt="Inchcape" />
-      <div class="nav-divider"></div>
-      <span class="nav-tagline">Respeto en la Industria</span>
-    </div>
-    <div class="nav-links">
-      <a href="#informate">Informate</a>
-      <a href="#hacemos">Nosotros</a>
-      <a href="#reportar" class="nav-cta">Quiero reportar</a>
-    </div>
-  </nav>
+  <div id="navbar-container"></div>
 
   <!-- ═══ HERO ═══ -->
   <section class="hero" id="inicio">
@@ -1192,17 +1180,23 @@ En Inchcape, asumimos este reto impulsando una cultura donde cada persona, espec
   </button>
 
   <script>
-    // Navbar scroll effect
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
-        nav.style.background = 'rgba(21,44,71,0.99)';
-        nav.style.boxShadow = '0 2px 24px rgba(0,0,0,.25)';
-      } else {
-        nav.style.background = 'rgba(21,44,71,0.97)';
-        nav.style.boxShadow = 'none';
-      }
-    });
+    // Cargar navbar dinámicamente
+    fetch('components/navbar.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('navbar-container').innerHTML = html;
+        // Ejecutar el script del navbar tras cargarlo
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 40) {
+            nav.style.background = 'rgba(21,44,71,0.99)';
+            nav.style.boxShadow = '0 2px 24px rgba(0,0,0,.25)';
+          } else {
+            nav.style.background = 'rgba(21,44,71,0.97)';
+            nav.style.boxShadow = 'none';
+          }
+        });
+      });
 
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
