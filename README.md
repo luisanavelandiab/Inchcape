@@ -13,8 +13,8 @@ Acceder fácilmente a canales oficiales de ayuda
 Convertimos situaciones cotidianas en evidentes, ayudando a reconocer lo que muchas veces pasa desapercibido.
 Nuestro micrositio no solo informa, sino que genera conciencia y promueve la acción.
 🛠️ Tecnologías utilizadas
-HTML5
-CSS3
+HTML
+CSS
 JavaScript
 Bootstrap
 GitHub (control de versiones)
@@ -26,13 +26,6 @@ Empatía con el usuario
 Definición clara del problema
 Ideación de soluciones centradas en la experiencia
 Prototipado y validación
-🌐 Estructura del sitio
-Entendiendo el problema
-Definiciones claras, ejemplos reales y formato visual “esto sí es / esto no es”.
-Lo que estamos haciendo
-Políticas, capacitaciones y compromisos de la empresa.
-Atención y ayuda
-Flujo guiado para identificar situaciones y redirigir a canales oficiales.
 ⚙️ Funcionalidades destacadas
 🎮 Quiz interactivo para identificar situaciones
 🎠 Carruseles de ejemplos del entorno industrial
