@@ -64,7 +64,50 @@ nav {
   border-radius: 6px;
   transition: opacity .2s !important;
 }
+/* ═══════════════════════════════
+       NAVBAR
+    ═══════════════════════════════ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px;
+      height: 76px;
+      background: rgba(21,44,71,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
 
+    /* ── LOGO NAVBAR GRANDE ── */
+    .nav-logo img {
+      height: 65px;
+      width: auto;
+      max-width: 230px;
+      border-radius: 4px;
+      object-fit: contain;
+    }
+    .nav-divider { width: 1px; height: 28px; background: rgba(255,255,255,0.2); }
+    .nav-tagline {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px; font-weight: 400;
+      color: var(--celeste); letter-spacing: 0.5px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a {
+      font-size: 14px; font-weight: 400;
+      color: rgba(255, 255, 255, 0.733);
+      text-decoration: none; letter-spacing: 0.3px;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--blanco); }
+    .nav-cta {
+      background: var(--lila);
+      color: var(--azul) !important;
+      font-weight: 500 !important;
+      padding: 8px 20px; border-radius: 6px;
+      transition: opacity .2s !important;
+    }
+    .nav-cta:hover { opacity: .88; }
 .nav-cta:hover { opacity: .88; }
 
 /* ═══════════════════════════════
@@ -515,7 +558,7 @@ h2, .section-title, .sec-title {
       width: 200px !important;
       height: auto !important;
       max-height: 72px !important;
-      border-radius: 4px !important;
+      border-radius: 6px !important;
       object-fit: contain !important;
       filter: none !important;
     }
