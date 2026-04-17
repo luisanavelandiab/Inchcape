@@ -3,1354 +3,1765 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Entendiendo el problema · Inchcape</title>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/styles.css" />
-<style>
-/* ═══════════════════════════════
-   NAVBAR
-═══════════════════════════════ */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 48px;
-  height: 72px;
-  background: rgba(21,44,71,0.97);
+  <title>Infórmate | Inchcape</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --azul: #11243a;
+      --azul2: #1a3a5c;
+      --celeste: #15BDE6;
+      --lila: #A561AB;
+      --verde: #9fd8b4;
+      --blanco: #ffffff;
+      --off: #f5f7fa;
+      --gris: #64748b;
+      --borde: rgba(17,36,58,.08);
+      --rosa-soft: #fff7fb;
+      --celeste-soft: #f4fbff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--off);
+      color: var(--azul);
+    }
+/* =========================
+   NAVBAR GLOBAL INCHCAPE
+========================= */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  background: rgba(21, 44, 71, 0.97);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(21,189,230,.2);
-  box-shadow: 0 2px 16px rgba(0,0,0,.15);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
 }
 
-.nav-logo { display: flex; align-items: center; gap: 12px; }
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
 
-/* ── LOGO NAVBAR GRANDE ── */
-.nav-logo img {
-  height: 65px;
+.nav-logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 10px 18px;
+  min-width: 124px;
+  min-height: 58px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.14);
+  border: 1px solid rgba(17,36,58,.06);
+}
+
+.nav-logo-img {
+  display: block;
   width: auto;
-  max-width: 230px;
-  border-radius: 4px;
+  height: 42px;
+  max-width: 150px;
   object-fit: contain;
+  background: transparent !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
 }
 
 .nav-divider {
-  width: 1px; height: 28px;
-  background: rgba(255,255,255,.2);
+  width: 1px;
+  height: 28px;
+  background: rgba(255,255,255,0.22);
 }
 
 .nav-tagline {
   font-family: 'DM Sans', sans-serif;
-  font-size: 11px; font-weight: 400;
-  color: var(--celeste);
-  letter-spacing: .5px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #15BDE6;
+  letter-spacing: 0.2px;
 }
 
-.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
 
 .nav-links a {
-  font-size: 12px; font-weight: 400;
-  color: rgba(255,255,255,.65);
-  text-decoration: none;
-  letter-spacing: .3px;
-  transition: color .2s;
-}
-
-.nav-links a:hover { color: var(--blanco); }
-
-.nav-cta {
-  background: var(--lila);
-  color: var(--azul) !important;
-  font-weight: 500 !important;
-  padding: 8px 20px;
-  border-radius: 6px;
-  transition: opacity .2s !important;
-}
-/* ═══════════════════════════════
-       NAVBAR
-    ═══════════════════════════════ */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 48px;
-      height: 76px;
-      background: rgba(21,44,71,0.97);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .nav-logo { display: flex; align-items: center; gap: 12px; }
-
-    /* ── LOGO NAVBAR GRANDE ── */
-    .nav-logo img {
-      height: 65px;
-      width: auto;
-      max-width: 230px;
-      border-radius: 4px;
-      object-fit: contain;
-    }
-    .nav-divider { width: 1px; height: 28px; background: rgba(255,255,255,0.2); }
-    .nav-tagline {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 14px; font-weight: 400;
-      color: var(--celeste); letter-spacing: 0.5px;
-    }
-    .nav-links { display: flex; align-items: center; gap: 32px; }
-    .nav-links a {
-      font-size: 14px; font-weight: 400;
-      color: rgba(255, 255, 255, 0.733);
-      text-decoration: none; letter-spacing: 0.3px;
-      transition: color .2s;
-    }
-    .nav-links a:hover { color: var(--blanco); }
-    .nav-cta {
-      background: var(--lila);
-      color: var(--azul) !important;
-      font-weight: 500 !important;
-      padding: 8px 20px; border-radius: 6px;
-      transition: opacity .2s !important;
-    }
-    .nav-cta:hover { opacity: .88; }
-.nav-cta:hover { opacity: .88; }
-
-/* ═══════════════════════════════
-   FOOTER LOGO FIX
-═══════════════════════════════ */
-.footer-logo {
-  width: 200px !important;
-  height: auto !important;
-  max-height: 72px !important;
-  border-radius: 4px !important;
-  object-fit: contain !important;
-}
-
-.footer-brand img,
-.footer .footer-logo,
-.footer-logo {
-  filter: none !important;
-  width: 200px !important;
-  height: auto !important;
-}
-
-/* ═══════════════════════════════
-   SECTION HEADERS - letter-spacing corregido
-═══════════════════════════════ */
-.sec-title {
-  letter-spacing: -0.3px !important;
-  font-size: clamp(24px, 3vw, 40px) !important;
-}
-
-.section-title {
-  letter-spacing: -0.3px !important;
-}
-
-h2, .section-title, .sec-title {
-  letter-spacing: -0.3px;
-}
-
-.comp-left h2 {
-  letter-spacing: -0.2px !important;
-  font-size: clamp(20px, 2.4vw, 30px) !important;
-  line-height: 1.25 !important;
-}
-
-
-/* Pantalla de inicio del quiz */
-.quiz-start-screen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 48px 32px;
-  gap: 20px;
-}
-
-.quiz-start-icon {
-  font-size: 48px;
-  margin-bottom: 8px;
-}
-
-.quiz-start-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: -0.2px;
-  margin-bottom: 4px;
-}
-
-.quiz-start-sub {
-  font-size: 14px;
-  color: rgba(255,255,255,.7);
-  max-width: 360px;
-  line-height: 1.6;
-}
-
-.quiz-start-pills {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 4px 0;
-}
-
-.quiz-start-pill {
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.15);
-  border-radius: 20px;
-  padding: 5px 14px;
-  font-size: 12px;
-  color: rgba(255,255,255,.8);
-}
-
-.quiz-start-btn {
-  background: var(--lila);
-  color: #fff;
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
   font-weight: 500;
-  padding: 13px 36px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: transform .15s, box-shadow .15s;
-  margin-top: 8px;
+  color: rgba(255,255,255,.78);
+  text-decoration: none;
+  transition: color .2s ease, opacity .2s ease;
 }
 
-.quiz-start-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(165,97,171,.4);
+.nav-links a:hover {
+  color: #ffffff;
 }
 
-/* Disclaimer overlay */
-.quiz-disclaimer {
-  display: none;
-  position: absolute;
-  inset: 0;
-  background: rgba(14, 30, 50, 0.97);
-  border-radius: 16px;
-  z-index: 10;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 40px 32px;
-  gap: 18px;
+.nav-cta {
+  background: #A561AB;
+  color: #ffffff !important;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 700 !important;
+  box-shadow: 0 8px 20px rgba(165,97,171,.25);
 }
 
-.quiz-disclaimer.show {
-  display: flex;
+.nav-cta:hover {
+  opacity: .92;
 }
 
-.disclaimer-icon {
-  width: 52px; height: 52px;
-  border-radius: 50%;
-  background: rgba(21,189,230,.15);
-  border: 1px solid rgba(21,189,230,.3);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 22px;
+/* Responsive */
+@media (max-width: 900px) {
+  .site-nav {
+    padding: 0 18px;
+    height: 72px;
+  }
+
+  .nav-tagline {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .nav-logo-box {
+    min-width: 112px;
+    min-height: 52px;
+    padding: 8px 14px;
+  }
+
+  .nav-logo-img {
+    height: 36px;
+    max-width: 128px;
+  }
 }
 
-.disclaimer-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: -0.2px;
+@media (max-width: 640px) {
+  .site-nav {
+    height: auto;
+    padding: 14px 16px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+  }
+
+  .nav-logo-box {
+    min-width: 108px;
+    min-height: 50px;
+    padding: 8px 12px;
+  }
+
+  .nav-logo-img {
+    height: 34px;
+    max-width: 120px;
+  }
 }
 
-.disclaimer-text {
-  font-size: 13px;
-  color: rgba(255,255,255,.7);
-  max-width: 340px;
-  line-height: 1.65;
-}
-
-.disclaimer-items {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  max-width: 340px;
-}
-
-.disclaimer-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 8px;
-  padding: 10px 14px;
-  text-align: left;
-}
-
-.disclaimer-item-icon {
-  font-size: 16px;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-.disclaimer-item-text {
-  font-size: 12px;
-  color: rgba(255,255,255,.75);
-  line-height: 1.5;
-}
-
-.disclaimer-accept-btn {
-  background: var(--celeste);
-  color: var(--azul);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  padding: 12px 32px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: opacity .2s;
-  margin-top: 4px;
-}
-
-.disclaimer-accept-btn:hover { opacity: .88; }
-
-.disclaimer-back {
-  font-size: 12px;
-  color: rgba(255,255,255,.4);
-  cursor: pointer;
-  transition: color .2s;
-  background: none;
-  border: none;
-}
-
-.disclaimer-back:hover { color: rgba(255,255,255,.7); }
-
-/* Quiz compacto */
-.quiz-section {
-  padding: 24px 0;
-}
-
-.quiz-box {
-  background: linear-gradient(135deg, rgba(21,44,71,.9) 0%, rgba(26,58,92,.9) 100%);
-  border: 1px solid rgba(21,189,230,.2);
-  border-radius: 16px;
-  overflow: hidden;
-  position: relative;
-  max-width: 680px;
-  margin: 0 auto;
-}
-
-.quiz-bg {
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(21,189,230,.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(21,189,230,.04) 1px, transparent 1px);
-  background-size: 28px 28px;
-  pointer-events: none;
-}
-
-.quiz-inner {
-  position: relative; z-index: 2;
-  padding: 32px 28px;
-}
-
-.quiz-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 10px; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 2px;
-  color: var(--celeste);
-  margin-bottom: 18px;
-}
-
-.quiz-q {
-  font-family: 'Syne', sans-serif;
-  font-size: 11px; font-weight: 600;
-  color: rgba(255,255,255,.5);
-  text-transform: uppercase; letter-spacing: 1.5px;
-  margin-bottom: 10px;
-}
-
-.quiz-sub {
-  font-size: 16px; font-weight: 400;
-  color: var(--blanco);
-  line-height: 1.6;
-  margin-bottom: 20px;
-  min-height: 52px;
-}
-
-.quiz-progress {
-  height: 3px;
-  background: rgba(255,255,255,.08);
-  border-radius: 2px;
-  margin-bottom: 20px;
-  overflow: hidden;
-}
-
-.quiz-fill {
-  height: 100%;
-  background: var(--celeste);
-  border-radius: 2px;
-  transition: width .4s ease;
-}
-
-.quiz-options {
-  display: flex; flex-direction: column; gap: 8px;
-  margin-bottom: 16px;
-}
-
-.quiz-opt {
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 8px;
-  padding: 11px 16px;
-  text-align: left;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px; color: rgba(255,255,255,.85);
-  cursor: pointer;
-  transition: background .15s, border-color .15s, transform .1s;
-  animation: fadeUp .3s ease both;
-}
-
-.quiz-opt:hover:not([style*="pointer-events: none"]) {
-  background: rgba(255,255,255,.1);
-  border-color: rgba(21,189,230,.4);
-  transform: translateX(3px);
-}
-
-.quiz-opt.selected {
-  background: rgba(21,189,230,.12);
-  border-color: var(--celeste);
-  color: #fff;
-}
-
-.quiz-opt.wrong {
-  background: rgba(220,80,80,.08);
-  border-color: rgba(220,80,80,.3);
-  color: rgba(255,255,255,.5);
-}
-
-.quiz-feedback {
-  font-size: 12px;
-  color: rgba(255,255,255,.7);
-  background: rgba(21,189,230,.08);
-  border: 1px solid rgba(21,189,230,.2);
-  border-radius: 8px;
-  padding: 10px 14px;
-  line-height: 1.6;
-  margin-bottom: 14px;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity .3s, max-height .3s, padding .3s;
-}
-
-.quiz-feedback.show {
-  opacity: 1;
-  max-height: 100px;
-  padding: 10px 14px;
-}
-
-.quiz-nav {
-  display: flex; justify-content: space-between; align-items: center;
-}
-
-.quiz-counter {
-  font-size: 11px; color: rgba(255,255,255,.35);
-}
-
-.quiz-next {
-  background: var(--lila);
-  color: #fff;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 12px; font-weight: 500;
-  padding: 9px 20px; border-radius: 6px;
-  border: none; cursor: pointer;
-  opacity: 0; pointer-events: none;
-  transform: translateX(8px);
-  transition: opacity .25s, transform .25s;
-}
-
-.quiz-next.show {
-  opacity: 1; pointer-events: auto;
-  transform: translateX(0);
-}
-
-/* Resultado */
-.quiz-result {
-  display: none;
-  flex-direction: column; align-items: center;
-  text-align: center; padding: 40px 28px; gap: 12px;
-}
-
-.quiz-result.show { display: flex; }
-
-.result-score {
-  font-family: 'Syne', sans-serif;
-  font-size: 52px; font-weight: 800;
-  color: var(--celeste);
-  line-height: 1;
-  letter-spacing: -1px;
-}
-
-.result-msg {
-  font-size: 14px; color: rgba(255,255,255,.7);
-  max-width: 340px; line-height: 1.65;
-}
-
-.quiz-restart {
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.15);
-  color: rgba(255,255,255,.8);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 12px; font-weight: 400;
-  padding: 9px 20px; border-radius: 6px;
-  cursor: pointer; margin-top: 8px;
-  transition: background .2s;
-}
-
-.quiz-restart:hover { background: rgba(255,255,255,.13); }
-
-/* ═══════════════════════════════
-       FOOTER DYNAMIC
-    ═══════════════════════════════ */
-    .footer { background: var(--azul) !important; padding: 0 !important; }
-
-    .footer-cta {
-      background: linear-gradient(135deg, rgba(165,97,171,.85), rgba(165,97,171,.7)) !important;
-      border: none !important; margin: 0 !important;
-      padding: 40px 48px !important;
-      display: flex !important; justify-content: space-between !important;
-      align-items: center !important; gap: 40px !important;
+    /* HERO */
+    .hero {
+      padding: 138px 24px 0;
+      background: linear-gradient(135deg, #11243a 0%, #1a3a5c 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 18px;
     }
-    .footer-cta .cta-text { flex: 1; }
-    .footer-cta .cta-text h3 { color: var(--blanco) !important; font-size: 22px !important; margin-bottom: 8px !important; letter-spacing: -0.2px !important; }
-    .footer-cta .cta-text p { color: rgba(255,255,255,.85) !important; font-size: 14px !important; }
-    .cta-button {
-      background: var(--blanco) !important; color: var(--lila) !important;
-      font-weight: 700 !important; padding: 12px 24px !important;
-      border-radius: 6px !important; white-space: nowrap !important; flex-shrink: 0 !important;
-    }
-    .cta-button:hover { background: rgba(255,255,255,.9) !important; }
 
-    .footer-contact { background: rgba(21,189,230,.08) !important; padding: 28px 48px !important; border-bottom: 1px solid rgba(21,189,230,.15) !important; }
-    .contact-title { color: rgba(255,255,255,.5) !important; font-size: 10px !important; font-weight: 700 !important; letter-spacing: 1.5px !important; text-transform: uppercase !important; margin-bottom: 20px !important; }
-    .contact-grid { display: grid !important; grid-template-columns: repeat(4,1fr) !important; gap: 24px !important; max-width: 1100px !important; margin: 0 auto !important; }
-    .contact-item { display: flex !important; gap: 12px !important; align-items: flex-start !important; }
-    .contact-icon { font-size: 24px !important; flex-shrink: 0 !important; }
-    .contact-item strong { color: var(--blanco) !important; font-size: 13px !important; display: block !important; }
-    .contact-item p { color: rgba(255,255,255,.6) !important; font-size: 11px !important; margin-top: 2px !important; }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(21,189,230,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(21,189,230,.05) 1px, transparent 1px);
+      background-size: 42px 42px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -30px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(165,97,171,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-copy {
+      max-width: 780px;
+      padding-bottom: 30px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--celeste);
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--celeste);
+      box-shadow: 0 0 10px rgba(21,189,230,.55);
+    }
+
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(38px, 5.4vw, 68px);
+      line-height: 1.02;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+      max-width: 760px;
+    }
+
+    .hero h1 span {
+      color: var(--celeste);
+    }
+
+    .hero p {
+      max-width: 760px;
+      font-size: 19px;
+      line-height: 1.85;
+      color: rgba(255,255,255,.84);
+    }
+
+    /* TABS */
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(255,255,255,.08);
+      margin-top: 20px;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,.55);
+      padding: 18px 16px 16px;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      border-bottom: 4px solid transparent;
+      transition: all .25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .tab-btn:hover {
+      color: rgba(255,255,255,.95);
+      background: rgba(255,255,255,.03);
+    }
+
+    .tab-btn.active {
+      color: white;
+      border-bottom-color: var(--celeste);
+      background: rgba(255,255,255,.04);
+    }
+
+    .tab-icon {
+      font-size: 15px;
+      opacity: .9;
+    }
+
+    /* CONTENT */
+    .wrapper {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 24px 110px;
+    }
+
+    .tab-panel {
+      display: none;
+      animation: fadeUp .25s ease;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .section-block {
+      margin-bottom: 34px;
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.1;
+      margin-bottom: 14px;
+      color: var(--azul);
+      letter-spacing: -0.5px;
+    }
+
+    .section-desc {
+      color: var(--gris);
+      line-height: 1.9;
+      margin-bottom: 28px;
+      max-width: 760px;
+      font-size: 16px;
+    }
+
+    /* MAIN CARDS */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+
+    .info-card {
+      background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+      border: 1px solid rgba(17,36,58,.08);
+      border-radius: 22px;
+      padding: 24px 24px 22px;
+      box-shadow: 0 14px 32px rgba(17,36,58,.05);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 38px rgba(17,36,58,.09);
+    }
+
+    .info-card.rosa {
+      border-top: 4px solid var(--lila);
+    }
+
+    .info-card.celeste {
+      border-top: 4px solid var(--celeste);
+    }
+
+    .info-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      color: var(--lila);
+    }
+
+    .info-card.celeste .info-label {
+      color: var(--celeste);
+    }
+
+    .info-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 28px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+      color: var(--azul);
+    }
+
+    .info-card p {
+      font-size: 16px;
+      line-height: 1.85;
+      color: #526072;
+    }
+
+    .mini-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      border: 1px solid rgba(17,36,58,.10);
+      background: #f8fbff;
+      color: #526072;
+      margin-top: 14px;
+    }
+
+    /* COMPARE */
+    .compare-wrap {
+      margin-top: 10px;
+    }
+
+    .compare-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .compare-head h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 28px;
+      color: var(--azul);
+    }
+
+    .compare-legend {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--gris);
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    .legend-dot.si { background: var(--lila); }
+    .legend-dot.no { background: var(--celeste); }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 22px;
+    }
+
+    .compare-card {
+      position: relative;
+      border-radius: 22px;
+      padding: 24px 22px;
+      box-shadow: 0 14px 30px rgba(17,36,58,.05);
+      overflow: hidden;
+    }
+
+    .compare-card.si {
+      background: linear-gradient(180deg, #fff7fb 0%, #ffffff 100%);
+      border: 1px solid rgba(165,97,171,.20);
+    }
+
+    .compare-card.no {
+      background: linear-gradient(180deg, #f4fbff 0%, #ffffff 100%);
+      border: 1px solid rgba(21,189,230,.20);
+    }
+
+    .compare-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+    }
+
+    .compare-card.si::before {
+      background: linear-gradient(90deg, var(--lila), #d946ef);
+    }
+
+    .compare-card.no::before {
+      background: linear-gradient(90deg, var(--celeste), #60a5fa);
+    }
+
+    .compare-card h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .compare-card p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #526072;
+      margin-bottom: 12px;
+    }
+
+    .tag-small {
+      display: inline-block;
+      padding: 7px 11px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .tag-si {
+      background: rgba(165,97,171,.12);
+      color: #7d3b84;
+      border: 1px solid rgba(165,97,171,.18);
+    }
+
+    .tag-no {
+      background: rgba(21,189,230,.12);
+      color: #0c85a2;
+      border: 1px solid rgba(21,189,230,.18);
+    }
+
+    /* INFO LIST BOXES */
+    .double-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .soft-box {
+      background: white;
+      border: 1px solid rgba(17,36,58,.08);
+      border-radius: 22px;
+      padding: 24px 22px;
+      box-shadow: 0 14px 30px rgba(17,36,58,.05);
+    }
+
+    .soft-box h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      margin-bottom: 8px;
+      color: var(--azul);
+    }
+
+    .soft-box p {
+      color: var(--gris);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .bullet-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .bullet-list li {
+      background: rgba(17,36,58,.03);
+      border: 1px solid rgba(17,36,58,.06);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #334155;
+    }
+
+    .phrase-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .phrase-card {
+      background: linear-gradient(180deg, #fff 0%, #faf5fb 100%);
+      border: 1px solid rgba(165,97,171,.14);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 14px;
+      color: #5b6577;
+      line-height: 1.7;
+    }
+
+    /* CASES */
+    .cases-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .case-card {
+      background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+      border: 1px solid rgba(17,36,58,.08);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 14px 32px rgba(17,36,58,.05);
+      display: grid;
+      grid-template-columns: 68px 1fr auto;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .case-avatar {
+      width: 68px;
+      height: 68px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      background: var(--celeste-soft);
+    }
+
+    .case-body h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .case-role {
+      font-size: 13px;
+      color: var(--gris);
+      margin-bottom: 10px;
+    }
+
+    .case-body p {
+      font-size: 14px;
+      color: #526072;
+      line-height: 1.8;
+    }
+
+    .case-side {
+      text-align: right;
+    }
+
+    .case-badge {
+      display: inline-block;
+      padding: 7px 11px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .badge-resuelto {
+      background: rgba(159,216,180,.20);
+      color: #2f6b4f;
+      border: 1px solid rgba(159,216,180,.32);
+    }
+
+    .badge-proceso {
+      background: rgba(165,97,171,.14);
+      color: #7d3b84;
+      border: 1px solid rgba(165,97,171,.22);
+    }
+
+    .case-type {
+      font-size: 12px;
+      color: var(--gris);
+      line-height: 1.6;
+    }
+
+    .case-note {
+      margin-top: 18px;
+      background: rgba(21,189,230,.08);
+      border: 1px solid rgba(21,189,230,.15);
+      border-radius: 16px;
+      padding: 16px 18px;
+      color: #31546a;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* QUIZ */
+    .quiz-box {
+      background: linear-gradient(135deg, rgba(21,44,71,.96) 0%, rgba(26,58,92,.96) 100%);
+      border: 1px solid rgba(21,189,230,.2);
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      max-width: 760px;
+      margin: 0 auto;
+      box-shadow: 0 18px 36px rgba(17,36,58,.10);
+    }
+
+    .quiz-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(21,189,230,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(21,189,230,.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    .quiz-inner {
+      position: relative;
+      z-index: 2;
+      padding: 34px 28px;
+    }
+
+    .quiz-start-screen,
+    .quiz-result {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 18px 0;
+      gap: 18px;
+    }
+
+    .quiz-start-screen.active,
+    .quiz-result.active {
+      display: flex;
+    }
+
+    .quiz-start-icon {
+      font-size: 48px;
+    }
+
+    .quiz-start-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .quiz-start-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,.74);
+      max-width: 380px;
+      line-height: 1.7;
+    }
+
+    .quiz-start-pills {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .quiz-start-pill {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 12px;
+      color: rgba(255,255,255,.84);
+    }
+
+    .quiz-start-btn,
+    .disclaimer-accept-btn {
+      background: var(--lila);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 13px 34px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .quiz-start-btn:hover,
+    .disclaimer-accept-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(165,97,171,.36);
+    }
+
+    .quiz-disclaimer {
+      display: none;
+      position: absolute;
+      inset: 0;
+      background: rgba(14, 30, 50, 0.97);
+      z-index: 10;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 34px 28px;
+      gap: 18px;
+    }
+
+    .quiz-disclaimer.show {
+      display: flex;
+    }
+
+    .disclaimer-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(21,189,230,.15);
+      border: 1px solid rgba(21,189,230,.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .disclaimer-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 19px;
+      color: #fff;
+    }
+
+    .disclaimer-text {
+      font-size: 13px;
+      color: rgba(255,255,255,.74);
+      max-width: 360px;
+      line-height: 1.7;
+    }
+
+    .disclaimer-back {
+      background: none;
+      border: none;
+      font-size: 12px;
+      color: rgba(255,255,255,.45);
+      cursor: pointer;
+    }
+
+    .quiz-game {
+      display: none;
+    }
+
+    .quiz-game.active {
+      display: block;
+    }
+
+    .quiz-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--celeste);
+      margin-bottom: 18px;
+    }
+
+    .quiz-q {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      color: rgba(255,255,255,.55);
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      margin-bottom: 10px;
+    }
+
+    .quiz-sub {
+      font-size: 18px;
+      color: #fff;
+      line-height: 1.7;
+      margin-bottom: 18px;
+      min-height: 72px;
+    }
+
+    .quiz-progress {
+      height: 4px;
+      background: rgba(255,255,255,.08);
+      border-radius: 999px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .quiz-fill {
+      height: 100%;
+      background: var(--celeste);
+      transition: width .35s ease;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .quiz-opt {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 12px;
+      padding: 13px 16px;
+      text-align: left;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: rgba(255,255,255,.88);
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .quiz-opt:hover:not([disabled]) {
+      background: rgba(255,255,255,.10);
+      border-color: rgba(21,189,230,.34);
+      transform: translateX(2px);
+    }
+
+    .quiz-opt.selected {
+      background: rgba(21,189,230,.13);
+      border-color: var(--celeste);
+      color: #fff;
+    }
+
+    .quiz-opt.wrong {
+      background: rgba(220,80,80,.09);
+      border-color: rgba(220,80,80,.3);
+      color: rgba(255,255,255,.6);
+    }
+
+    .quiz-feedback {
+      font-size: 13px;
+      color: rgba(255,255,255,.78);
+      background: rgba(21,189,230,.08);
+      border: 1px solid rgba(21,189,230,.18);
+      border-radius: 12px;
+      padding: 0 14px;
+      line-height: 1.7;
+      max-height: 0;
+      overflow: hidden;
+      transition: .3s ease;
+      margin-bottom: 14px;
+    }
+
+    .quiz-feedback.show {
+      padding: 12px 14px;
+      max-height: 120px;
+    }
+
+    .quiz-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .quiz-counter {
+      font-size: 12px;
+      color: rgba(255,255,255,.42);
+    }
+
+    .quiz-next,
+    .quiz-restart {
+      background: var(--lila);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 11px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: none;
+    }
+
+    .quiz-next.show,
+    .quiz-restart.show {
+      display: inline-flex;
+    }
+
+    .result-score {
+      font-family: 'Syne', sans-serif;
+      font-size: 56px;
+      font-weight: 800;
+      color: var(--celeste);
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .result-msg {
+      font-size: 15px;
+      color: rgba(255,255,255,.78);
+      max-width: 390px;
+      line-height: 1.75;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: linear-gradient(135deg, #0f1f33, #152c47);
+      color: #eaf2ff;
+      margin-top: 50px;
+    }
 
     .footer-main {
-      max-width: 1100px !important; margin: 0 auto !important;
-      display: grid !important; grid-template-columns: 2fr 1fr 1fr 1fr !important;
-      gap: 48px !important; padding: 48px !important;
-      border-bottom: 1px solid rgba(255,255,255,.08) !important;
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 56px 24px 40px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 34px;
     }
-    .footer-brand { display: flex !important; flex-direction: column !important; gap: 12px !important; }
 
-    /* ── LOGO FOOTER GRANDE — sin filter que lo oculte ── */
-    .footer-brand img,
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
     .footer-logo {
-      width: 200px !important;
-      height: auto !important;
-      max-height: 72px !important;
-      border-radius: 6px !important;
-      object-fit: contain !important;
-      filter: none !important;
+      width: 180px;
+      height: auto;
+      object-fit: contain;
+      background: #fff;
+      padding: 8px 12px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.15);
     }
 
-    .brand-tagline { color: var(--celeste) !important; font-size: 12px !important; font-weight: 500 !important; }
-    .brand-desc { color: rgba(255,255,255,.6) !important; font-size: 12px !important; line-height: 1.6 !important; margin: 8px 0 !important; }
-    .social-links { display: flex !important; gap: 8px !important; margin-top: 8px !important; }
+    .brand-tagline {
+      color: var(--celeste);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .brand-desc {
+      color: rgba(255,255,255,.72);
+      font-size: 13px;
+      line-height: 1.7;
+      max-width: 320px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 8px;
+    }
+
     .social-links a {
-      width: 28px !important; height: 28px !important; border-radius: 6px !important;
-      background: rgba(255,255,255,.08) !important; color: rgba(255,255,255,.5) !important;
-      display: flex !important; align-items: center !important; justify-content: center !important;
-      font-size: 11px !important; font-weight: 600 !important;
-      text-decoration: none !important; transition: all .2s !important;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,.08);
+      color: white;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
     }
-    .social-links a:hover { background: var(--celeste) !important; color: var(--azul) !important; }
+
     .verified-badge {
-      background: rgba(21,189,230,.15) !important; border: 1px solid rgba(21,189,230,.3) !important;
-      border-radius: 6px !important; padding: 8px 12px !important;
-      color: var(--celeste) !important; font-size: 10px !important; line-height: 1.5 !important; margin-top: 8px !important;
+      background: rgba(21,189,230,.12);
+      border: 1px solid rgba(21,189,230,.28);
+      color: var(--celeste);
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 11px;
+      line-height: 1.6;
+      width: fit-content;
     }
 
-    .footer-links { display: flex !important; flex-direction: column !important; gap: 8px !important; }
-    .footer-links h4 { color: var(--blanco) !important; font-size: 13px !important; font-weight: 600 !important; margin-bottom: 12px !important; }
+    .footer-links h4 {
+      color: white;
+      font-size: 15px;
+      margin-bottom: 14px;
+      font-family: 'Syne', sans-serif;
+    }
+
     .footer-links a {
-      color: rgba(255,255,255,.55) !important; font-size: 12px !important;
-      text-decoration: none !important; transition: color .2s !important;
-      display: inline-flex !important; gap: 6px !important; align-items: center !important;
+      display: block;
+      color: rgba(255,255,255,.7);
+      text-decoration: none;
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 8px;
     }
-    .footer-links a:hover { color: var(--celeste) !important; }
-    .badge { background: rgba(165,97,171,.2) !important; color: var(--lila) !important; font-size: 9px !important; padding: 2px 6px !important; border-radius: 4px !important; font-weight: 600 !important; }
 
-     .footer-conf {
-      background: rgba(165,97,171,.12) !important;
-      border-top: 1px solid rgba(165,97,171,.2) !important; border-bottom: 1px solid rgba(165,97,171,.2) !important;
-      color: rgba(255,255,255,.85) !important; padding: 24px 48px !important;
-      display: flex !important; gap: 16px !important; align-items: flex-start !important;
+    .footer-conf {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
     }
-    .conf-icon { font-size: 20px !important; flex-shrink: 0 !important; }
-    .conf-text strong { display: block !important; color: var(--blanco) !important; margin-bottom: 4px !important; font-size: 13px !important; }
-    .conf-text p { font-size: 12px !important; line-height: 1.6 !important; }
+
+    .conf-icon {
+      font-size: 20px;
+    }
+
+    .conf-text strong {
+      display: block;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .conf-text p {
+      color: rgba(255,255,255,.75);
+      font-size: 13px;
+      line-height: 1.7;
+    }
 
     .footer-bottom {
-      background: rgba(0,0,0,.2) !important; padding: 16px 48px !important;
-      max-width: 100% !important; margin: 0 auto !important;
-      display: flex !important; justify-content: space-between !important;
-      align-items: center !important; flex-wrap: wrap !important; gap: 16px !important;
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 18px 24px 28px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
     }
-    .footer-copy { color: rgba(255,255,255,.4) !important; font-size: 11px !important; }
-    .footer-links-bottom { display: flex !important; gap: 16px !important; flex-wrap: wrap !important; }
-    .footer-links-bottom a { color: rgba(255,255,255,.35) !important; font-size: 11px !important; text-decoration: none !important; transition: color .2s !important; }
-    .footer-links-bottom a:hover { color: var(--celeste) !important; }
 
-    /* FAB */
-    .fab {
-      position: fixed; bottom: 28px; right: 28px; z-index: 99;
-      display: flex; align-items: center; gap: 8px;
-      background: var(--lila); color: var(--blanco);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 12px; font-weight: 500;
-      padding: 12px 20px; border-radius: 30px;
-      border: none; cursor: pointer;
-      box-shadow: 0 8px 28px rgba(165,97,171,.45);
-      transition: transform .15s, box-shadow .15s;
+    .footer-copy {
+      color: rgba(255,255,255,.55);
+      font-size: 12px;
     }
-    .fab:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(165,97,171,.5); }
-    .fab-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.7); animation: pulse 2s infinite; }
 
+    .footer-links-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer-links-bottom a {
+      color: rgba(255,255,255,.55);
+      text-decoration: none;
+      font-size: 12px;
+    }
+
+    /* ANIM */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-/* ═══════════════════════════════
-   ANIMACIONES
-═══════════════════════════════ */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+    /* RESPONSIVE */
+    @media (max-width: 980px) {
+      .tabs {
+        grid-template-columns: 1fr 1fr;
+      }
 
-@keyframes pulse {
-  0%,100% { opacity:1; transform:scale(1); }
-  50%      { opacity:.4; transform:scale(1.4); }
-}
+      .info-grid,
+      .compare-grid,
+      .double-box,
+      .cases-grid {
+        grid-template-columns: 1fr;
+      }
 
-/* ═══════════════════════════════
-   RESPONSIVE
-═══════════════════════════════ */
-@media (max-width: 900px) {
-  nav { padding: 0 20px; height: 64px; }
-  .nav-logo img { height: 46px; }
-  .nav-links { display: none; }
-  .footer-cta { flex-direction: column !important; gap: 18px !important; text-align: center !important; }
-  .contact-grid { grid-template-columns: repeat(2,1fr) !important; }
-  .footer-main { grid-template-columns: 1fr 1fr !important; gap: 28px !important; }
-}
+      .case-card {
+        grid-template-columns: 1fr;
+      }
 
-@media (max-width: 480px) {
-  .contact-grid { grid-template-columns: 1fr !important; }
-  .footer-main { grid-template-columns: 1fr !important; }
-  .footer-cta { padding: 24px !important; }
-  .footer-contact { padding: 18px 20px !important; }
-  .quiz-inner { padding: 24px 20px; }
-}
-</style>
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+    
+
+      .nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+      }
+
+      .hero {
+        padding-top: 138px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .tabs {
+        grid-template-columns: 1fr;
+      }
+
+      .tab-btn {
+        justify-content: flex-start;
+        text-align: left;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-conf,
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- ═══ NAVBAR ═══ -->
-<div id="navbar-container"></div>
+  <div id="navbar-container"></div>
 
-<div class="section-wrap">
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span>Entendiendo el problema</div>
+        <h1>¿Qué es acoso y qué es <span>discriminación?</span></h1>
+        <p>
+          Identificar estas situaciones es el primer paso para cambiarlas. Aquí te lo explicamos
+          con definiciones claras, ejemplos reales y una guía simple para reconocerlas.
+        </p>
+      </div>
 
-  <!-- ── ENCABEZADO CON TABS ── -->
-  <div class="sec-header">
-    <div class="sec-header-bg"></div>
-    <div class="sec-header-circle"></div>
-    <div class="header-inner">
-      <div class="eyebrow"><div class="eyebrow-dot"></div>Entendiendo el problema</div>
-      <h2 class="sec-title">¿Qué es acoso y qué es<br><span>discriminación?</span></h2>
-      <p class="sec-sub">Identificar estas situaciones es el primer paso para cambiarlas. Aquí te lo explicamos con definiciones claras y ejemplos reales del sector automotriz e industrial.</p>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="acoso"><span class="tab-icon">🚨</span>Acoso laboral</button>
+        <button class="tab-btn" data-tab="discriminacion"><span class="tab-icon">⚖️</span>Discriminación</button>
+        <button class="tab-btn" data-tab="casos"><span class="tab-icon">👷</span>Casos del sector</button>
+        <button class="tab-btn" data-tab="quiz"><span class="tab-icon">🧠</span>¿Lo identificas?</button>
+      </div>
     </div>
-    <div class="tab-row">
-      <button class="tab-btn on" onclick="switchTab('acoso', this)">
-        <span class="tab-icon">🚨</span>Acoso laboral
-      </button>
-      <button class="tab-btn" onclick="switchTab('discriminacion', this)">
-        <span class="tab-icon">⚖️</span>Discriminación
-      </button>
-      <button class="tab-btn" onclick="switchTab('casos', this)">
-        <span class="tab-icon">👷</span>Casos del sector
-      </button>
-      <button class="tab-btn" onclick="switchTab('quiz', this)">
-        <span class="tab-icon">🧠</span>¿Lo identificas?
-      </button>
-    </div>
-  </div>
+  </section>
 
-  <div class="content-area">
+  <main class="wrapper">
+    <!-- ACOSO -->
+    <section class="tab-panel active" id="panel-acoso">
+      <div class="info-grid">
+        <article class="info-card rosa">
+          <div class="info-label">Definición legal</div>
+          <h3>¿Qué es el acoso laboral?</h3>
+          <p>
+            Es cualquier conducta que cause daño moral o psicológico al trabajador,
+            ejercida de forma repetida por un superior o compañero. Puede ser verbal,
+            físico o psicológico.
+          </p>
+          <div class="mini-pill">⚖️ Ley N° 27942 – Art. 6</div>
+        </article>
 
-    <!-- ── TAB: ACOSO ── -->
-    <div id="panel-acoso" class="tab-panel show">
+        <article class="info-card celeste">
+          <div class="info-label">¿Cómo se manifiesta?</div>
+          <h3>Formas frecuentes en el sector</h3>
+          <p>
+            Burlas, humillaciones públicas, asignación de tareas degradantes, aislamiento del equipo,
+            amenazas o presiones para obtener favores a cambio de beneficios laborales.
+          </p>
+          <div class="mini-pill">📋 Entorno industrial y automotriz</div>
+        </article>
+      </div>
 
-      <div class="def-section">
-        <div class="def-grid">
-          <div class="def-card">
-            <div class="def-label">Definición legal</div>
-            <div class="def-title">¿Qué es el acoso laboral?</div>
-            <div class="def-text">Es cualquier conducta que cause daño moral o psicológico al trabajador, ejercida de forma repetida por un superior o compañero. Puede ser verbal, físico o psicológico.</div>
-            <div class="def-law">⚖️ Ley N° 27942 – Art. 6</div>
+      <div class="compare-wrap section-block">
+        <div class="compare-head">
+          <h3>¿Esto es acoso o no?</h3>
+          <div class="compare-legend">
+            <div><span class="legend-dot si"></span>Sí es acoso</div>
+            <div><span class="legend-dot no"></span>No es acoso</div>
           </div>
-          <div class="def-card celeste">
-            <div class="def-label">¿Cómo se manifiesta?</div>
-            <div class="def-title">Formas frecuentes en el sector</div>
-            <div class="def-text">Burlas, humillaciones públicas, asignación de tareas degradantes, aislamiento del equipo, amenazas o presiones para obtener favores a cambio de beneficios laborales.</div>
-            <div class="def-law">📋 Entorno industrial y automotriz</div>
-          </div>
+        </div>
+
+        <div class="compare-grid">
+          <article class="compare-card si">
+            <h4>Esto sí es acoso</h4>
+            <p>Tu supervisor te asigna las tareas más pesadas como castigo por negarte a hacer algo que no era tu responsabilidad.</p>
+            <span class="tag-small tag-si">Acoso vertical</span>
+          </article>
+
+          <article class="compare-card no">
+            <h4>Esto no es acoso</h4>
+            <p>Tu jefe te llama la atención en privado por no cumplir el procedimiento de seguridad establecido en el taller.</p>
+            <span class="tag-small tag-no">Corrección legítima</span>
+          </article>
+
+          <article class="compare-card si">
+            <h4>Esto sí es acoso</h4>
+            <p>Un compañero te hace comentarios repetidos sobre tu cuerpo, género o edad frente a otros trabajadores.</p>
+            <span class="tag-small tag-si">Acoso horizontal</span>
+          </article>
+
+          <article class="compare-card no">
+            <h4>Esto no es acoso</h4>
+            <p>Tu supervisor te evalúa con criterios exigentes porque el trabajo requiere precisión y seguridad operativa.</p>
+            <span class="tag-small tag-no">Evaluación profesional</span>
+          </article>
         </div>
       </div>
 
-      <div class="sino-section">
-        <div class="sino-header">
-          <div class="sino-title">¿Esto es acoso o no?</div>
-          <div class="sino-legend">
-            <div class="legend-item"><div class="legend-dot-s"></div>Sí es acoso</div>
-            <div class="legend-item"><div class="legend-dot-n"></div>No es acoso</div>
-          </div>
-        </div>
-        <div class="sino-grid">
+      <div class="double-box">
+        <article class="soft-box">
+          <h4>¿Cómo identificar el acoso?</h4>
+          <p>No siempre es evidente. Estas señales son alertas clave.</p>
+          <ul class="bullet-list">
+            <li>Humillaciones o ridiculización repetida frente a otros.</li>
+            <li>Asignación de tareas degradantes o imposibles como castigo.</li>
+            <li>Críticas constantes sin justificación real.</li>
+            <li>Aislamiento intencional del equipo.</li>
+            <li>Miedo o presión constante al interactuar con una persona específica.</li>
+          </ul>
+        </article>
 
-          <div class="sino-card card-si">
-            <div class="sino-icon-wrap">🛑</div>
-            <div class="sino-body">
-              <div class="sino-label"><div class="sino-label-dot-s"></div>Esto SÍ es acoso</div>
-              <div class="sino-text">Tu supervisor te asigna las tareas más pesadas como castigo por negarte a hacer algo que no era tu responsabilidad.</div>
-              <span class="sino-tag tag-acoso">Acoso vertical</span>
-            </div>
+        <article class="soft-box">
+          <h4>Frases que lo normalizan</h4>
+          <p>Cuando estas frases se vuelven “normales”, hay una alerta.</p>
+          <div class="phrase-grid">
+            <div class="phrase-card">“Aquí siempre se ha trabajado así.”</div>
+            <div class="phrase-card">“Solo es broma, no exageres.”</div>
+            <div class="phrase-card">“Si no aguantas presión, este trabajo no es para ti.”</div>
+            <div class="phrase-card">“Te trato así porque quiero que mejores.”</div>
+            <div class="phrase-card">“Así me trataron a mí cuando empecé.”</div>
           </div>
-
-          <div class="sino-card card-no">
-            <div class="sino-icon-wrap">✓</div>
-            <div class="sino-body">
-              <div class="sino-label"><div class="sino-label-dot-n"></div>Esto NO es acoso</div>
-              <div class="sino-text">Tu jefe te llama la atención en privado por no cumplir el procedimiento de seguridad establecido en el taller.</div>
-              <span class="sino-tag tag-ok">Corrección legítima</span>
-            </div>
-          </div>
-
-          <div class="sino-card card-si">
-            <div class="sino-icon-wrap">🛑</div>
-            <div class="sino-body">
-              <div class="sino-label"><div class="sino-label-dot-s"></div>Esto SÍ es acoso</div>
-              <div class="sino-text">Un compañero te hace comentarios repetidos sobre tu cuerpo, género o edad frente a otros trabajadores del almacén.</div>
-              <span class="sino-tag tag-acoso">Acoso horizontal</span>
-            </div>
-          </div>
-
-          <div class="sino-card card-no">
-            <div class="sino-icon-wrap">✓</div>
-            <div class="sino-body">
-              <div class="sino-label"><div class="sino-label-dot-n"></div>Esto NO es acoso</div>
-              <div class="sino-text">Tu supervisor te evalúa con criterios exigentes porque el trabajo requiere alta precisión y seguridad operativa.</div>
-              <span class="sino-tag tag-ok">Evaluación de desempeño</span>
-            </div>
-          </div>
-
-          <div class="sino-card card-si">
-            <div class="sino-icon-wrap">🛑</div>
-            <div class="sino-body">
-              <div class="sino-label"><div class="sino-label-dot-s"></div>Esto SÍ es acoso</div>
-              <div class="sino-text">Te presionan para que hagas horas extra sin pago a cambio de no ser trasladado a otra área o no perder tu puesto.</div>
-              <span class="sino-tag tag-acoso">Acoso laboral grave</span>
-            </div>
-          </div>
-
-          <div class="sino-card card-no">
-            <div class="sino-icon-wrap">✓</div>
-            <div class="sino-body">
-              <div class="sino-label"><div class="sino-label-dot-n"></div>Esto NO es acoso</div>
-              <div class="sino-text">Te piden que corrijas un informe dos veces porque no cumplía con los estándares técnicos requeridos.</div>
-              <span class="sino-tag tag-ok">Exigencia profesional</span>
-            </div>
-          </div>
-
-          <div class="detect-section">
-            <div class="detect-title">¿Cómo identificar el acoso laboral?</div>
-            <div class="detect-sub">No siempre es evidente. Estas señales son alertas clave en entornos laborales.</div>
-            <ul class="detect-list">
-              <li>Te humillan o ridiculizan frente a otros de forma repetida.</li>
-              <li>Te asignan tareas innecesarias, degradantes o imposibles como castigo.</li>
-              <li>Recibes críticas constantes sin justificación o sin posibilidad de mejora.</li>
-              <li>Te aíslan del equipo o te excluyen intencionalmente.</li>
-              <li>Sientes miedo, ansiedad o presión constante al interactuar con una persona específica.</li>
-              <li>Te amenazan directa o indirectamente con perder tu puesto.</li>
-            </ul>
-          </div>
-
-          <div class="frases-section">
-            <div class="frases-title">Frases que normalizan el acoso 🚩</div>
-            <div class="frases-sub">Si suenan familiares… ojo, no es cultura laboral, es problema estructural.</div>
-            <div class="frases-grid">
-              <div class="frase-card">"Aquí siempre se ha trabajado así."</div>
-              <div class="frase-card">"Si no aguantas presión, este trabajo no es para ti."</div>
-              <div class="frase-card">"Solo es broma, no exageres."</div>
-              <div class="frase-card">"Te trato así porque quiero que mejores."</div>
-              <div class="frase-card">"Así me trataron a mí cuando empecé."</div>
-              <div class="frase-card">"Deberías agradecer que tienes trabajo."</div>
-            </div>
-          </div>
-
-        </div>
+        </article>
       </div>
-    </div>
+    </section>
 
-    <!-- ── TAB: DISCRIMINACIÓN ── -->
-    <div id="panel-discriminacion" class="tab-panel">
+    <!-- DISCRIMINACION -->
+    <section class="tab-panel" id="panel-discriminacion">
+      <div class="info-grid">
+        <article class="info-card rosa">
+          <div class="info-label">Definición legal</div>
+          <h3>¿Qué es la discriminación laboral?</h3>
+          <p>
+            Es tratar a alguien de forma desventajosa por características como género, edad,
+            origen, religión, discapacidad u orientación sexual, sin que exista una justificación objetiva.
+          </p>
+          <div class="mini-pill">⚖️ Constitución Art. 2 · Ley N° 26772</div>
+        </article>
 
-      <div class="def-section">
-        <div class="def-grid">
-          <div class="def-card">
-            <div class="def-label">Definición legal</div>
-            <div class="def-title">¿Qué es la discriminación laboral?</div>
-            <div class="def-text">Es tratar a alguien de forma desventajosa por características como género, edad, origen, religión, discapacidad u orientación sexual, sin que exista justificación objetiva.</div>
-            <div class="def-law">⚖️ Constitución Art. 2 · Ley N° 26772</div>
+        <article class="info-card celeste">
+          <div class="info-label">¿Cómo se manifiesta?</div>
+          <h3>Formas frecuentes en la industria</h3>
+          <p>
+            Exclusión de capacitaciones, diferencias salariales injustificadas, negativa de ascensos,
+            repartición desigual de turnos o tareas por razones personales y no técnicas.
+          </p>
+          <div class="mini-pill">📋 Sector automotriz e industrial</div>
+        </article>
+      </div>
+
+      <div class="compare-wrap section-block">
+        <div class="compare-head">
+          <h3>¿Esto es discriminación o no?</h3>
+          <div class="compare-legend">
+            <div><span class="legend-dot si"></span>Sí es discriminación</div>
+            <div><span class="legend-dot no"></span>No lo es</div>
           </div>
-          <div class="def-card celeste">
-            <div class="def-label">¿Cómo se manifiesta?</div>
-            <div class="def-title">Formas frecuentes en la industria</div>
-            <div class="def-text">Exclusión de capacitaciones, diferencias salariales injustificadas, negativa de ascensos, repartición desigual de turnos o tareas por razones personales y no técnicas.</div>
-            <div class="def-law">📋 Sector automotriz e industrial</div>
-          </div>
+        </div>
+
+        <div class="compare-grid">
+          <article class="compare-card si">
+            <h4>Esto sí es discriminación</h4>
+            <p>No te incluyen en la capacitación de nuevos equipos porque “eso es para los hombres” o “ya estás muy mayor”.</p>
+            <span class="tag-small tag-si">Por género / edad</span>
+          </article>
+
+          <article class="compare-card no">
+            <h4>Esto no es discriminación</h4>
+            <p>Te asignan a otra área porque tu perfil técnico encaja mejor con ese puesto disponible.</p>
+            <span class="tag-small tag-no">Decisión técnica</span>
+          </article>
+
+          <article class="compare-card si">
+            <h4>Esto sí es discriminación</h4>
+            <p>Te pagan menos que un compañero con el mismo cargo y experiencia sin justificación formal documentada.</p>
+            <span class="tag-small tag-si">Brecha salarial</span>
+          </article>
+
+          <article class="compare-card no">
+            <h4>Esto no es discriminación</h4>
+            <p>Un compañero tiene mayor salario porque cuenta con certificaciones técnicas adicionales comprobables.</p>
+            <span class="tag-small tag-no">Diferencia objetiva</span>
+          </article>
         </div>
       </div>
 
-      <div class="sino-section">
-        <div class="sino-header">
-          <div class="sino-title">¿Esto es discriminación o no?</div>
-          <div class="sino-legend">
-            <div class="legend-item"><div class="legend-dot-s"></div>Sí es discriminación</div>
-            <div class="legend-item"><div class="legend-dot-n"></div>No lo es</div>
-          </div>
-        </div>
-        <div class="sino-grid">
+      <div class="double-box">
+        <article class="soft-box">
+          <h4>¿Cómo identificarla?</h4>
+          <p>A veces se esconde en decisiones “normales”.</p>
+          <ul class="bullet-list">
+            <li>No accedes a oportunidades que otros sí, sin razón clara.</li>
+            <li>Recibes trato diferente por tu género, edad, origen o apariencia.</li>
+            <li>Te excluyen de reuniones o capacitaciones importantes.</li>
+            <li>Hay diferencias salariales sin justificación objetiva.</li>
+            <li>Te asignan roles basados en estereotipos.</li>
+          </ul>
+        </article>
 
-          <div class="sino-card card-si">
-            <div class="sino-icon-wrap">🛑</div>
-            <div class="sino-body">
-              <div class="sino-label"><div class="sino-label-dot-s"></div>Esto SÍ es discriminación</div>
-              <div class="sino-text">No te incluyen en la capacitación de nuevos equipos porque "eso es para los hombres" o "ya estás muy mayor para aprender eso".</div>
-              <span class="sino-tag tag-disc">Por género / edad</span>
-            </div>
+        <article class="soft-box">
+          <h4>Frases que la normalizan</h4>
+          <p>Cuando la desigualdad se disfraza de lógica empresarial.</p>
+          <div class="phrase-grid">
+            <div class="phrase-card">“Ese puesto no es para mujeres.”</div>
+            <div class="phrase-card">“Buscamos gente más joven para ese rol.”</div>
+            <div class="phrase-card">“Él gana más porque tiene más presencia.”</div>
+            <div class="phrase-card">“Tú encajas mejor en tareas más simples.”</div>
+            <div class="phrase-card">“Así funciona la industria.”</div>
           </div>
-
-          <div class="sino-card card-no">
-            <div class="sino-icon-wrap">✓</div>
-            <div class="sino-body">
-              <div class="sino-label"><div class="sino-label-dot-n"></div>Esto NO es discriminación</div>
-              <div class="sino-text">Te asignan a otra área porque hay una vacante disponible y tu perfil técnico encaja mejor con ese puesto.</div>
-              <span class="sino-tag tag-ok">Decisión técnica</span>
-            </div>
-          </div>
-
-          <div class="sino-card card-si">
-            <div class="sino-icon-wrap">🛑</div>
-            <div class="sino-body">
-              <div class="sino-label"><div class="sino-label-dot-s"></div>Esto SÍ es discriminación</div>
-              <div class="sino-text">Te pagan menos que un compañero con el mismo cargo y experiencia sin ninguna justificación formal documentada.</div>
-              <span class="sino-tag tag-disc">Brecha salarial</span>
-            </div>
-          </div>
-
-          <div class="sino-card card-no">
-            <div class="sino-icon-wrap">✓</div>
-            <div class="sino-body">
-              <div class="sino-label"><div class="sino-label-dot-n"></div>Esto NO es discriminación</div>
-              <div class="sino-text">Un compañero tiene mayor salario porque tiene certificaciones técnicas adicionales que tú aún no has obtenido.</div>
-              <span class="sino-tag tag-ok">Diferencia objetiva</span>
-            </div>
-          </div>
-
-          <div class="detect-section">
-            <div class="detect-title">¿Cómo identificar la discriminación?</div>
-            <div class="detect-sub">No siempre es explícita. A veces se esconde en decisiones "normales".</div>
-            <ul class="detect-list">
-              <li>No tienes acceso a oportunidades que otros sí, sin razón clara.</li>
-              <li>Recibes un trato diferente por tu género, edad, origen o apariencia.</li>
-              <li>Te excluyen de capacitaciones o reuniones importantes.</li>
-              <li>Existen diferencias salariales sin justificación objetiva.</li>
-              <li>Te asignan tareas o roles basados en estereotipos.</li>
-              <li>Sientes que necesitas demostrar más que otros para obtener lo mismo.</li>
-            </ul>
-          </div>
-
-          <div class="frases-section">
-            <div class="frases-title">Frases que normalizan la discriminación 🚩</div>
-            <div class="frases-sub">Cuando la desigualdad se disfraza de lógica empresarial…</div>
-            <div class="frases-grid">
-              <div class="frase-card">"Ese puesto no es para mujeres."</div>
-              <div class="frase-card">"Buscamos gente más joven para ese rol."</div>
-              <div class="frase-card">"Él gana más porque tiene más presencia."</div>
-              <div class="frase-card">"Tú encajas mejor en tareas más simples."</div>
-              <div class="frase-card">"Es que tú eres muy sensible para ese tipo de trabajo."</div>
-              <div class="frase-card">"Es que así funciona la industria."</div>
-            </div>
-          </div>
-
-        </div>
+        </article>
       </div>
-    </div>
+    </section>
 
-    <!-- ── TAB: CASOS ── -->
-    <div id="panel-casos" class="tab-panel">
-      <div class="casos-section">
-        <div class="caso-title">Situaciones reales</div>
-        <div class="caso-cards">
-
-          <div class="caso-card">
-            <div class="caso-avatar" style="background:#f5edf6;">👩</div>
-            <div class="caso-body">
-              <div class="caso-name">Ana M. · Técnica de taller</div>
-              <div class="caso-role">Área de mantenimiento</div>
-              <div class="caso-quote">Mi supervisor me decía frente a todos que las mujeres no servían para el taller. Pensé que era normal hasta que una compañera me habló del canal de denuncia.</div>
-            </div>
-            <div class="caso-side">
-              <span class="caso-badge badge-resuelto">Resuelto</span>
-              <div class="caso-tipo">Acoso laboral<br>vertical</div>
-            </div>
-          </div>
-
-          <div class="caso-card">
-            <div class="caso-avatar" style="background:#e6f9fd;">👨</div>
-            <div class="caso-body">
-              <div class="caso-name">Carlos R. · Operario de almacén</div>
-              <div class="caso-role">Área de logística</div>
-              <div class="caso-quote">Siempre me dejaban fuera de las reuniones de equipo y nunca me avisaban de las capacitaciones. Me enteré de los cambios por terceros.</div>
-            </div>
-            <div class="caso-side">
-              <span class="caso-badge badge-resuelto">Resuelto</span>
-              <div class="caso-tipo">Discriminación<br>laboral</div>
-            </div>
-          </div>
-
-          <div class="caso-card">
-            <div class="caso-avatar" style="background:#f5edf6;">👩</div>
-            <div class="caso-body">
-              <div class="caso-name">Lucía T. · Asistente administrativa</div>
-              <div class="caso-role">Área comercial</div>
-              <div class="caso-quote">Un compañero me enviaba mensajes fuera del horario laboral con comentarios inapropiados. Cuando lo reporté, RRHH actuó de inmediato.</div>
-            </div>
-            <div class="caso-side">
-              <span class="caso-badge badge-proceso">En seguimiento</span>
-              <div class="caso-tipo">Acoso<br>horizontal</div>
-            </div>
-          </div>
-
-          <div class="caso-card">
-            <div class="caso-avatar" style="background:#f5edf6;">👩</div>
-            <div class="caso-body">
-              <div class="caso-name">Natalia S. · Ingeniera</div>
-              <div class="caso-role">Energía</div>
-              <div class="caso-quote">En reuniones técnicas, ignoraban mis aportes y luego eran retomados por compañeros hombres como si fueran ideas nuevas.</div>
-            </div>
-            <div class="caso-side">
-              <span class="caso-badge badge-proceso">En seguimiento</span>
-              <div class="caso-tipo">Discriminación<br>por género</div>
-            </div>
-          </div>
-
-          <div class="caso-card">
-            <div class="caso-avatar" style="background:#f5edf6;">👷‍♀️</div>
-            <div class="caso-body">
-              <div class="caso-name">María L. · Ingeniera de obra</div>
-              <div class="caso-role">Construcción</div>
-              <div class="caso-quote">El jefe de obra hacía comentarios sarcásticos cada vez que yo daba una indicación técnica. Decía "mejor que lo confirme un ingeniero de verdad".</div>
-            </div>
-            <div class="caso-side">
-              <span class="caso-badge badge-proceso">En seguimiento</span>
-              <div class="caso-tipo">Acoso laboral<br>vertical</div>
-            </div>
-          </div>
-
-          <div class="caso-card">
-            <div class="caso-avatar" style="background:#f5edf6;">👩‍🏭</div>
-            <div class="caso-body">
-              <div class="caso-name">Elena P. · Operaria</div>
-              <div class="caso-role">Industria alimentaria</div>
-              <div class="caso-quote">No me permitían rotar a otras áreas porque asumían que no podría con el ritmo físico, sin siquiera evaluarme.</div>
-            </div>
-            <div class="caso-side">
-              <span class="caso-badge badge-proceso">En seguimiento</span>
-              <div class="caso-tipo">Discriminación<br>por estereotipo</div>
-            </div>
-          </div>
-
-          <div class="caso-card">
-            <div class="caso-avatar" style="background:#e6f9fd;">👨</div>
-            <div class="caso-body">
-              <div class="caso-name">Diego P. · Técnico de mantenimiento</div>
-              <div class="caso-role">Industria minera</div>
-              <div class="caso-quote">Mis compañeros me escondían herramientas y luego se burlaban cuando no podía terminar el trabajo a tiempo.</div>
-            </div>
-            <div class="caso-side">
-              <span class="caso-badge badge-resuelto">Resuelto</span>
-              <div class="caso-tipo">Acoso<br>horizontal</div>
-            </div>
-          </div>
-
-          <div class="caso-card">
-            <div class="caso-avatar" style="background:#f5edf6;">👩</div>
-            <div class="caso-body">
-              <div class="caso-name">Rosa M. · Supervisora</div>
-              <div class="caso-role">Logística</div>
-              <div class="caso-quote">Cuando regresé de licencia de maternidad, me asignaron tareas de menor responsabilidad sin explicación.</div>
-            </div>
-            <div class="caso-side">
-              <span class="caso-badge badge-proceso">En seguimiento</span>
-              <div class="caso-tipo">Discriminación<br>por maternidad</div>
-            </div>
-          </div>
-
-          <div class="caso-card">
-            <div class="caso-avatar" style="background:#f5edf6;">👩</div>
-            <div class="caso-body">
-              <div class="caso-name">Valeria S. · Programadora</div>
-              <div class="caso-role">Tecnología</div>
-              <div class="caso-quote">Un compañero revisaba mi código en público solo para criticarlo, incluso cuando estaba correcto. Lo hacía constantemente frente al equipo.</div>
-            </div>
-            <div class="caso-side">
-              <span class="caso-badge badge-proceso">En seguimiento</span>
-              <div class="caso-tipo">Acoso<br>horizontal</div>
-            </div>
-          </div>
-
-          <div class="caso-card">
-            <div class="caso-avatar" style="background:#e6f9fd;">👨</div>
-            <div class="caso-body">
-              <div class="caso-name">Daniel C. · Analista</div>
-              <div class="caso-role">Finanzas</div>
-              <div class="caso-quote">No fui incluido en un proyecto clave porque mi jefe prefería trabajar con personas de su misma universidad.</div>
-            </div>
-            <div class="caso-side">
-              <span class="caso-badge badge-proceso">En seguimiento</span>
-              <div class="caso-tipo">Discriminación<br>por afinidad</div>
-            </div>
-          </div>
-
-          <div class="caso-card">
-            <div class="caso-avatar" style="background:#e6f9fd;">👨</div>
-            <div class="caso-body">
-              <div class="caso-name">Luis G. · Operador de maquinaria</div>
-              <div class="caso-role">Logística</div>
-              <div class="caso-quote">Mi supervisor me asignaba turnos nocturnos constantemente como castigo por no aceptar quedarme horas extra sin pago.</div>
-            </div>
-            <div class="caso-side">
-              <span class="caso-badge badge-resuelto">Resuelto</span>
-              <div class="caso-tipo">Acoso laboral<br>vertical</div>
-            </div>
-          </div>
-
-          <div class="caso-card">
-            <div class="caso-avatar" style="background:#f5edf6;">👩‍💻</div>
-            <div class="caso-body">
-              <div class="caso-name">Paula V. · Desarrolladora junior</div>
-              <div class="caso-role">Tecnología</div>
-              <div class="caso-quote">A pesar de tener el mismo rendimiento que mis compañeros, no me asignaban proyectos importantes porque decían que "aún me faltaba confianza".</div>
-            </div>
-            <div class="caso-side">
-              <span class="caso-badge badge-proceso">En seguimiento</span>
-              <div class="caso-tipo">Discriminación<br>laboral</div>
-            </div>
-          </div>
-
-          <div class="caso-card">
-            <div class="caso-avatar" style="background:#e6f9fd;">👨</div>
-            <div class="caso-body">
-              <div class="caso-name">Fernando D. · Operario</div>
-              <div class="caso-role">Manufactura</div>
-              <div class="caso-quote">No me consideraron para un ascenso porque dijeron que mi acento no era adecuado para tratar con clientes.</div>
-            </div>
-            <div class="caso-side">
-              <span class="caso-badge badge-proceso">En seguimiento</span>
-              <div class="caso-tipo">Discriminación<br>por origen</div>
-            </div>
-          </div>
-
-          <div class="caso-card">
-            <div class="caso-avatar" style="background:#e6f9fd;">👨‍🔧</div>
-            <div class="caso-body">
-              <div class="caso-name">Hugo R. · Técnico mecánico</div>
-              <div class="caso-role">Automotriz</div>
-              <div class="caso-quote">Siempre asignaban las capacitaciones internacionales a los mismos trabajadores, dejando fuera a otros sin criterios claros.</div>
-            </div>
-            <div class="caso-side">
-              <span class="caso-badge badge-proceso">En seguimiento</span>
-              <div class="caso-tipo">Discriminación<br>laboral</div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="caso-nota">
-          <strong>Nota:</strong> Los nombres son ficticios pero las situaciones representan casos reales del entorno industrial. Todos los reportes en Inchcape son tratados con total confidencialidad.
-        </div>
+    <!-- CASOS -->
+    <section class="tab-panel" id="panel-casos">
+      <div class="section-block">
+        <h2 class="section-title">Casos del sector</h2>
+        <p class="section-desc">
+          Estas situaciones representan ejemplos reales del entorno industrial y automotriz.
+          Los nombres son ficticios, pero reflejan problemas frecuentes.
+        </p>
       </div>
-    </div>
 
-    <!-- ── TAB: QUIZ ── -->
-    <div id="panel-quiz" class="tab-panel">
-      <div class="quiz-section">
-        <div class="quiz-box">
-          <div class="quiz-bg"></div>
-          <div class="quiz-inner">
+      <div class="cases-grid">
+        <article class="case-card">
+          <div class="case-avatar">👩</div>
+          <div class="case-body">
+            <h4>Ana M.</h4>
+            <div class="case-role">Técnica de taller</div>
+            <p>Mi supervisor me decía frente a todos que las mujeres no servían para el taller. Pensé que era normal hasta que una compañera me habló del canal de denuncia.</p>
+          </div>
+          <div class="case-side">
+            <span class="case-badge badge-resuelto">Resuelto</span>
+            <div class="case-type">Acoso laboral vertical</div>
+          </div>
+        </article>
 
-            <!-- PANTALLA DE INICIO -->
-            <div id="quiz-start" class="quiz-start-screen">
-              <div class="quiz-start-icon">🧠</div>
-              <div class="quiz-start-title">¿Sabes identificarlo?</div>
-              <div class="quiz-start-sub">Pon a prueba tu conocimiento con 4 situaciones reales del entorno laboral.</div>
-              <div class="quiz-start-pills">
-                <div class="quiz-start-pill">4 preguntas</div>
-                <div class="quiz-start-pill">~2 minutos</div>
-                <div class="quiz-start-pill">Sin registro</div>
-              </div>
-              <button class="quiz-start-btn" onclick="showDisclaimer()">Empezar quiz →</button>
+        <article class="case-card">
+          <div class="case-avatar">👨</div>
+          <div class="case-body">
+            <h4>Carlos R.</h4>
+            <div class="case-role">Operario de almacén</div>
+            <p>Siempre me dejaban fuera de reuniones del equipo y nunca me avisaban de las capacitaciones. Me enteraba por terceros.</p>
+          </div>
+          <div class="case-side">
+            <span class="case-badge badge-resuelto">Resuelto</span>
+            <div class="case-type">Discriminación laboral</div>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <div class="case-avatar">👩</div>
+          <div class="case-body">
+            <h4>Lucía T.</h4>
+            <div class="case-role">Asistente administrativa</div>
+            <p>Un compañero me enviaba mensajes fuera del horario laboral con comentarios inapropiados. Cuando lo reporté, RR. HH. actuó de inmediato.</p>
+          </div>
+          <div class="case-side">
+            <span class="case-badge badge-proceso">En seguimiento</span>
+            <div class="case-type">Acoso horizontal</div>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <div class="case-avatar">👷‍♀️</div>
+          <div class="case-body">
+            <h4>María L.</h4>
+            <div class="case-role">Ingeniera de obra</div>
+            <p>El jefe de obra hacía comentarios sarcásticos cada vez que yo daba una indicación técnica. Decía que lo confirme “un ingeniero de verdad”.</p>
+          </div>
+          <div class="case-side">
+            <span class="case-badge badge-proceso">En seguimiento</span>
+            <div class="case-type">Acoso vertical</div>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <div class="case-avatar">👩‍💻</div>
+          <div class="case-body">
+            <h4>Paula V.</h4>
+            <div class="case-role">Desarrolladora junior</div>
+            <p>No me asignaban proyectos importantes porque decían que aún me faltaba confianza, a pesar de tener el mismo rendimiento.</p>
+          </div>
+          <div class="case-side">
+            <span class="case-badge badge-proceso">En seguimiento</span>
+            <div class="case-type">Discriminación laboral</div>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <div class="case-avatar">👨‍🔧</div>
+          <div class="case-body">
+            <h4>Hugo R.</h4>
+            <div class="case-role">Técnico mecánico</div>
+            <p>Siempre asignaban las capacitaciones internacionales a los mismos trabajadores, dejando fuera a otros sin criterios claros.</p>
+          </div>
+          <div class="case-side">
+            <span class="case-badge badge-proceso">En seguimiento</span>
+            <div class="case-type">Discriminación laboral</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="case-note">
+        <strong>Nota:</strong> Los nombres son ficticios, pero las situaciones representan casos reales del entorno laboral. Todos los reportes deben tratarse con confidencialidad.
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="tab-panel" id="panel-quiz">
+      <div class="section-block">
+        <h2 class="section-title">¿Lo identificas?</h2>
+        <p class="section-desc">
+          Responde este quiz corto e interactivo. Te ayudará a distinguir entre acoso,
+          discriminación y situaciones laborales que no necesariamente constituyen una vulneración.
+        </p>
+      </div>
+
+      <div class="quiz-box">
+        <div class="quiz-bg"></div>
+        <div class="quiz-inner">
+          <div class="quiz-start-screen active" id="quizStart">
+            <div class="quiz-start-icon">🧠</div>
+            <div class="quiz-start-title">Pon a prueba tu criterio</div>
+            <div class="quiz-start-sub">4 preguntas rápidas, sin registro y con explicación inmediata.</div>
+            <div class="quiz-start-pills">
+              <div class="quiz-start-pill">4 preguntas</div>
+              <div class="quiz-start-pill">~2 minutos</div>
+              <div class="quiz-start-pill">Sin registro</div>
             </div>
+            <button class="quiz-start-btn" id="startQuizBtn">Empezar quiz</button>
+          </div>
 
-            <!-- DISCLAIMER -->
-            <div id="quiz-disclaimer" class="quiz-disclaimer">
-              <div class="disclaimer-icon">🔒</div>
-              <div class="disclaimer-title">Tus respuestas son privadas</div>
-              <div class="disclaimer-text">Este quiz es solo educativo. No registramos tus respuestas ni las compartimos con nadie.</div>
-              <div class="disclaimer-items">
-                <div class="disclaimer-item">
-                  <div class="disclaimer-item-icon">✓</div>
-                  <div class="disclaimer-item-text">Las respuestas son completamente anónimas y no se almacenan.</div>
-                </div>
-              </div>
-              <button class="disclaimer-accept-btn" onclick="startQuiz()">Entendido, comenzar</button>
-              <button class="disclaimer-back" onclick="hideDisclaimer()">← Volver</button>
+          <div class="quiz-disclaimer" id="quizDisclaimer">
+            <div class="disclaimer-icon">🔒</div>
+            <div class="disclaimer-title">Tus respuestas son privadas</div>
+            <div class="disclaimer-text">Este quiz es solo educativo. No registramos tus respuestas ni las compartimos con nadie.</div>
+            <button class="disclaimer-accept-btn" id="acceptDisclaimerBtn">Entendido, comenzar</button>
+            <button class="disclaimer-back" id="backDisclaimerBtn">← Volver</button>
+          </div>
+
+          <div class="quiz-game" id="quizGame">
+            <div class="quiz-eyebrow">Quiz — ¿Lo identificas?</div>
+            <div class="quiz-q" id="quizTitle">Pregunta 1 de 4</div>
+            <div class="quiz-sub" id="quizText"></div>
+            <div class="quiz-progress"><div class="quiz-fill" id="quizBar" style="width:25%"></div></div>
+            <div class="quiz-options" id="quizOptions"></div>
+            <div class="quiz-feedback" id="quizFeedback"></div>
+            <div class="quiz-nav">
+              <span class="quiz-counter" id="quizCounter">Pregunta 1 / 4</span>
+              <button class="quiz-next" id="quizNext">Siguiente →</button>
             </div>
+          </div>
 
-            <!-- QUIZ EN JUEGO -->
-            <div id="quiz-game" style="display:none;">
-              <div class="quiz-eyebrow">Quiz — ¿Lo identificas?</div>
-              <div class="quiz-q" id="qTitle">Pregunta 1 de 4</div>
-              <div class="quiz-sub" id="qText"></div>
-              <div class="quiz-progress"><div class="quiz-fill" id="qBar" style="width:25%"></div></div>
-              <div class="quiz-options" id="qOpts"></div>
-              <div class="quiz-feedback" id="qFeedback"></div>
-              <div class="quiz-nav">
-                <span class="quiz-counter" id="qCounter">Pregunta 1 / 4</span>
-                <button class="quiz-next" id="qNext" onclick="nextQuestion()">Siguiente →</button>
-              </div>
-            </div>
-
-            <!-- RESULTADO -->
-            <div class="quiz-result" id="quiz-result">
-              <div class="result-score" id="rScore"></div>
-              <div class="result-msg" id="rMsg"></div>
-              <button class="quiz-restart" onclick="restartQuiz()">Volver a intentarlo</button>
-            </div>
-
+          <div class="quiz-result" id="quizResult">
+            <div class="result-score" id="resultScore"></div>
+            <div class="result-msg" id="resultMsg"></div>
+            <button class="quiz-restart" id="quizRestart">Volver a intentarlo</button>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+  </main>
 
-  </div><!-- /content-area -->
-</div><!-- /section-wrap -->
-
-<!-- ═══ FOOTER ═══ -->
-<div id="footer-container"></div>
-
-<script>
-// ── TABS ──
-function switchTab(id, btn) {
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('show'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('on'));
-  document.getElementById('panel-' + id).classList.add('show');
-  btn.classList.add('on');
-}
-
-// ── QUIZ FLOW ──
-function showDisclaimer() {
-  document.getElementById('quiz-disclaimer').classList.add('show');
-}
-
-function hideDisclaimer() {
-  document.getElementById('quiz-disclaimer').classList.remove('show');
-}
-
-function startQuiz() {
-  document.getElementById('quiz-disclaimer').classList.remove('show');
-  document.getElementById('quiz-start').style.display = 'none';
-  document.getElementById('quiz-game').style.display = 'block';
-  renderQ();
-}
-
-// ── PREGUNTAS ──
-const questions = [
-  {
-    q: "Tu jefe te grita frente a todo el equipo cuando cometes un error, y lo hace casi todos los días. ¿Es acoso laboral?",
-    opts: ["Sí, es acoso laboral", "No, es una corrección normal", "Depende del error cometido"],
-    correct: 0,
-    feedback: "Las humillaciones públicas repetidas constituyen acoso laboral según la Ley N° 27942, sin importar el motivo."
-  },
-  {
-    q: "No te invitan a la capacitación de nuevos equipos porque 'ya tienes muchos años en la empresa'. ¿Es discriminación?",
-    opts: ["No, es una decisión de la empresa", "Sí, es discriminación por edad", "Solo si se repite varias veces"],
-    correct: 1,
-    feedback: "Excluir a alguien de capacitaciones por edad es discriminación laboral, protegida por la Constitución y la Ley N° 26772."
-  },
-  {
-    q: "Tu supervisor te pide que corrijas un informe técnico tres veces porque no cumple los estándares de seguridad. ¿Es acoso?",
-    opts: ["Sí, es hostigamiento", "No, es exigencia laboral legítima", "Sí, si lo hace con mala actitud"],
-    correct: 1,
-    feedback: "Exigir calidad no es acoso. El acoso implica conductas que dañan la dignidad, no la exigencia profesional justificada."
-  },
-  {
-    q: "Un compañero te hace comentarios sobre tu apariencia física de forma repetida, aunque le has pedido que pare. ¿Qué es?",
-    opts: ["Es un tema personal, no laboral", "Es acoso laboral horizontal", "Solo es acoso si lo hace el jefe"],
-    correct: 1,
-    feedback: "El acoso puede ser horizontal (entre compañeros). Comentarios tras haber pedido que paren constituyen acoso."
-  }
-];
-
-let current = 0, score = 0, answered = false;
-
-function renderQ() {
-  const q = questions[current];
-  document.getElementById('qTitle').textContent = `Pregunta ${current + 1} de ${questions.length}`;
-  document.getElementById('qText').textContent = q.q;
-  document.getElementById('qBar').style.width = `${((current + 1) / questions.length) * 100}%`;
-  document.getElementById('qCounter').textContent = `Pregunta ${current + 1} / ${questions.length}`;
-
-  const optsEl = document.getElementById('qOpts');
-  optsEl.innerHTML = '';
-  q.opts.forEach((opt, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'quiz-opt';
-    btn.textContent = opt;
-    btn.style.animationDelay = `${i * .05}s`;
-    btn.onclick = () => answer(btn, i, q);
-    optsEl.appendChild(btn);
-  });
-
-  const fb = document.getElementById('qFeedback');
-  fb.className = 'quiz-feedback';
-  fb.textContent = '';
-  document.getElementById('qNext').classList.remove('show');
-  answered = false;
-}
-
-function answer(btn, idx, q) {
-  if (answered) return;
-  answered = true;
-  const correct = idx === q.correct;
-  if (correct) score++;
-
-  btn.classList.add('selected');
-
-  // Marcar incorrectas
-  document.querySelectorAll('.quiz-opt').forEach((b, i) => {
-    b.style.pointerEvents = 'none';
-    if (i === q.correct) b.classList.add('selected');
-    else if (b === btn && !correct) b.classList.add('wrong');
-  });
-
-  const fb = document.getElementById('qFeedback');
-  fb.textContent = q.feedback;
-  fb.className = 'quiz-feedback show';
-
-  const next = document.getElementById('qNext');
-  next.classList.add('show');
-  next.textContent = current < questions.length - 1 ? 'Siguiente →' : 'Ver resultado';
-}
-
-function nextQuestion() {
-  current++;
-  if (current < questions.length) {
-    renderQ();
-  } else {
-    showResult();
-  }
-}
-
-function showResult() {
-  document.getElementById('quiz-game').style.display = 'none';
-  const res = document.getElementById('quiz-result');
-  res.classList.add('show');
-  document.getElementById('rScore').textContent = `${score} / ${questions.length}`;
-  const msgs = [
-    "Hay situaciones que aún pueden confundirte. Revisa la sección de definiciones y ejemplos.",
-    "Vas bien, pero algunas situaciones del sector industrial vale la pena repasar con calma.",
-    "¡Muy bien! Identificas la mayoría de situaciones. Comparte este quiz con tu equipo.",
-    "¡Excelente! Tienes muy claro qué es acoso y discriminación. Eres parte del cambio en Inchcape."
-  ];
-  document.getElementById('rMsg').textContent = msgs[Math.min(score, 3)];
-}
-
-function restartQuiz() {
-  current = 0; score = 0; answered = false;
-  document.getElementById('quiz-result').classList.remove('show');
-  document.getElementById('quiz-start').style.display = 'flex';
-}
-</script>
-
- <script>
-    fetch('../components/navbar.html')
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById('navbar-container').innerHTML = html;
-        const nav = document.querySelector('nav');
-        if (nav) {
-          window.addEventListener('scroll', () => {
-            nav.style.background = window.scrollY > 40
-              ? 'rgba(21,44,71,0.99)'
-              : 'rgba(21,44,71,0.97)';
-            nav.style.boxShadow = window.scrollY > 40
-              ? '0 2px 24px rgba(0,0,0,.25)'
-              : 'none';
-          });
-        }
-      });
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.style.opacity = '1';
-          e.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.prop-card, .cifra-card, .sec-card').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(28px)';
-      el.style.transition = 'opacity .5s ease, transform .5s ease';
-      observer.observe(el);
-    });
-  </script>
-
-  <!-- Footer dinámico -->
   <div id="footer-container"></div>
 
   <script>
+  fetch('../components/navbar.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('navbar-container').innerHTML = html;
+
+      const logo = document.getElementById('navLogoImg');
+      const home = document.getElementById('navHomeLink');
+      const inicio = document.getElementById('navInicio');
+      const informate = document.getElementById('navInformate');
+      const nosotros = document.getElementById('navNosotros');
+      const reportar = document.getElementById('navReportar');
+
+      if (logo) logo.src = '../assets/images/logo.png';
+      if (home) home.href = '../index.html';
+      if (inicio) inicio.href = '../index.html';
+      if (informate) informate.href = './informate.html';
+      if (nosotros) nosotros.href = './nosotros.html';
+      if (reportar) reportar.href = './reportar.html';
+
+      const nav = document.querySelector('.site-nav');
+      if (nav) {
+        window.addEventListener('scroll', () => {
+          nav.style.background = window.scrollY > 40
+            ? 'rgba(21,44,71,0.99)'
+            : 'rgba(21,44,71,0.97)';
+          nav.style.boxShadow = window.scrollY > 40
+            ? '0 2px 24px rgba(0,0,0,.25)'
+            : '0 10px 24px rgba(0,0,0,.08)';
+        });
+      }
+    });
+
+  fetch('../components/footer.html')
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById('footer-container').innerHTML = html;
+    });
+</script>
+  <script>
+
+    // FOOTER
     fetch('../components/footer.html')
       .then(r => r.text())
       .then(html => {
         document.getElementById('footer-container').innerHTML = html;
-        // Fix logo del footer: quitar filter que lo hace invisible
-        const footerImgs = document.querySelectorAll('.footer-brand img, .footer-logo');
-        footerImgs.forEach(img => {
-          img.style.filter = 'none';
-          img.style.width = '200px';
-          img.style.height = 'auto';
-        });
       });
-  </script>
 
+    // TABS
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.tab;
+        tabButtons.forEach(b => b.classList.remove('active'));
+        tabPanels.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('panel-' + id).classList.add('active');
+      });
+    });
+
+    // QUIZ
+    const quizQuestions = [
+      {
+        q: "Tu jefe te grita frente a todo el equipo cuando cometes un error, y lo hace casi todos los días. ¿Es acoso laboral?",
+        opts: ["Sí, es acoso laboral", "No, es una corrección normal", "Depende del error cometido"],
+        correct: 0,
+        feedback: "Las humillaciones públicas repetidas constituyen acoso laboral. No se justifican por el contexto del error."
+      },
+      {
+        q: "No te invitan a la capacitación de nuevos equipos porque 'ya tienes muchos años en la empresa'. ¿Es discriminación?",
+        opts: ["No, es una decisión de la empresa", "Sí, es discriminación por edad", "Solo si se repite varias veces"],
+        correct: 1,
+        feedback: "Excluir a alguien por edad, sin razón objetiva, puede constituir discriminación laboral."
+      },
+      {
+        q: "Tu supervisor te pide corregir un informe técnico tres veces porque no cumple estándares de seguridad. ¿Es acoso?",
+        opts: ["Sí, es hostigamiento", "No, es exigencia laboral legítima", "Sí, si lo hace con mala actitud"],
+        correct: 1,
+        feedback: "Exigir calidad y cumplimiento técnico no es acoso cuando existe justificación profesional."
+      },
+      {
+        q: "Un compañero hace comentarios sobre tu apariencia física de forma repetida, aunque le has pedido que pare. ¿Qué es?",
+        opts: ["Es un tema personal", "Es acoso laboral horizontal", "Solo es acoso si lo hace el jefe"],
+        correct: 1,
+        feedback: "El acoso también puede ocurrir entre compañeros. Repetir conductas no deseadas tras un pedido expreso es una alerta clara."
+      }
+    ];
+
+    const startQuizBtn = document.getElementById('startQuizBtn');
+    const acceptDisclaimerBtn = document.getElementById('acceptDisclaimerBtn');
+    const backDisclaimerBtn = document.getElementById('backDisclaimerBtn');
+    const quizStart = document.getElementById('quizStart');
+    const quizDisclaimer = document.getElementById('quizDisclaimer');
+    const quizGame = document.getElementById('quizGame');
+    const quizResult = document.getElementById('quizResult');
+    const quizTitle = document.getElementById('quizTitle');
+    const quizText = document.getElementById('quizText');
+    const quizBar = document.getElementById('quizBar');
+    const quizOptions = document.getElementById('quizOptions');
+    const quizFeedback = document.getElementById('quizFeedback');
+    const quizCounter = document.getElementById('quizCounter');
+    const quizNext = document.getElementById('quizNext');
+    const resultScore = document.getElementById('resultScore');
+    const resultMsg = document.getElementById('resultMsg');
+    const quizRestart = document.getElementById('quizRestart');
+
+    let currentQuestion = 0;
+    let score = 0;
+    let answered = false;
+
+    startQuizBtn.addEventListener('click', () => {
+      quizDisclaimer.classList.add('show');
+    });
+
+    backDisclaimerBtn.addEventListener('click', () => {
+      quizDisclaimer.classList.remove('show');
+    });
+
+    acceptDisclaimerBtn.addEventListener('click', () => {
+      quizDisclaimer.classList.remove('show');
+      quizStart.classList.remove('active');
+      quizGame.classList.add('active');
+      renderQuestion();
+    });
+
+    function renderQuestion() {
+      const q = quizQuestions[currentQuestion];
+      quizTitle.textContent = `Pregunta ${currentQuestion + 1} de ${quizQuestions.length}`;
+      quizText.textContent = q.q;
+      quizBar.style.width = `${((currentQuestion + 1) / quizQuestions.length) * 100}%`;
+      quizCounter.textContent = `Pregunta ${currentQuestion + 1} / ${quizQuestions.length}`;
+
+      quizOptions.innerHTML = '';
+      quizFeedback.classList.remove('show');
+      quizFeedback.textContent = '';
+      quizNext.classList.remove('show');
+      answered = false;
+
+      q.opts.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-opt';
+        btn.textContent = opt;
+        btn.addEventListener('click', () => answerQuestion(btn, i, q));
+        quizOptions.appendChild(btn);
+      });
+    }
+
+    function answerQuestion(btn, index, q) {
+      if (answered) return;
+      answered = true;
+
+      const correct = index === q.correct;
+      if (correct) score++;
+
+      document.querySelectorAll('.quiz-opt').forEach((option, i) => {
+        option.disabled = true;
+        if (i === q.correct) option.classList.add('selected');
+        else if (option === btn && !correct) option.classList.add('wrong');
+      });
+
+      quizFeedback.textContent = q.feedback;
+      quizFeedback.classList.add('show');
+      quizNext.classList.add('show');
+      quizNext.textContent = currentQuestion < quizQuestions.length - 1 ? 'Siguiente →' : 'Ver resultado';
+    }
+
+    quizNext.addEventListener('click', () => {
+      currentQuestion++;
+      if (currentQuestion < quizQuestions.length) {
+        renderQuestion();
+      } else {
+        showResult();
+      }
+    });
+
+    function showResult() {
+      quizGame.classList.remove('active');
+      quizResult.classList.add('active');
+      resultScore.textContent = `${score} / ${quizQuestions.length}`;
+
+      const messages = [
+        "Hay situaciones que aún pueden confundirte. Revisa las definiciones y ejemplos antes de seguir.",
+        "Vas bien, pero algunas situaciones del entorno laboral vale la pena repasarlas con más calma.",
+        "Muy bien. Identificas la mayoría de los casos y señales clave.",
+        "Excelente. Tienes muy claro cómo reconocer acoso y discriminación en el trabajo."
+      ];
+
+      resultMsg.textContent = messages[Math.min(score, 3)];
+      quizRestart.classList.add('show');
+    }
+
+    quizRestart.addEventListener('click', () => {
+      currentQuestion = 0;
+      score = 0;
+      answered = false;
+      quizResult.classList.remove('active');
+      quizRestart.classList.remove('show');
+      quizStart.classList.add('active');
+    });
+  </script>
 </body>
 </html>
