@@ -1,406 +1,1156 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nosotros | Inchcape</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nosotros | Inchcape</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
-<style>
-:root {
-  --azul:#11243a;
-  --azul2:#1a3a5c;
-  --celeste:#3bd8ff;
-  --lila:#A561AB;
-  --blanco:#fff;
-  --off:#f5f7fa;
+  <style>
+    :root {
+      --azul:#11243a;
+      --azul2:#1a3a5c;
+      --celeste:#15BDE6;
+      --lila:#A561AB;
+      --verde:#9fd8b4;
+      --blanco:#fff;
+      --off:#f5f7fa;
+      --gris:#64748b;
+      --borde: rgba(17,36,58,.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family:'DM Sans',sans-serif;
+      background: var(--off);
+      color: var(--azul);
+    }
+
+/* NAVBAR */
+/* NAVBAR */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 34px;
+  height: 74px;
+  background: rgba(21,44,71,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
 }
 
-body {
-  margin:0;
-  font-family:'DM Sans',sans-serif;
-  background:var(--off);
-  color:var(--azul);
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
 }
 
-/* ═══════════════════════════════
-       NAVBAR
-    ═══════════════════════════════ */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 48px;
-      height: 76px;
-      background: rgba(21,44,71,0.97);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .nav-logo { display: flex; align-items: center; gap: 12px; }
+.nav-logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  padding: 10px 20px;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.14);
+  min-width: 150px;
+  min-height: 60px;
+}
 
-    /* ── LOGO NAVBAR GRANDE ── */
-    .nav-logo img {
-      height: 65px;
-      width: auto;
-      max-width: 230px;
-      border-radius: 4px;
-      object-fit: contain;
-    }
-    .nav-divider { width: 1px; height: 28px; background: rgba(255,255,255,0.2); }
-    .nav-tagline {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 14px; font-weight: 400;
-      color: var(--celeste); letter-spacing: 0.5px;
-    }
-    .nav-links { display: flex; align-items: center; gap: 32px; }
-    .nav-links a {
-      font-size: 14px; font-weight: 400;
-      color: rgba(255, 255, 255, 0.733);
-      text-decoration: none; letter-spacing: 0.3px;
-      transition: color .2s;
-    }
-    .nav-links a:hover { color: var(--blanco); }
-    .nav-cta {
-      background: var(--lila);
-      color: var(--azul) !important;
-      font-weight: 500 !important;
-      padding: 8px 20px; border-radius: 6px;
-      transition: opacity .2s !important;
-    }
-    .nav-cta:hover { opacity: .88; }
- /* ═══════════════════════════════
-       FOOTER DYNAMIC
-    ═══════════════════════════════ */
-    .footer { background: var(--azul) !important; padding: 0 !important; }
-
-    .footer-cta {
-      background: linear-gradient(135deg, rgba(165,97,171,.85), rgba(165,97,171,.7)) !important;
-      border: none !important; margin: 0 !important;
-      padding: 40px 48px !important;
-      display: flex !important; justify-content: space-between !important;
-      align-items: center !important; gap: 40px !important;
-    }
-    .footer-cta .cta-text { flex: 1; }
-    .footer-cta .cta-text h3 { color: var(--blanco) !important; font-size: 22px !important; margin-bottom: 8px !important; letter-spacing: -0.2px !important; }
-    .footer-cta .cta-text p { color: rgba(255,255,255,.85) !important; font-size: 14px !important; }
-    .cta-button {
-      background: var(--blanco) !important; color: var(--lila) !important;
-      font-weight: 700 !important; padding: 12px 24px !important;
-      border-radius: 6px !important; white-space: nowrap !important; flex-shrink: 0 !important;
-    }
-    .cta-button:hover { background: rgba(255,255,255,.9) !important; }
-
-    .footer-contact { background: rgba(21,189,230,.08) !important; padding: 28px 48px !important; border-bottom: 1px solid rgba(21,189,230,.15) !important; }
-    .contact-title { color: rgba(255,255,255,.5) !important; font-size: 10px !important; font-weight: 700 !important; letter-spacing: 1.5px !important; text-transform: uppercase !important; margin-bottom: 20px !important; }
-    .contact-grid { display: grid !important; grid-template-columns: repeat(4,1fr) !important; gap: 24px !important; max-width: 1100px !important; margin: 0 auto !important; }
-    .contact-item { display: flex !important; gap: 12px !important; align-items: flex-start !important; }
-    .contact-icon { font-size: 24px !important; flex-shrink: 0 !important; }
-    .contact-item strong { color: var(--blanco) !important; font-size: 13px !important; display: block !important; }
-    .contact-item p { color: rgba(255,255,255,.6) !important; font-size: 11px !important; margin-top: 2px !important; }
-
-    .footer-main {
-      max-width: 1100px !important; margin: 0 auto !important;
-      display: grid !important; grid-template-columns: 2fr 1fr 1fr 1fr !important;
-      gap: 48px !important; padding: 48px !important;
-      border-bottom: 1px solid rgba(255,255,255,.08) !important;
-    }
-    .footer-brand { display: flex !important; flex-direction: column !important; gap: 12px !important; }
-
-   /* ── LOGO FOOTER GRANDE — sin filter que lo oculte ── */
-    .nav-logo img,
-.footer-logo {
-  border-radius: 4px;
+.nav-logo img {
+  height: 46px;
+  width: auto;
+  max-width: 140px;
+  display: block;
   object-fit: contain;
-  background: white;
-  padding: 4px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-    .brand-tagline { color: var(--celeste) !important; font-size: 12px !important; font-weight: 500 !important; }
-    .brand-desc { color: rgba(255,255,255,.6) !important; font-size: 12px !important; line-height: 1.6 !important; margin: 8px 0 !important; }
-    .social-links { display: flex !important; gap: 8px !important; margin-top: 8px !important; }
-    .social-links a {
-      width: 28px !important; height: 28px !important; border-radius: 6px !important;
-      background: rgba(255,255,255,.08) !important; color: rgba(255,255,255,.5) !important;
-      display: flex !important; align-items: center !important; justify-content: center !important;
-      font-size: 11px !important; font-weight: 600 !important;
-      text-decoration: none !important; transition: all .2s !important;
-    }
-    .social-links a:hover { background: var(--celeste) !important; color: var(--azul) !important; }
-    .verified-badge {
-      background: rgba(21,189,230,.15) !important; border: 1px solid rgba(21,189,230,.3) !important;
-      border-radius: 6px !important; padding: 8px 12px !important;
-      color: var(--celeste) !important; font-size: 10px !important; line-height: 1.5 !important; margin-top: 8px !important;
-    }
+.nav-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(255,255,255,0.22);
+}
 
-    .footer-links { display: flex !important; flex-direction: column !important; gap: 8px !important; }
-    .footer-links h4 { color: var(--blanco) !important; font-size: 13px !important; font-weight: 600 !important; margin-bottom: 12px !important; }
-    .footer-links a {
-      color: rgba(255,255,255,.55) !important; font-size: 12px !important;
-      text-decoration: none !important; transition: color .2s !important;
-      display: inline-flex !important; gap: 6px !important; align-items: center !important;
-    }
-    .footer-links a:hover { color: var(--celeste) !important; }
-    .badge { background: rgba(165,97,171,.2) !important; color: var(--lila) !important; font-size: 9px !important; padding: 2px 6px !important; border-radius: 4px !important; font-weight: 600 !important; }
+.nav-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--celeste);
+  letter-spacing: 0.2px;
+}
 
-    .footer-conf {
-      background: rgba(165,97,171,.12) !important;
-      border-top: 1px solid rgba(165,97,171,.2) !important; border-bottom: 1px solid rgba(165,97,171,.2) !important;
-      color: rgba(255,255,255,.85) !important; padding: 24px 48px !important;
-      display: flex !important; gap: 16px !important; align-items: flex-start !important;
-    }
-    .conf-icon { font-size: 20px !important; flex-shrink: 0 !important; }
-    .conf-text strong { display: block !important; color: var(--blanco) !important; margin-bottom: 4px !important; font-size: 13px !important; }
-    .conf-text p { font-size: 12px !important; line-height: 1.6 !important; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
 
-    .footer-bottom {
-      background: rgba(0,0,0,.2) !important; padding: 16px 48px !important;
-      max-width: 100% !important; margin: 0 auto !important;
-      display: flex !important; justify-content: space-between !important;
-      align-items: center !important; flex-wrap: wrap !important; gap: 16px !important;
-    }
-    .footer-copy { color: rgba(255,255,255,.4) !important; font-size: 11px !important; }
-    .footer-links-bottom { display: flex !important; gap: 16px !important; flex-wrap: wrap !important; }
-    .footer-links-bottom a { color: rgba(255,255,255,.35) !important; font-size: 11px !important; text-decoration: none !important; transition: color .2s !important; }
-    .footer-links-bottom a:hover { color: var(--celeste) !important; }
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.78);
+  text-decoration: none;
+  transition: color .2s ease, opacity .2s ease;
+}
 
-/* SECCIONES */
+.nav-links a:hover {
+  color: var(--blanco);
+}
+
+.nav-cta {
+  background: var(--lila);
+  color: var(--blanco) !important;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 700 !important;
+  box-shadow: 0 8px 20px rgba(165,97,171,.25);
+}
+
+.nav-cta:hover {
+  opacity: .92;
+}
+
+@media (max-width: 900px) {
+  .site-nav {
+    padding: 0 18px;
+  }
+
+  .nav-tagline {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+ .nav-logo-box {
+  min-width: 128px;
+  min-height: 54px;
+  padding: 8px 14px;
+}
+
+.nav-logo img {
+  height: 38px;
+  max-width: 120px;
+}
+}
+
+@media (max-width: 640px) {
+  .site-nav {
+    height: auto;
+    padding: 14px 16px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+  }
+}
+/* HERO */
+.hero {
+  padding: 140px 24px 70px;
+  background: linear-gradient(135deg, #11243a 0%, #1a3a5c 100%);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(21,189,230,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21,189,230,.05) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--celeste);
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(36px, 5.4vw, 66px);
+  line-height: 1.02;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 20px;
+  line-height: 1.9;
+  color: rgba(255,255,255,.88);
+}
+
+/* CONTENEDOR GENERAL */
+.wrapper {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 70px 24px 90px;
+}
+
 .section {
-  max-width:1100px;
-  margin:120px auto;
-  padding:0 24px;
+  margin-bottom: 70px;
 }
 
-.section h2 {
-  font-family:'Syne';
-  font-size:28px;
-  margin-bottom:20px;
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 30px;
+  margin-bottom: 12px;
+  color: var(--azul);
+}
+.section-desc {
+  color: var(--gris);
+  line-height: 1.9;
+  margin-bottom: 34px;
+  max-width: 760px;
+  font-size: 16px;
 }
 
-/* GRID */
+
+/* GRID POLÍTICAS */
 .grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-/* CARDS */
 .card {
-  background:white;
-  border-radius:14px;
-  padding:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
-  transition:.3s;
-  opacity:0;
-  transform:translateY(30px);
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+  border: 1px solid rgba(17,36,58,.07);
+  border-radius: 22px;
+  padding: 24px 22px 22px;
+  box-shadow: 0 16px 34px rgba(17,36,58,.06);
+  opacity: 0;
+  transform: translateY(24px);
+  transition: transform .3s ease, box-shadow .3s ease, opacity .45s ease;
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--celeste), var(--lila));
+  opacity: .9;
 }
 
 .card:hover {
-  transform:translateY(-6px);
-  box-shadow:0 20px 40px rgba(0,0,0,.12);
+  transform: translateY(-6px);
+  box-shadow: 0 22px 42px rgba(17,36,58,.10);
 }
 
-/* PROGRESS */
-.progress {
-  background:#ddd;
-  border-radius:10px;
-  overflow:hidden;
-  height:10px;
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
+
+.card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  line-height: 1.2;
+  margin: 16px 0 12px;
+  color: var(--azul);
+}
+
+.card p {
+  font-size: 15px;
+  color: #526072;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.meta {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  font-size: 14px;
+  color: #334155;
+  padding-top: 12px;
+  border-top: 1px solid rgba(17,36,58,.08);
+}
+
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.tag.vigente {
+  background: rgba(21,189,230,.14);
+  color: #0b7f9a;
+  border: 1px solid rgba(21,189,230,.18);
+}
+
+.tag.activo {
+  background: rgba(165,97,171,.15);
+  color: #7e3d84;
+  border: 1px solid rgba(165,97,171,.18);
+}
+
+.tag.formacion {
+  background: rgba(159,216,180,.25);
+  color: #2f6b4f;
+  border: 1px solid rgba(159,216,180,.35);
+}
+
+/* CAPACITACIONES */
+.cap-list {
+  display: grid;
+  gap: 18px;
+}
+
+.cap-item {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+  border: 1px solid rgba(17,36,58,.07);
+  border-radius: 20px;
+  padding: 22px 22px 20px;
+  box-shadow: 0 14px 30px rgba(17,36,58,.05);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform .3s ease, box-shadow .3s ease, opacity .45s ease;
+}
+.cap-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 38px rgba(17,36,58,.09);
+}
+
+.cap-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cap-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 10px;
+}
+
+.cap-top h3 {
+  font-size: 19px;
+  color: var(--azul);
+  line-height: 1.25;
+  font-family: 'Syne', sans-serif;
+}
+
+.cap-top span {
+  font-weight: 800;
+  color: var(--lila);
+  font-size: 15px;
+  background: rgba(165,97,171,.10);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.cap-item p {
+  color: var(--gris);
+  margin-bottom: 12px;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.progress {
+  width: 100%;
+  height: 12px;
+  background: #e8edf3;
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
+}
+
 .progress-bar {
-  height:100%;
-  width:0;
-  background:linear-gradient(90deg,var(--lila),var(--celeste));
-  transition:width 1.2s ease;
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--celeste), var(--lila));
+  transition: width 1.2s ease;
+  box-shadow: 0 4px 10px rgba(21,189,230,.22);
 }
 
 /* TIMELINE */
 .timeline {
-  border-left:3px solid var(--lila);
-  padding-left:20px;
+  display: grid;
+  gap: 22px;
 }
+
 .timeline-item {
-  margin-bottom:25px;
-  opacity:0;
-  transform:translateY(20px);
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 20px;
+  align-items: start;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: .45s ease;
 }
+
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.year {
+  font-family: 'Syne', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--azul);
+  padding-top: 12px;
+}
+
+.timeline-box {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+  border-radius: 18px;
+  padding: 20px;
+  border-left: 5px solid var(--celeste);
+  box-shadow: 0 14px 28px rgba(17,36,58,.05);
+}
+.timeline-box:hover {
+  box-shadow: 0 18px 36px rgba(17,36,58,.09);
+}
+
+.timeline-box h3 {
+  font-size: 19px;
+  margin-bottom: 10px;
+  font-family: 'Syne', sans-serif;
+  line-height: 1.25;
+}
+
+.timeline-box p {
+  color: var(--gris);
+  line-height: 1.7;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
 .status {
-  font-size:12px;
-  padding:4px 10px;
-  border-radius:20px;
-}
-.ok { background:#d1fae5; }
-.active { background:#dbeafe; }
-.progressing { background:#fef3c7; }
-
-/* LISTAS */
-.list div {
-  background:white;
-  padding:15px;
-  border-radius:10px;
-  margin-bottom:10px;
-  transition:.2s;
-}
-.list div:hover {
-  background:var(--azul);
-  color:white;
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 6px 11px;
+  border-radius: 999px;
+  letter-spacing: .2px;
 }
 
-/* ANIMACIÓN */
-.show {
-  opacity:1 !important;
-  transform:translateY(0) !important;
+.status.ok {
+  background: #d1fae5;
+  color: #166534;
+}
+
+.status.active {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status.progressing {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* COMPROMISOS */
+.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.mini-card {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1.5px solid rgba(21,189,230,.22);
+  border-radius: 18px;
+  padding: 22px 20px;
+  line-height: 1.8;
+  color: #23354a;
+  box-shadow: 0 12px 28px rgba(17,36,58,.05);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease, opacity .45s ease;
+  overflow: hidden;
+}
+.mini-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--celeste), var(--lila));
+}
+
+.mini-card::after {
+  content: "✓";
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 16px;
+  font-weight: 800;
+  color: rgba(165,97,171,.35);
+}
+
+.mini-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 38px rgba(17,36,58,.10);
+  border-color: rgba(165,97,171,.35);
+}
+
+.mini-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MEDIDAS */
+.medidas {
+  position: relative;
+  background: linear-gradient(135deg, #11243a 0%, #183454 100%);
+  color: white;
+  border-radius: 24px;
+  padding: 34px 30px;
+  box-shadow: 0 20px 42px rgba(17,36,58,.18);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform .3s ease, box-shadow .3s ease, opacity .45s ease;
+  overflow: hidden;
+}
+.medidas::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(165,97,171,.25) 0%, transparent 70%);
+}
+
+.medidas:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(17,36,58,.22);
+}
+
+.medidas.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.medidas h3 {
+  position: relative;
+  z-index: 2;
+  font-family: 'Syne', sans-serif;
+  font-size: 24px;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.medidas p {
+  position: relative;
+  z-index: 2;
+  line-height: 1.9;
+  margin-bottom: 18px;
+  color: rgba(255,255,255,.92);
+  font-size: 15px;
+  max-width: 820px;
+}
+
+.medidas ul {
+  position: relative;
+  z-index: 2;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.medidas li {
+  line-height: 1.7;
+  color: rgba(255,255,255,.88);
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 12px 14px;
+  border-radius: 12px;
+}
+
+/* RESPONSIVE CONTENIDO */
+@media (max-width: 900px) {
+  .grid,
+  .mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 120px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+}
+    /* FOOTER */
+.footer {
+  background: linear-gradient(135deg, #0f1f33, #152c47);
+  color: #eaf2ff;
+  margin-top: 40px;
+}
+
+.footer-main {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 56px 24px 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 34px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-logo {
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+}
+
+.brand-tagline {
+  color: var(--celeste);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.brand-desc {
+  color: rgba(255,255,255,.72);
+  font-size: 13px;
+  line-height: 1.7;
+  max-width: 320px;
+}
+
+.social-links {
+  display: flex;
+  gap: 8px;
+}
+
+.social-links a {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,.08);
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  transition: .25s ease;
+}
+
+.social-links a:hover {
+  background: var(--celeste);
+  color: var(--azul);
+}
+
+.verified-badge {
+  background: rgba(21,189,230,.12);
+  border: 1px solid rgba(21,189,230,.28);
+  color: var(--celeste);
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 11px;
+  line-height: 1.6;
+  width: fit-content;
+}
+
+.footer-links h4 {
+  color: white;
+  font-size: 15px;
+  margin-bottom: 14px;
+  font-family: 'Syne', sans-serif;
+}
+
+.footer-links a {
+  display: block;
+  color: rgba(255,255,255,.7);
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 8px;
+  transition: .2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--celeste);
+}
+
+.footer-conf {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.conf-icon {
+  font-size: 20px;
+}
+
+.conf-text strong {
+  display: block;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.conf-text p {
+  color: rgba(255,255,255,.75);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.footer-bottom {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 18px 24px 28px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-copy {
+  color: rgba(255,255,255,.55);
+  font-size: 12px;
+}
+
+.footer-links-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.footer-links-bottom a {
+  color: rgba(255,255,255,.55);
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.footer-links-bottom a:hover {
+  color: var(--celeste);
 }
 
 
-</style>
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-conf,
+  .footer-bottom {
+    flex-direction: column;
+  }
+
+  .footer-logo {
+    width: 150px;
+  }
+
+}
+.section {
+  position: relative;
+  margin-bottom: 84px;
+}
+
+.section:not(:last-of-type)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -42px;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(17,36,58,0) 0%,
+    rgba(17,36,58,.08) 20%,
+    rgba(17,36,58,.08) 80%,
+    rgba(17,36,58,0) 100%
+  );
+}
+
+.card,
+.cap-item,
+.timeline-box,
+.mini-card,
+.medidas {
+  will-change: transform, box-shadow;
+}
+
+.card:hover h3,
+.timeline-box:hover h3,
+.cap-item:hover h3 {
+  color: var(--azul2);
+}
+
+.section-title::before {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--celeste), var(--lila));
+  margin-bottom: 14px;
+}
+
+.wrapper {
+  padding-bottom: 110px;
+}
+
+.medidas {
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .section {
+    margin-bottom: 72px;
+  }
+
+  .section:not(:last-of-type)::after {
+    bottom: -34px;
+  }
+
+  .section-title::before {
+    width: 44px;
+    margin-bottom: 12px;
+  }
+}
+  </style>
 </head>
-
 <body>
 
-    <!-- NAVBAR DINÁMICO -->
-<div id="navbar-container"></div>
+  <div id="navbar-container"></div>
 
-<!-- POLITICAS -->
-<section class="section">
-<h2>Políticas implementadas</h2>
-<div class="grid">
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">Nosotros</span>
+      <h1>Lo que estamos haciendo en Inchcape</h1>
+      <p>
+        El respeto en el trabajo se construye con acciones concretas. Por eso impulsamos
+        políticas claras, formación continua, compromisos visibles y medidas de actuación
+        frente al acoso y la discriminación.
+      </p>
+    </div>
+  </section>
 
-<div class="card">Respeto laboral<br><small>Ley 27942 • Activa • 2022</small></div>
-<div class="card">Protocolo anti acoso<br><small>DS 014 • Activa • 2023</small></div>
-<div class="card">Igualdad laboral<br><small>Ley 28983 • Activa • 2022</small></div>
-<div class="card">Canales confidenciales<br><small>Datos • Activa • 2024</small></div>
-<div class="card">Comité convivencia<br><small>MTPE • Activo • 2023</small></div>
-<div class="card">Inclusión<br><small>En mejora • 2025</small></div>
+  <main class="wrapper">
+    <section class="section">
+      <h2 class="section-title">1. Políticas implementadas</h2>
+      <p class="section-desc">
+        Presentamos seis lineamientos clave que fortalecen una cultura organizacional más segura,
+        inclusiva y respetuosa, indicando su base legal, estado actual y año de vigencia.
+      </p>
 
-</div>
-</section>
+      <div class="grid">
+        <article class="card">
+          <span class="tag vigente">Vigente</span>
+          <h3>Política de respeto laboral</h3>
+          <p>Promueve relaciones de trabajo basadas en trato digno, convivencia segura y cero tolerancia al maltrato.</p>
+          <ul class="meta">
+            <li><strong>Base legal:</strong> Ley N.° 27942</li>
+            <li><strong>Estado:</strong> Activa</li>
+            <li><strong>Vigencia:</strong> 2022</li>
+          </ul>
+        </article>
 
-<!-- CAPACITACIONES -->
-<section class="section">
-<h2>Capacitaciones</h2>
+        <article class="card">
+          <span class="tag vigente">Vigente</span>
+          <h3>Protocolo de prevención del acoso</h3>
+          <p>Define conductas prohibidas, procedimientos de atención y mecanismos de actuación ante denuncias.</p>
+          <ul class="meta">
+            <li><strong>Base legal:</strong> D.S. 014-2019-MIMP</li>
+            <li><strong>Estado:</strong> Activa</li>
+            <li><strong>Vigencia:</strong> 2023</li>
+          </ul>
+        </article>
 
-<div class="card">
-Prevención del acoso
-<div class="progress"><div class="progress-bar" data-width="80%"></div></div>
-</div>
+        <article class="card">
+          <span class="tag vigente">Vigente</span>
+          <h3>Política de igualdad de oportunidades</h3>
+          <p>Busca garantizar un trato equitativo en el acceso, permanencia y desarrollo del talento.</p>
+          <ul class="meta">
+            <li><strong>Base legal:</strong> Ley N.° 28983</li>
+            <li><strong>Estado:</strong> Activa</li>
+            <li><strong>Vigencia:</strong> 2022</li>
+          </ul>
+        </article>
 
-<div class="card">
-Liderazgo inclusivo
-<div class="progress"><div class="progress-bar" data-width="65%"></div></div>
-</div>
+        <article class="card">
+          <span class="tag activo">Activa</span>
+          <h3>Canales confidenciales de orientación</h3>
+          <p>Facilitan la derivación segura de casos y el acompañamiento respetuoso de los colaboradores.</p>
+          <ul class="meta">
+            <li><strong>Base legal:</strong> Protección de datos</li>
+            <li><strong>Estado:</strong> Activa</li>
+            <li><strong>Vigencia:</strong> 2024</li>
+          </ul>
+        </article>
 
-<div class="card">
-Derechos laborales
-<div class="progress"><div class="progress-bar" data-width="90%"></div></div>
-</div>
+        <article class="card">
+          <span class="tag activo">Activo</span>
+          <h3>Comité de convivencia y seguimiento</h3>
+          <p>Refuerza la revisión de casos, el monitoreo interno y la mejora continua de las acciones preventivas.</p>
+          <ul class="meta">
+            <li><strong>Base legal:</strong> Normativa laboral interna</li>
+            <li><strong>Estado:</strong> Activo</li>
+            <li><strong>Vigencia:</strong> 2023</li>
+          </ul>
+        </article>
 
-</section>
+        <article class="card">
+          <span class="tag formacion">En mejora</span>
+          <h3>Lineamientos de inclusión</h3>
+          <p>Fortalecen el liderazgo respetuoso, la representación equitativa y la prevención de sesgos en el entorno laboral.</p>
+          <ul class="meta">
+            <li><strong>Base legal:</strong> Igualdad laboral</li>
+            <li><strong>Estado:</strong> En mejora</li>
+            <li><strong>Vigencia:</strong> 2025</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-<!-- AVANCES -->
-<section class="section">
-<h2>Avances</h2>
+    <section class="section">
+      <h2 class="section-title">2. Capacitaciones</h2>
+      <p class="section-desc">
+        Desarrollamos programas de formación para reforzar la prevención, la identificación de conductas de riesgo
+        y la actuación responsable de líderes y colaboradores.
+      </p>
 
-<div class="timeline">
-<div class="timeline-item">2022 Implementación <span class="status ok">Completado</span></div>
-<div class="timeline-item">2023 Capacitaciones <span class="status ok">Completado</span></div>
-<div class="timeline-item">2024 Mejora canales <span class="status active">Activo</span></div>
-<div class="timeline-item">2025 Cultura inclusiva <span class="status progressing">En formación</span></div>
-</div>
+      <div class="cap-list">
+        <div class="cap-item">
+          <div class="cap-top">
+            <h3>Prevención del acoso laboral</h3>
+            <span>80%</span>
+          </div>
+          <p>Dirigido a personal operativo, administrativo y equipos de soporte.</p>
+          <div class="progress"><div class="progress-bar" data-width="80%"></div></div>
+        </div>
 
-</section>
+        <div class="cap-item">
+          <div class="cap-top">
+            <h3>Liderazgo inclusivo</h3>
+            <span>65%</span>
+          </div>
+          <p>Dirigido a jefaturas, coordinadores y líderes de equipo.</p>
+          <div class="progress"><div class="progress-bar" data-width="65%"></div></div>
+        </div>
 
-<!-- COMPROMISOS -->
-<section class="section">
-<h2>Compromisos</h2>
-<div class="list">
-<div>Cero tolerancia</div>
-<div>Confidencialidad</div>
-<div>Protección</div>
-<div>Capacitación continua</div>
-<div>Canales accesibles</div>
-<div>Evaluación constante</div>
-</div>
-</section>
+        <div class="cap-item">
+          <div class="cap-top">
+            <h3>Derechos laborales y rutas de atención</h3>
+            <span>90%</span>
+          </div>
+          <p>Dirigido a RR. HH., responsables de seguimiento y colaboradores clave.</p>
+          <div class="progress"><div class="progress-bar" data-width="90%"></div></div>
+        </div>
+      </div>
+    </section>
 
-<!-- CONSECUENCIAS -->
-<section class="section">
-<h2>Consecuencias</h2>
-<div class="list">
-<div>Amonestación</div>
-<div>Suspensión</div>
-<div>Despido</div>
-<div>Acción legal</div>
-</div>
-</section>
+    <section class="section">
+      <h2 class="section-title">3. Avances</h2>
+      <p class="section-desc">
+        Este timeline muestra hitos de implementación y fortalecimiento de la estrategia entre 2022 y 2025.
+      </p>
 
-<div id="footer-container"></div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="year">2022</div>
+          <div class="timeline-box">
+            <h3>Implementación inicial</h3>
+            <p>Se establecieron primeros lineamientos y mecanismos de sensibilización interna.</p>
+            <span class="status ok">Completado</span>
+          </div>
+        </div>
 
-<script>
-// NAVBAR + FOOTER
-fetch('../components/navbar.html')
-.then(r=>r.text())
-.then(d=>document.getElementById('navbar-container').innerHTML=d);
+        <div class="timeline-item">
+          <div class="year">2023</div>
+          <div class="timeline-box">
+            <h3>Capacitaciones internas</h3>
+            <p>Se ampliaron programas formativos y se reforzó el enfoque preventivo.</p>
+            <span class="status ok">Completado</span>
+          </div>
+        </div>
 
-fetch('../components/footer.html')
-.then(r=>r.text())
-.then(d=>document.getElementById('footer-container').innerHTML=d);
+        <div class="timeline-item">
+          <div class="year">2024</div>
+          <div class="timeline-box">
+            <h3>Mejora de canales y seguimiento</h3>
+            <p>Se fortalecieron rutas de orientación, derivación y visibilidad de recursos internos.</p>
+            <span class="status active">Activo</span>
+          </div>
+        </div>
 
-// ANIMACIONES
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.classList.add('show');
+        <div class="timeline-item">
+          <div class="year">2025</div>
+          <div class="timeline-box">
+            <h3>Cultura inclusiva y mejora continua</h3>
+            <p>Se proyecta consolidar una cultura organizacional más inclusiva y medible.</p>
+            <span class="status progressing">En formación</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      // barras
-      if(e.target.classList.contains('progress-bar')){
-        e.target.style.width = e.target.dataset.width;
-      }
-    }
-  });
-});
+    <section class="section">
+      <h2 class="section-title">4. Compromisos</h2>
+      <p class="section-desc">
+        Estos compromisos expresan la forma en que Inchcape busca sostener una cultura de respeto de manera permanente.
+      </p>
 
-document.querySelectorAll('.card, .timeline-item, .progress-bar').forEach(el=>{
-  observer.observe(el);
-});
-</script>
-</script>
-<!-- FOOTER DINÁMICO -->
-<div id="footer-container"></div>
+      <div class="mini-grid">
+        <div class="mini-card">Cero tolerancia frente al acoso y la discriminación.</div>
+        <div class="mini-card">Confidencialidad en el tratamiento de los casos.</div>
+        <div class="mini-card">Protección y acompañamiento a las personas afectadas.</div>
+        <div class="mini-card">Capacitación continua en prevención y convivencia.</div>
+        <div class="mini-card">Canales accesibles y seguros para orientación y derivación.</div>
+        <div class="mini-card">Evaluación constante y mejora de las acciones implementadas.</div>
+      </div>
+    </section>
 
-<script>
-  // NAVBAR
-  fetch('../components/navbar.html')
-    .then(r => r.text())
-    .then(html => {
-      document.getElementById('navbar-container').innerHTML = html;
+    <section class="section">
+      <h2 class="section-title">5. Consecuencias y medidas disciplinarias</h2>
+      <p class="section-desc">
+        Las conductas contrarias al respeto y la convivencia no son toleradas y pueden generar acciones correctivas y disciplinarias.
+      </p>
 
-      const nav = document.querySelector('nav');
-      if (nav) {
-        window.addEventListener('scroll', () => {
-          nav.style.background = window.scrollY > 40
-            ? 'rgba(21,44,71,0.99)'
-            : 'rgba(21,44,71,0.95)';
-          nav.style.boxShadow = window.scrollY > 40
-            ? '0 2px 24px rgba(0,0,0,.25)'
-            : 'none';
-        });
-      }
-    });
+      <div class="medidas">
+        <h3>Medidas aplicables según la gravedad del caso</h3>
+        <p>
+          Dependiendo de la evaluación interna y del proceso correspondiente, la organización puede activar distintas medidas
+          para proteger a la persona afectada, investigar el hecho y aplicar consecuencias proporcionales.
+        </p>
+        <ul>
+          <li>Amonestación formal.</li>
+          <li>Suspensión temporal.</li>
+          <li>Desvinculación por falta grave.</li>
+          <li>Derivación al canal o instancia legal correspondiente.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
-  // FOOTER
-  fetch('../components/footer.html')
-    .then(r => r.text())
-    .then(html => {
-      document.getElementById('footer-container').innerHTML = html;
+  <div id="footer-container"></div>
 
-      // Fix logo (igual que en index)
-      const footerImgs = document.querySelectorAll('.footer-brand img, .footer-logo');
-      footerImgs.forEach(img => {
-        img.style.filter = 'none';
-        img.style.width = '200px';
-        img.style.height = 'auto';
+  <script>
+    fetch('../components/navbar.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('navbar-container').innerHTML = html;
+
+        const nav = document.querySelector('.site-nav');
+        if (nav) {
+          window.addEventListener('scroll', () => {
+            nav.style.background = window.scrollY > 40
+              ? 'rgba(21,44,71,0.99)'
+              : 'rgba(21,44,71,0.97)';
+            nav.style.boxShadow = window.scrollY > 40
+              ? '0 2px 24px rgba(0,0,0,.25)'
+              : 'none';
+          });
+        }
       });
-    });
-</script>
+
+    fetch('../components/footer.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('footer-container').innerHTML = html;
+      });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+
+          if (entry.target.classList.contains('progress-bar')) {
+            entry.target.style.width = entry.target.dataset.width;
+          }
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.card, .cap-item, .timeline-item, .mini-card, .medidas, .progress-bar')
+      .forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
