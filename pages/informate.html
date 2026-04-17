@@ -119,10 +119,8 @@ nav {
   max-height: 72px !important;
   border-radius: 4px !important;
   object-fit: contain !important;
-  /* NO filter aquí — el logo tiene colores propios */
 }
 
-/* Override en caso de que el footer component use filter brightness(0) invert */
 .footer-brand img,
 .footer .footer-logo,
 .footer-logo {
@@ -143,21 +141,16 @@ nav {
   letter-spacing: -0.3px !important;
 }
 
-/* ─── FIX: secciones con texto muy estirado ─── */
 h2, .section-title, .sec-title {
   letter-spacing: -0.3px;
 }
 
-/* Específicamente el título "¿Viviste una situación..." */
 .comp-left h2 {
   letter-spacing: -0.2px !important;
   font-size: clamp(20px, 2.4vw, 30px) !important;
   line-height: 1.25 !important;
 }
 
-/* ═══════════════════════════════
-   QUIZ — rediseño compacto
-═══════════════════════════════ */
 
 /* Pantalla de inicio del quiz */
 .quiz-start-screen {
@@ -590,7 +583,7 @@ h2, .section-title, .sec-title {
     .footer-links a:hover { color: var(--celeste) !important; }
     .badge { background: rgba(165,97,171,.2) !important; color: var(--lila) !important; font-size: 9px !important; padding: 2px 6px !important; border-radius: 4px !important; font-weight: 600 !important; }
 
-    .footer-conf {
+     .footer-conf {
       background: rgba(165,97,171,.12) !important;
       border-top: 1px solid rgba(165,97,171,.2) !important; border-bottom: 1px solid rgba(165,97,171,.2) !important;
       color: rgba(255,255,255,.85) !important; padding: 24px 48px !important;
