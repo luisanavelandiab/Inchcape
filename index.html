@@ -26,7 +26,7 @@
       overflow-x: hidden;
     }
 
-    /* =========================
+  /* =========================
    NAVBAR GLOBAL INCHCAPE
 ========================= */
 .site-nav {
@@ -69,7 +69,7 @@
 .nav-logo-img {
   display: block;
   width: auto;
-  height: 60px;
+  height: 55px;
   max-width: 180px;
   object-fit: contain;
   background: transparent !important;
@@ -175,9 +175,9 @@
     padding: 8px 12px;
   }
 
-  .nav-logo-img {
-    height: 34px;
-    max-width: 120px;
+ .nav-logo-img {
+    height: 36px;
+    max-width: 128px;
   }
 }
     /* ═══════════════════════════════
@@ -253,12 +253,12 @@
     }
 
     .hero-title {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(34px, 5.5vw, 66px);
-      font-weight: 750;
+      font-family: 'Nunito';
+      font-size: clamp(40px, 5.5vw, 70px);
+      font-weight: 800;
       color: var(--blanco);
       line-height: 1;
-      letter-spacing: 2px; /* antes era -1px,(-0,5) más legible */
+      letter-spacing: 2px; 
       margin-bottom: 20px;
       animation: fadeUp .7s .2s ease both;
     }
@@ -472,7 +472,7 @@
       gap: 40px; position: relative; z-index: 2;
     }
     .comp-left h2 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Nunito';
       font-size: clamp(20px, 2.4vw, 30px); /* reducido para que no se vea tan alargado */
       font-weight: 800; color: var(--azul);
       line-height: 1.25; margin-bottom: 10px;
@@ -574,15 +574,17 @@
     .footer-brand { display: flex !important; flex-direction: column !important; gap: 12px !important; }
 
     /* ── LOGO FOOTER GRANDE — sin filter que lo oculte ── */
-    .nav-logo img,
 .footer-logo {
-  border-radius: 4px;
-  object-fit: contain;
-  background: white;
-  padding: 4px;
-}
+      width: 180px;
+      height: auto;
+      object-fit: contain;
+      background: #fff;
+      padding: 8px 12px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.15);
+    }
 
-    .brand-tagline { color: var(--celeste) !important; font-size: 12px !important; font-weight: 500 !important; }
+    .brand-tagline { color: var(--celeste) !important; font-size: 15px !important; font-weight: 500 !important; }
     .brand-desc { color: rgba(255,255,255,.6) !important; font-size: 12px !important; line-height: 1.6 !important; margin: 8px 0 !important; }
     .social-links { display: flex !important; gap: 8px !important; margin-top: 8px !important; }
     .social-links a {
@@ -966,51 +968,13 @@
     Reportar ahora
   </button>
 
-  <script>
-    fetch('../components/navbar.html')
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById('navbar-container').innerHTML = html;
-        const nav = document.querySelector('nav');
-        if (nav) {
-          window.addEventListener('scroll', () => {
-            nav.style.background = window.scrollY > 40
-              ? 'rgba(21,44,71,0.99)'
-              : 'rgba(21,44,71,0.97)';
-            nav.style.boxShadow = window.scrollY > 40
-              ? '0 2px 24px rgba(0,0,0,.25)'
-              : 'none';
-          });
-        }
-      });
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.style.opacity = '1';
-          e.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.prop-card, .cifra-card, .sec-card').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(28px)';
-      el.style.transition = 'opacity .5s ease, transform .5s ease';
-      observer.observe(el);
-    });
-  </script>
-
   <!-- Footer dinámico -->
   <div id="footer-container"></div>
 <script>
-  fetch('../components/navbar.html')
+  fetch('components/navbar.html')
     .then(r => r.text())
     .then(html => {
       document.getElementById('navbar-container').innerHTML = html;
-
-      const path = window.location.pathname;
-      const repoBase = path.includes('/Inchcape/') ? '/Inchcape' : '';
 
       const logo = document.getElementById('navLogoImg');
       const home = document.getElementById('navHomeLink');
@@ -1019,12 +983,12 @@
       const nosotros = document.getElementById('navNosotros');
       const reportar = document.getElementById('navReportar');
 
-      if (logo) logo.src = `${repoBase}/assets/images/logo.png`;
-      if (home) home.href = `${repoBase}/index.html`;
-      if (inicio) inicio.href = `${repoBase}/index.html`;
-      if (informate) informate.href = `${repoBase}/pages/informate.html`;
-      if (nosotros) nosotros.href = `${repoBase}/pages/nosotros.html`;
-      if (reportar) reportar.href = `${repoBase}/pages/reportar.html`;
+      if (logo) logo.src = 'assets/images/logo.jpg';
+      if (home) home.href = 'index.html';
+      if (inicio) inicio.href = 'index.html';
+      if (informate) informate.href = 'pages/informate.html';
+      if (nosotros) nosotros.href = 'pages/nosotros.html';
+      if (reportar) reportar.href = 'pages/reportar.html';
 
       const nav = document.querySelector('.site-nav');
       if (nav) {
@@ -1034,24 +998,16 @@
             : 'rgba(21,44,71,0.97)';
           nav.style.boxShadow = window.scrollY > 40
             ? '0 2px 24px rgba(0,0,0,.25)'
-            : 'none';
+            : '0 10px 24px rgba(0,0,0,.08)';
         });
       }
     });
+
+  fetch('components/footer.html')
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById('footer-container').innerHTML = html;
+    });
 </script>
-  <script>
-    fetch('../components/footer.html')
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById('footer-container').innerHTML = html;
-        // Fix logo del footer: quitar filter que lo hace invisible
-        const footerImgs = document.querySelectorAll('.footer-brand img, .footer-logo');
-        footerImgs.forEach(img => {
-          img.style.filter = 'none';
-          img.style.width = '200px';
-          img.style.height = 'auto';
-        });
-      });
-  </script>
 </body>
 </html>

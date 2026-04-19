@@ -28,6 +28,8 @@ body {
   background: var(--blanco);
   color: var(--azul);
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 /* ─── HERO ─── */
@@ -62,12 +64,12 @@ body {
 }
 
 .hero-title {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(32px, 5.5vw, 64px);
+  font-family: 'Nunito ';
+  font-size: clamp(40px, 5.5vw, 70px);
   font-weight: 800;
-  color: white;
-  line-height: 1.08;
-  letter-spacing: -1.5px;
+  color: var(--blanco);
+  line-height: 1;
+  letter-spacing: 2px;
 }
 
 /* ─── PROPÓSITO ─── */
@@ -205,9 +207,12 @@ body {
 
 /* ── LOGO MÁS GRANDE ── */
 .footer-logo {
-  width: 180px;
   filter: brightness(1.2);
-  border-radius: 6px;
+  border-radius: 8px;
+   display: block;
+  width: auto;
+  height: 55px;
+  max-width: 180px;
 }
 
 .footer-brand p { font-size: .85rem; opacity: .7; }
@@ -297,7 +302,7 @@ body {
 
 /* ── LOGO NAVBAR MÁS GRANDE ── */
 .nav-logo img {
-      height: 60px;
+      height: 55px;
       width: auto;
       max-width: 230px;
       border-radius: 4px;
@@ -1326,8 +1331,8 @@ body {
 .nav-logo-img {
   display: block;
   width: auto;
-  height: 42px;
-  max-width: 150px;
+  height: 55px;
+  max-width: 180px;
   object-fit: contain;
   background: transparent !important;
   filter: none !important;
@@ -1433,7 +1438,7 @@ body {
   }
 
   .nav-logo-img {
-    height: 34px;
-    max-width: 120px;
+    height: 36px;
+    max-width: 128px;
   }
 }

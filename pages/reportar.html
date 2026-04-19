@@ -75,7 +75,7 @@
   display: block;
   width: auto;
   height: 60px;
-  max-width: 150px;
+  max-width: 180px;
   object-fit: contain;
   background: transparent !important;
   filter: none !important;
@@ -111,9 +111,7 @@
   transition: color .2s ease, opacity .2s ease;
 }
 
-.nav-links a:hover {
-  color: #ffffff;
-}
+.nav-links a:hover { color: #ffffff; }
 
 .nav-cta {
   background: #A561AB;
@@ -124,66 +122,22 @@
   box-shadow: 0 8px 20px rgba(165,97,171,.25);
 }
 
-.nav-cta:hover {
-  opacity: .92;
-}
+.nav-cta:hover { opacity: .92; }
 
-/* Responsive */
 @media (max-width: 900px) {
-  .site-nav {
-    padding: 0 18px;
-    height: 72px;
-  }
-
-  .nav-tagline {
-    display: none;
-  }
-
-  .nav-links {
-    gap: 14px;
-  }
-
-  .nav-links a {
-    font-size: 13px;
-  }
-
-  .nav-logo-box {
-    min-width: 112px;
-    min-height: 52px;
-    padding: 8px 14px;
-  }
-
-  .nav-logo-img {
-    height: 36px;
-    max-width: 128px;
-  }
+  .site-nav { padding: 0 18px; height: 72px; }
+  .nav-tagline { display: none; }
+  .nav-links { gap: 14px; }
+  .nav-links a { font-size: 13px; }
+  .nav-logo-box { min-width: 112px; min-height: 52px; padding: 8px 14px; }
+  .nav-logo-img { height: 36px; max-width: 128px; }
 }
 
 @media (max-width: 640px) {
-  .site-nav {
-    height: auto;
-    padding: 14px 16px;
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 10px 14px;
-  }
-
-  .nav-logo-box {
-    min-width: 108px;
-    min-height: 50px;
-    padding: 8px 12px;
-  }
-
-  .nav-logo-img {
-    height: 34px;
-    max-width: 120px;
-  }
+  .site-nav { height: auto; padding: 14px 16px; flex-direction: column; gap: 12px; align-items: flex-start; }
+  .nav-links { width: 100%; flex-wrap: wrap; gap: 10px 14px; }
+  .nav-logo-box { min-width: 108px; min-height: 50px; padding: 8px 12px; }
+  .nav-logo-img { height: 34px; max-width: 120px; }
 }
 
     /* HERO */
@@ -224,7 +178,7 @@
     }
 
     .hero h1 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Nunito';
       font-size: clamp(36px, 5.2vw, 64px);
       line-height: 1.04;
       margin-bottom: 20px;
@@ -323,10 +277,113 @@
 
     .progress-bar {
       height: 100%;
-      width: 25%;
+      width: 0%;
       border-radius: 999px;
       background: linear-gradient(90deg, var(--celeste), var(--lila));
       transition: width .35s ease;
+    }
+
+    /* ========================
+       DISCLAIMER SCREEN
+    ======================== */
+    #disclaimerScreen {
+      animation: fadeUp .3s ease;
+    }
+
+    .disclaimer-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(21,189,230,.12), rgba(165,97,171,.12));
+      border: 1px solid rgba(21,189,230,.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .disclaimer-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      color: var(--azul);
+      margin-bottom: 16px;
+    }
+
+    .disclaimer-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 20px 0 24px;
+    }
+
+    .disclaimer-card {
+      background: var(--off);
+      border: 1px solid rgba(17,36,58,.08);
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .disclaimer-card .dc-icon {
+      font-size: 22px;
+    }
+
+    .disclaimer-card strong {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--azul);
+      display: block;
+    }
+
+    .disclaimer-card span {
+      font-size: 12px;
+      color: var(--gris);
+      line-height: 1.5;
+    }
+
+    .disclaimer-note {
+      font-size: 13px;
+      color: var(--gris);
+      line-height: 1.7;
+      background: rgba(21,189,230,.06);
+      border: 1px solid rgba(21,189,230,.14);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 24px;
+    }
+
+    .btn-start {
+      background: linear-gradient(135deg, var(--lila), #8a3f8f);
+      color: white;
+      border: none;
+      border-radius: 14px;
+      padding: 15px 32px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 28px rgba(165,97,171,.28);
+      transition: transform .15s, box-shadow .15s;
+    }
+
+    .btn-start:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(165,97,171,.38);
+    }
+
+    .btn-start-arrow {
+      font-size: 18px;
+      transition: transform .2s;
+    }
+
+    .btn-start:hover .btn-start-arrow {
+      transform: translateX(4px);
     }
 
     /* STEPS */
@@ -432,6 +489,104 @@
       border: 1px solid rgba(17,36,58,.12);
     }
 
+    /* ========================
+       LOADING ANIMATION
+    ======================== */
+    #loadingScreen {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+      animation: fadeUp .3s ease;
+    }
+
+    .loading-orb {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      margin: 0 auto 24px;
+      position: relative;
+    }
+
+    .loading-orb::before,
+    .loading-orb::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+    }
+
+    .loading-orb::before {
+      border: 3px solid rgba(21,189,230,.15);
+    }
+
+    .loading-orb::after {
+      border: 3px solid transparent;
+      border-top-color: var(--celeste);
+      border-right-color: var(--lila);
+      animation: spin 1s linear infinite;
+    }
+
+    .loading-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .loading-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--lila);
+      animation: dotBounce 1.2s infinite ease-in-out;
+    }
+
+    .loading-dot:nth-child(2) { animation-delay: .2s; background: var(--celeste); }
+    .loading-dot:nth-child(3) { animation-delay: .4s; background: var(--lila); }
+
+    @keyframes dotBounce {
+      0%, 80%, 100% { transform: scale(0.7); opacity: .5; }
+      40% { transform: scale(1.1); opacity: 1; }
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .loading-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      color: var(--azul);
+      margin-bottom: 8px;
+    }
+
+    .loading-sub {
+      font-size: 13px;
+      color: var(--gris);
+    }
+
+    .loading-bar-wrap {
+      width: 240px;
+      height: 4px;
+      background: #e8edf3;
+      border-radius: 999px;
+      margin: 20px auto 0;
+      overflow: hidden;
+    }
+
+    .loading-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--celeste), var(--lila));
+      animation: loadFill 1.8s ease forwards;
+    }
+
+    @keyframes loadFill {
+      0% { width: 0%; }
+      60% { width: 75%; }
+      100% { width: 100%; }
+    }
+
     /* RESULT */
     .result-box {
       display: none;
@@ -500,6 +655,7 @@
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
+      align-items: center;
     }
 
     .result-link {
@@ -523,6 +679,44 @@
       background: white;
       color: var(--azul);
       border: 1px solid rgba(17,36,58,.12);
+    }
+
+    /* ETHICSPOINT BUTTON */
+    .ethics-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--lila), #8a3f8f);
+      color: white;
+      text-decoration: none;
+      border-radius: 14px;
+      padding: 14px 24px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 10px 28px rgba(165,97,171,.30);
+      transition: transform .15s, box-shadow .15s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .ethics-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(165,97,171,.42);
+    }
+
+    .ethics-btn-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.7);
+      animation: pulse 2s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity:1; transform:scale(1); }
+      50%      { opacity:.4; transform:scale(1.4); }
     }
 
     /* FOOTER */
@@ -557,11 +751,7 @@
       box-shadow: 0 8px 24px rgba(0,0,0,.15);
     }
 
-    .brand-tagline {
-      color: var(--celeste);
-      font-size: 13px;
-      font-weight: 600;
-    }
+    .brand-tagline { color: var(--celeste); font-size: 15px; font-weight: 600; }
 
     .brand-desc {
       color: rgba(255,255,255,.72);
@@ -570,101 +760,42 @@
       max-width: 320px;
     }
 
-    .social-links {
-      display: flex;
-      gap: 8px;
-    }
+    .social-links { display: flex; gap: 8px; }
 
     .social-links a {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255,255,255,.08);
-      color: white;
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 700;
+      width: 32px; height: 32px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,.08); color: white;
+      text-decoration: none; font-size: 12px; font-weight: 700;
     }
 
-    .verified-badge {
-      background: rgba(21,189,230,.12);
-      border: 1px solid rgba(21,189,230,.28);
-      color: var(--celeste);
-      padding: 10px 12px;
-      border-radius: 10px;
-      font-size: 11px;
-      line-height: 1.6;
-      width: fit-content;
-    }
-
-    .footer-links h4 {
-      color: white;
-      font-size: 15px;
-      margin-bottom: 14px;
-      font-family: 'Syne', sans-serif;
-    }
+    .footer-links h4 { color: white; font-size: 15px; margin-bottom: 14px; font-family: 'Syne', sans-serif; }
 
     .footer-links a {
-      display: block;
-      color: rgba(255,255,255,.7);
-      text-decoration: none;
-      font-size: 13px;
-      line-height: 1.7;
-      margin-bottom: 8px;
+      display: block; color: rgba(255,255,255,.7);
+      text-decoration: none; font-size: 13px; line-height: 1.7; margin-bottom: 8px;
     }
 
     .footer-conf {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 20px 24px;
+      max-width: 1150px; margin: 0 auto; padding: 20px 24px;
       border-top: 1px solid rgba(255,255,255,.08);
       border-bottom: 1px solid rgba(255,255,255,.08);
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
+      display: flex; gap: 14px; align-items: flex-start;
     }
 
-    .conf-text strong {
-      display: block;
-      color: white;
-      margin-bottom: 4px;
-    }
-
-    .conf-text p {
-      color: rgba(255,255,255,.75);
-      font-size: 13px;
-      line-height: 1.7;
-    }
+    .conf-text strong { display: block; color: white; margin-bottom: 4px; }
+    .conf-text p { color: rgba(255,255,255,.75); font-size: 13px; line-height: 1.7; }
 
     .footer-bottom {
-      max-width: 1150px;
-      margin: 0 auto;
+      max-width: 1150px; margin: 0 auto;
       padding: 18px 24px 28px;
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
+      display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
     }
 
-    .footer-copy {
-      color: rgba(255,255,255,.55);
-      font-size: 12px;
-    }
+    .footer-copy { color: rgba(255,255,255,.55); font-size: 12px; }
 
-    .footer-links-bottom {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .footer-links-bottom a {
-      color: rgba(255,255,255,.55);
-      text-decoration: none;
-      font-size: 12px;
-    }
+    .footer-links-bottom { display: flex; flex-wrap: wrap; gap: 14px; }
+    .footer-links-bottom a { color: rgba(255,255,255,.55); text-decoration: none; font-size: 12px; }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(12px); }
@@ -676,39 +807,18 @@
       .nav-links { gap: 14px; }
       .options-grid { grid-template-columns: 1fr; }
       .footer-main { grid-template-columns: 1fr 1fr; }
+      .disclaimer-cards { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 640px) {
-      .site-nav {
-        height: auto;
-        padding: 14px 16px;
-        flex-direction: column;
-        gap: 12px;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        width: 100%;
-        flex-wrap: wrap;
-      }
-
-      .hero {
-        padding-top: 136px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .intro-box h2,
-      .stepper-title,
-      .result-box h3 {
-        font-size: 24px;
-      }
-
+      .site-nav { height: auto; padding: 14px 16px; flex-direction: column; gap: 12px; align-items: flex-start; }
+      .nav-links { width: 100%; flex-wrap: wrap; }
+      .hero { padding-top: 136px; }
+      .hero p { font-size: 16px; }
+      .intro-box h2, .stepper-title, .result-box h3 { font-size: 24px; }
       .footer-main { grid-template-columns: 1fr; }
-      .footer-conf,
-      .footer-bottom { flex-direction: column; }
+      .footer-conf, .footer-bottom { flex-direction: column; }
+      .disclaimer-cards { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -740,18 +850,55 @@
     <section class="stepper-box">
       <div class="stepper-top">
         <h2 class="stepper-title">Ruta guiada</h2>
-        <span class="step-count">Paso <span id="stepNumber">1</span> de 4</span>
+        <span class="step-count">Paso <span id="stepNumber">—</span> de 4</span>
       </div>
 
       <div class="progress">
         <div class="progress-bar" id="progressBar"></div>
       </div>
 
+      <!-- ========================
+           DISCLAIMER SCREEN
+      ======================== -->
+      <div id="disclaimerScreen">
+        <div class="disclaimer-icon">🔐</div>
+        <h3 class="disclaimer-title">Antes de comenzar, lee esto</h3>
+        <p style="font-size:15px;color:var(--gris);line-height:1.8;margin-bottom:0;">
+          Esta guía es completamente confidencial. Tus respuestas <strong style="color:var(--azul);">no se almacenan, no se registran y no se comparten</strong> con nadie dentro ni fuera de Inchcape. Su único propósito es ayudarte a identificar tu situación y orientarte hacia el canal adecuado.
+        </p>
+
+        <div class="disclaimer-cards">
+          <div class="disclaimer-card">
+            <span class="dc-icon">🙈</span>
+            <strong>Sin rastreo</strong>
+            <span>No registramos tu identidad ni tus respuestas en ningún servidor.</span>
+          </div>
+          <div class="disclaimer-card">
+            <span class="dc-icon">🤐</span>
+            <strong>Sin represalias</strong>
+            <span>Responder este formulario no tiene consecuencias laborales de ningún tipo.</span>
+          </div>
+          <div class="disclaimer-card">
+            <span class="dc-icon">🧭</span>
+            <strong>Solo orientación</strong>
+            <span>Esta guía no abre un caso formal. Solo te ayuda a identificar el siguiente paso.</span>
+          </div>
+        </div>
+
+        <div class="disclaimer-note">
+          ⚖️ &nbsp;Si decides hacer un reporte formal, serás derivado/a al canal oficial de Inchcape, protegido por la <strong>Ley N° 27942</strong> y la normativa peruana vigente.
+        </div>
+
+        <button class="btn-start" onclick="startQuiz()">
+          Entendido, comenzar
+          <span class="btn-start-arrow">→</span>
+        </button>
+      </div>
+
       <!-- PASO 1 -->
-      <div class="step active" data-step="1">
+      <div class="step" data-step="1">
         <h3>¿Qué ocurrió?</h3>
         <p>Selecciona la situación que más se parece a lo que viviste o presenciaste.</p>
-
         <div class="options-grid" id="step1Options">
           <button class="option-btn" data-value="burlas">Burlas, humillaciones o comentarios ofensivos.</button>
           <button class="option-btn" data-value="exclusion">Exclusión o trato desigual por género u otra condición.</button>
@@ -764,7 +911,6 @@
       <div class="step" data-step="2">
         <h3>¿Quién realizó la conducta?</h3>
         <p>Esto nos ayuda a orientar mejor la ruta de derivación.</p>
-
         <div class="options-grid" id="step2Options">
           <button class="option-btn" data-value="jefatura">Una jefatura o supervisor/a.</button>
           <button class="option-btn" data-value="companero">Un compañero o compañera.</button>
@@ -777,7 +923,6 @@
       <div class="step" data-step="3">
         <h3>¿Con qué frecuencia ocurrió?</h3>
         <p>Escoge la opción más cercana.</p>
-
         <div class="options-grid" id="step3Options">
           <button class="option-btn" data-value="una-vez">Una sola vez.</button>
           <button class="option-btn" data-value="repetido">Varias veces o de forma repetida.</button>
@@ -790,21 +935,34 @@
       <div class="step" data-step="4">
         <h3>¿Cómo te afectó?</h3>
         <p>Puedes elegir más de una opción.</p>
-
         <div class="options-grid" id="step4Options">
           <button class="option-btn multi" data-value="miedo">Generó miedo o inseguridad.</button>
           <button class="option-btn multi" data-value="afecto-trabajo">Afectó mi desempeño o bienestar laboral.</button>
           <button class="option-btn multi" data-value="desigualdad">Sentí trato desigual o injusto.</button>
           <button class="option-btn multi" data-value="confusion">No estoy segura/o de cómo clasificarlo.</button>
         </div>
-
         <div class="multi-note">En este paso puedes seleccionar varias opciones.</div>
       </div>
 
-      <div class="actions">
+      <div class="actions" id="actionBtns" style="display:none;">
         <button class="btn btn-secondary" id="prevBtn" type="button" style="display:none;">Volver</button>
         <button class="btn btn-primary" id="nextBtn" type="button">Siguiente</button>
         <button class="btn btn-outline" id="restartBtn" type="button" style="display:none;">Reiniciar</button>
+      </div>
+
+      <!-- LOADING -->
+      <div id="loadingScreen">
+        <div class="loading-orb"></div>
+        <div class="loading-dots">
+          <div class="loading-dot"></div>
+          <div class="loading-dot"></div>
+          <div class="loading-dot"></div>
+        </div>
+        <p class="loading-label">Analizando tu situación…</p>
+        <p class="loading-sub">Estamos preparando la orientación más adecuada para ti.</p>
+        <div class="loading-bar-wrap">
+          <div class="loading-bar-fill"></div>
+        </div>
       </div>
 
       <div class="result-box" id="resultBox"></div>
@@ -814,34 +972,195 @@
   <div id="footer-container"></div>
 
   <script>
+  let currentStep = 0;
+  const totalSteps = 4;
+  const answers = {};
+
+  // Click en opción → avanza automáticamente
+  document.querySelector('.stepper-box').addEventListener('click', function(e) {
+    const btn = e.target.closest('.option-btn');
+    if (!btn) return;
+
+    const grid = btn.closest('.options-grid');
+
+    if (btn.classList.contains('multi')) {
+      // Paso 4: solo toggle, no avanza automático
+      btn.classList.toggle('selected');
+    } else {
+      // Pasos 1-3: selecciona y avanza solo
+      grid.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      answers[`step${currentStep}`] = [btn.dataset.value];
+
+      setTimeout(() => {
+        if (currentStep < totalSteps) {
+          currentStep++;
+          showStep(currentStep);
+        } else {
+          showLoading();
+        }
+      }, 220); // pequeña pausa para ver la selección antes de avanzar
+    }
+  });
+
+  function startQuiz() {
+    document.getElementById('disclaimerScreen').style.display = 'none';
+    document.getElementById('actionBtns').style.display = 'flex';
+    document.getElementById('stepNumber').textContent = '1';
+    currentStep = 1;
+    updateProgress();
+    showStep(1);
+  }
+
+  function showStep(n) {
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    const target = document.querySelector(`.step[data-step="${n}"]`);
+    if (target) target.classList.add('active');
+
+    // En paso 4 mostrar botón siguiente, en los demás ocultarlo
+    document.getElementById('prevBtn').style.display = n > 1 ? 'inline-block' : 'none';
+    document.getElementById('nextBtn').style.display = n === totalSteps ? 'inline-block' : 'none';
+    document.getElementById('restartBtn').style.display = 'none';
+    document.getElementById('resultBox').classList.remove('show');
+    document.getElementById('resultBox').innerHTML = '';
+    document.getElementById('loadingScreen').style.display = 'none';
+    document.getElementById('stepNumber').textContent = n;
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const pct = currentStep > 0 ? (currentStep / totalSteps) * 100 : 0;
+    document.getElementById('progressBar').style.width = pct + '%';
+  }
+
+  // Botón siguiente solo existe en paso 4 (multi-select)
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentStep !== totalSteps) return;
+    const grid = document.getElementById(`step${currentStep}Options`);
+    const selected = grid ? grid.querySelectorAll('.option-btn.selected') : [];
+    if (selected.length === 0) {
+      grid.style.outline = '2px solid rgba(239,68,68,.3)';
+      grid.style.borderRadius = '12px';
+      setTimeout(() => grid.style.outline = 'none', 1200);
+      return;
+    }
+    answers[`step${currentStep}`] = [...selected].map(b => b.dataset.value);
+    showLoading();
+  });
+
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentStep > 1) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  });
+
+  document.getElementById('restartBtn').addEventListener('click', () => {
+    currentStep = 0;
+    Object.keys(answers).forEach(k => delete answers[k]);
+    document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+    document.getElementById('resultBox').classList.remove('show');
+    document.getElementById('resultBox').innerHTML = '';
+    document.getElementById('loadingScreen').style.display = 'none';
+    document.getElementById('actionBtns').style.display = 'none';
+    document.getElementById('stepNumber').textContent = '—';
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    document.getElementById('progressBar').style.width = '0%';
+    document.getElementById('disclaimerScreen').style.display = 'block';
+  });
+
+  function showLoading() {
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    document.getElementById('actionBtns').style.display = 'none';
+    document.getElementById('loadingScreen').style.display = 'block';
+    document.getElementById('progressBar').style.width = '100%';
+    document.getElementById('stepNumber').textContent = '4';
+    setTimeout(() => {
+      document.getElementById('loadingScreen').style.display = 'none';
+      showResult();
+    }, 2200);
+  }
+
+  function showResult() {
+    const step1 = answers.step1?.[0] || 'ambigua';
+    const step3 = answers.step3?.[0] || 'no-se';
+    const step4 = answers.step4 || [];
+
+    let type = 'ambiguo';
+    if (step1 === 'burlas' || step1 === 'presion') type = 'acoso';
+    else if (step1 === 'exclusion') type = 'discriminacion';
+    else if (step3 === 'continua' || step4.includes('miedo')) type = 'hostil';
+
+    const configs = {
+      acoso: {
+        cls: 'result-acoso',
+        title: '⚠️ Lo que describes podría ser acoso laboral',
+        desc: 'Basándonos en tus respuestas, la situación que viviste presenta características compatibles con acoso o hostigamiento laboral según la Ley N° 27942.',
+        items: ['Tienes derecho a reportarlo de forma confidencial.', 'El área de Recursos Humanos debe recibir tu caso sin represalias.', 'Puedes solicitar orientación legal gratuita a través del MTPE.'],
+      },
+      discriminacion: {
+        cls: 'result-discriminacion',
+        title: '⚖️ Lo que describes podría ser discriminación laboral',
+        desc: 'Tus respuestas sugieren que podrías haber sido objeto de trato desigual o discriminatorio. La Ley N° 28983 protege a todas las personas contra la discriminación laboral.',
+        items: ['Toda persona tiene derecho a igualdad de oportunidades.', 'La discriminación laboral es sancionable por ley.', 'Puedes reportar esta situación de forma anónima y segura.'],
+      },
+      hostil: {
+        cls: 'result-hostil',
+        title: '🔶 Posible entorno laboral hostil',
+        desc: 'Lo que describes podría configurar un entorno de trabajo hostil, especialmente si la situación es continua o te genera miedo.',
+        items: ['Un entorno hostil afecta tu salud y desempeño.', 'Tienes derecho a trabajar en condiciones dignas.', 'El Comité de Convivencia de Inchcape puede orientarte.'],
+      },
+      ambiguo: {
+        cls: 'result-ambiguo',
+        title: '💬 Necesitas orientación personalizada',
+        desc: 'No siempre es fácil clasificar una situación, y eso es completamente válido. Te recomendamos acudir directamente al canal oficial para recibir orientación confidencial.',
+        items: ['No necesitas tener todo claro para pedir ayuda.', 'El equipo de Recursos Humanos está preparado para escucharte.', 'Puedes consultar de forma anónima sin compromiso.'],
+      },
+    };
+
+    const c = configs[type];
+    const box = document.getElementById('resultBox');
+    box.className = `result-box show ${c.cls}`;
+    box.innerHTML = `
+      <h3>${c.title}</h3>
+      <p>${c.desc}</p>
+      <ul>${c.items.map(i => `<li>✓ ${i}</li>`).join('')}</ul>
+      <div class="result-actions">
+        <a class="ethics-btn" href="https://secure.ethicspoint.eu/domain/media/en/gui/104822/index.html" target="_blank" rel="noopener">
+          <div class="ethics-btn-dot"></div>
+          Reportar en canal oficial de Inchcape
+        </a>
+        <a class="result-link secondary" href="../pages/informate.html">Quiero informarme más</a>
+      </div>
+    `;
+
+    document.getElementById('actionBtns').style.display = 'flex';
+    document.getElementById('prevBtn').style.display = 'none';
+    document.getElementById('nextBtn').style.display = 'none';
+    document.getElementById('restartBtn').style.display = 'inline-block';
+  }
+
   fetch('../components/navbar.html')
-    .then(response => response.text())
+    .then(r => r.text())
     .then(html => {
       document.getElementById('navbar-container').innerHTML = html;
-
       const logo = document.getElementById('navLogoImg');
       const home = document.getElementById('navHomeLink');
       const inicio = document.getElementById('navInicio');
       const informate = document.getElementById('navInformate');
       const nosotros = document.getElementById('navNosotros');
       const reportar = document.getElementById('navReportar');
-
-      if (logo) logo.src = '../assets/images/logo.png';
+      if (logo) logo.src = '../assets/images/logo.jpg';
       if (home) home.href = '../index.html';
       if (inicio) inicio.href = '../index.html';
       if (informate) informate.href = './informate.html';
       if (nosotros) nosotros.href = './nosotros.html';
       if (reportar) reportar.href = './reportar.html';
-
       const nav = document.querySelector('.site-nav');
       if (nav) {
         window.addEventListener('scroll', () => {
-          nav.style.background = window.scrollY > 40
-            ? 'rgba(21,44,71,0.99)'
-            : 'rgba(21,44,71,0.97)';
-          nav.style.boxShadow = window.scrollY > 40
-            ? '0 2px 24px rgba(0,0,0,.25)'
-            : '0 10px 24px rgba(0,0,0,.08)';
+          nav.style.background = window.scrollY > 40 ? 'rgba(21,44,71,0.99)' : 'rgba(21,44,71,0.97)';
+          nav.style.boxShadow = window.scrollY > 40 ? '0 2px 24px rgba(0,0,0,.25)' : '0 10px 24px rgba(0,0,0,.08)';
         });
       }
     });

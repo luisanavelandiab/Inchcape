@@ -35,6 +35,7 @@
       background: var(--off);
       color: var(--azul);
     }
+    
 /* =========================
    NAVBAR GLOBAL INCHCAPE
 ========================= */
@@ -78,8 +79,8 @@
 .nav-logo-img {
   display: block;
   width: auto;
-  height: 60px;
-  max-width: 150px;
+  height: 55px;
+  max-width: 180px;
   object-fit: contain;
   background: transparent !important;
   filter: none !important;
@@ -184,9 +185,9 @@
     padding: 8px 12px;
   }
 
-  .nav-logo-img {
-    height: 34px;
-    max-width: 120px;
+ .nav-logo-img {
+    height: 36px;
+    max-width: 128px;
   }
 }
 
@@ -256,9 +257,9 @@
     }
 
     .hero h1 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Nunito';
       font-size: clamp(38px, 5.4vw, 68px);
-      line-height: 1.02;
+      line-height: 1.2;
       margin-bottom: 18px;
       letter-spacing: -1px;
       max-width: 760px;
@@ -1028,7 +1029,7 @@
 
     .brand-tagline {
       color: var(--celeste);
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 600;
     }
 
@@ -1574,7 +1575,7 @@
       const nosotros = document.getElementById('navNosotros');
       const reportar = document.getElementById('navReportar');
 
-      if (logo) logo.src = '../assets/images/logo.png';
+      if (logo) logo.src = '../assets/images/logo.jpg';
       if (home) home.href = '../index.html';
       if (inicio) inicio.href = '../index.html';
       if (informate) informate.href = './informate.html';
