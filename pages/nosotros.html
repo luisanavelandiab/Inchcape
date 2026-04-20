@@ -43,7 +43,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 76px;
+  min-height: 76px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -59,6 +59,7 @@
   align-items: center;
   gap: 14px;
   text-decoration: none;
+  min-width: 0;
 }
 
 .nav-logo-box {
@@ -77,12 +78,11 @@
 .nav-logo-img {
   display: block;
   width: auto;
-  height: 55px;
-  max-width: 180px;
+  height: 42px;
+  max-width: 150px;
   object-fit: contain;
   background: transparent !important;
   filter: none !important;
-  mix-blend-mode: normal !important;
 }
 
 .nav-divider {
@@ -97,6 +97,7 @@
   font-weight: 500;
   color: #15BDE6;
   letter-spacing: 0.2px;
+  white-space: nowrap;
 }
 
 .nav-links {
@@ -131,13 +132,59 @@
   opacity: .92;
 }
 
+/* BOTÓN HAMBURGUESA */
+.nav-toggle {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  border-radius: 12px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  transition: .2s ease;
+}
+
+.nav-toggle:hover {
+  background: rgba(255,255,255,.08);
+}
+
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: #ffffff;
+  transition: .25s ease;
+}
+
+.site-nav.menu-open .nav-toggle span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.site-nav.menu-open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-nav.menu-open .nav-toggle span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* TABLET */
 @media (max-width: 900px) {
   .site-nav {
     padding: 0 18px;
-    height: 72px;
+    min-height: 72px;
   }
 
   .nav-tagline {
+    display: none;
+  }
+
+  .nav-divider {
     display: none;
   }
 
@@ -161,19 +208,49 @@
   }
 }
 
-@media (max-width: 640px) {
+/* CELULAR */
+@media (max-width: 768px) {
   .site-nav {
-    height: auto;
     padding: 14px 16px;
-    flex-direction: column;
-    gap: 12px;
     align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    margin-left: auto;
   }
 
   .nav-links {
+    display: none;
     width: 100%;
-    flex-wrap: wrap;
-    gap: 10px 14px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 8px 0 4px;
+    animation: fadeNav .22s ease;
+  }
+
+  .site-nav.menu-open .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: rgba(255,255,255,.04);
+    color: rgba(255,255,255,.88);
+  }
+
+  .nav-links a:hover {
+    background: rgba(255,255,255,.08);
+  }
+
+  .nav-cta {
+    text-align: center;
   }
 
   .nav-logo-box {
@@ -183,53 +260,22 @@
   }
 
   .nav-logo-img {
-    height: 36px;
-    max-width: 128px;
+    height: 34px;
+    max-width: 120px;
   }
 }
 
-@media (max-width: 640px) {
-  .site-nav {
-    height: auto;
-    padding: 14px 16px;
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
+@keyframes fadeNav {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
   }
-
-  .nav-links {
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 10px 14px;
-  }
-
-  .nav-logo-box {
-    min-width: 108px;
-    min-height: 50px;
-    padding: 8px 12px;
-  }
-
-  .nav-logo-img {
-    height: 36px;
-    max-width: 128px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 640px) {
-  .site-nav {
-    height: auto;
-    padding: 14px 16px;
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 10px 14px;
-  }
-}
 /* HERO */
 .hero {
   padding: 140px 24px 70px;
@@ -1168,15 +1214,11 @@
   </main>
 
   <div id="footer-container"></div>
-
 <script>
   fetch('../components/navbar.html')
     .then(response => response.text())
     .then(html => {
       document.getElementById('navbar-container').innerHTML = html;
-
-      const isGithubPages = window.location.hostname.includes('github.io');
-      const basePath = isGithubPages ? '/Inchcape' : '';
 
       const logo = document.getElementById('navLogoImg');
       const home = document.getElementById('navHomeLink');
@@ -1184,15 +1226,34 @@
       const informate = document.getElementById('navInformate');
       const nosotros = document.getElementById('navNosotros');
       const reportar = document.getElementById('navReportar');
-
-      if (logo) logo.src = `${basePath}/assets/images/logo.jpg`;
-      if (home) home.href = `${basePath}/index.html`;
-      if (inicio) inicio.href = `${basePath}/index.html`;
-      if (informate) informate.href = `${basePath}/pages/informate.html`;
-      if (nosotros) nosotros.href = `${basePath}/pages/nosotros.html`;
-      if (reportar) reportar.href = `${basePath}/pages/reportar.html`;
-
+      const toggle = document.getElementById('navToggle');
       const nav = document.querySelector('.site-nav');
+      const menu = document.getElementById('navMenu');
+
+      if (logo) logo.src = '../assets/images/logo.jpg';
+      if (home) home.href = '../index.html';
+      if (inicio) inicio.href = '../index.html';
+      if (informate) informate.href = './informate.html';
+      if (nosotros) nosotros.href = './nosotros.html';
+      if (reportar) reportar.href = './reportar.html';
+
+      if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+          nav.classList.toggle('menu-open');
+          const expanded = nav.classList.contains('menu-open');
+          toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        });
+      }
+
+      if (menu && nav) {
+        menu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            nav.classList.remove('menu-open');
+            if (toggle) toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
       if (nav) {
         window.addEventListener('scroll', () => {
           nav.style.background = window.scrollY > 40
@@ -1204,6 +1265,8 @@
         });
       }
     });
+</script>
+<script>
 
   fetch('../components/footer.html')
     .then(r => r.text())

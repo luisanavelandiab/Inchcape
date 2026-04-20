@@ -1,16 +1,22 @@
 <nav class="site-nav">
-  <a class="nav-logo" href="#" aria-label="Ir al inicio" id="navHomeLink">
+  <a class="nav-logo" href="#" id="navHomeLink" aria-label="Ir al inicio">
     <span class="nav-logo-box">
-      <img src="" alt="Logo Inchcape" class="nav-logo-img" id="navLogoImg">
+      <img id="navLogoImg" class="nav-logo-img" src="" alt="Logo Inchcape">
     </span>
     <span class="nav-divider"></span>
-    <span class="brand-tagline">Respeto en la Industria</span>
+    <span class="nav-tagline">Respeto en la Industria</span>
   </a>
 
-  <div class="nav-links">
-    <a href="inicio.html" id="navInicio">Inicio</a>
-    <a href="informate.html" id="navInformate">Infórmate</a>
-    <a href="nosotros.html" id="navNosotros">Nosotros</a>
-    <a href="reportar.html" id="navReportar" class="nav-cta">Quiero reportar</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="nav-links" id="navMenu">
+    <a href="#" id="navInicio">Inicio</a>
+    <a href="#" id="navInformate">Infórmate</a>
+    <a href="#" id="navNosotros">Nosotros</a>
+    <a href="#" id="navReportar" class="nav-cta">Quiero reportar</a>
   </div>
 </nav>
