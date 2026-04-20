@@ -774,12 +774,391 @@
       .footer-cta { padding: 24px !important; }
       .footer-contact { padding: 20px 24px !important; }
     }
+
+   /* =========================
+   MODO NOCTURNO REAL
+========================= */
+.theme-toggle {
+  position: fixed;
+  top: 92px;
+  right: 22px;
+  z-index: 1200;
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(17,36,58,.92);
+  backdrop-filter: blur(12px);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0,0,0,.22);
+}
+
+.theme-icon {
+  position: absolute;
+  font-size: 20px;
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.theme-sun {
+  opacity: 0;
+  transform: scale(.8) rotate(-20deg);
+}
+
+.theme-moon {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}
+
+/* BASE GENERAL */
+body.dark-mode {
+  background: #07111c;
+  color: #e9f1fb;
+}
+
+body.dark-mode .theme-toggle {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.18);
+}
+
+body.dark-mode .theme-sun {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}
+
+body.dark-mode .theme-moon {
+  opacity: 0;
+  transform: scale(.8) rotate(20deg);
+}
+
+body.dark-mode main,
+body.dark-mode .wrapper {
+  background: transparent;
+}
+
+/* HERO */
+body.dark-mode .hero {
+  background: linear-gradient(135deg, #06101a 0%, #0d1d31 100%);
+}
+
+body.dark-mode .hero::before {
+  background-image:
+    linear-gradient(rgba(59,216,255,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,216,255,.06) 1px, transparent 1px);
+}
+
+body.dark-mode .hero::after {
+  background: radial-gradient(circle, rgba(165,97,171,.16) 0%, transparent 70%);
+}
+
+/* TABS */
+body.dark-mode .tab-btn {
+  color: rgba(255,255,255,.62);
+}
+
+body.dark-mode .tab-btn:hover {
+  color: #ffffff;
+  background: rgba(255,255,255,.05);
+}
+
+body.dark-mode .tab-btn.active {
+  color: #ffffff;
+  background: rgba(255,255,255,.08);
+  border-bottom-color: var(--celeste);
+}
+
+/* TARJETAS Y CAJAS */
+body.dark-mode .info-card,
+body.dark-mode .soft-box,
+body.dark-mode .case-card,
+body.dark-mode .quiz-box,
+body.dark-mode .quiz-start-pill,
+body.dark-mode .quiz-feedback,
+body.dark-mode .mini-pill,
+body.dark-mode .case-note {
+  background: #0f1b2b !important;
+  border-color: rgba(255,255,255,.08) !important;
+  box-shadow: 0 14px 30px rgba(0,0,0,.24) !important;
+}
+
+body.dark-mode .compare-card.si {
+  background: #1b1220 !important;
+  border-color: rgba(165,97,171,.28) !important;
+  box-shadow: 0 14px 30px rgba(0,0,0,.24) !important;
+}
+
+body.dark-mode .compare-card.no {
+  background: #0d2029 !important;
+  border-color: rgba(21,189,230,.24) !important;
+  box-shadow: 0 14px 30px rgba(0,0,0,.24) !important;
+}
+
+body.dark-mode .phrase-card,
+body.dark-mode .bullet-list li {
+  background: #132235 !important;
+  border-color: rgba(255,255,255,.08) !important;
+  color: rgba(233,241,251,.84) !important;
+}
+
+/* QUIZ */
+body.dark-mode .quiz-box {
+  background: linear-gradient(135deg, #0a1522 0%, #11243a 100%) !important;
+}
+
+body.dark-mode .quiz-opt {
+  background: rgba(255,255,255,.05);
+  border-color: rgba(255,255,255,.10);
+}
+
+body.dark-mode .quiz-opt:hover:not([disabled]) {
+  background: rgba(255,255,255,.09);
+}
+
+body.dark-mode .quiz-opt.selected {
+  background: rgba(21,189,230,.18);
+  border-color: var(--celeste);
+}
+
+body.dark-mode .quiz-opt.wrong {
+  background: rgba(220,80,80,.14);
+  border-color: rgba(220,80,80,.32);
+}
+
+/* TEXTO */
+body.dark-mode .section-title,
+body.dark-mode .info-card h3,
+body.dark-mode .soft-box h4,
+body.dark-mode .compare-card h4,
+body.dark-mode .case-body h4,
+body.dark-mode .compare-head h3,
+body.dark-mode .quiz-start-title,
+body.dark-mode .disclaimer-title {
+  color: #f4f8fc !important;
+}
+
+body.dark-mode .section-desc,
+body.dark-mode .soft-box p,
+body.dark-mode .info-card p,
+body.dark-mode .compare-card p,
+body.dark-mode .case-body p,
+body.dark-mode .case-role,
+body.dark-mode .case-type,
+body.dark-mode .compare-legend,
+body.dark-mode .mini-pill,
+body.dark-mode .case-note,
+body.dark-mode .quiz-start-sub,
+body.dark-mode .disclaimer-text,
+body.dark-mode .result-msg {
+  color: rgba(233,241,251,.74) !important;
+}
+
+body.dark-mode .info-label,
+body.dark-mode .quiz-eyebrow,
+body.dark-mode .eyebrow {
+  color: var(--celeste) !important;
+}
+
+body.dark-mode .tag-si {
+  background: rgba(165,97,171,.16);
+  color: #d9a6df;
+  border-color: rgba(165,97,171,.24);
+}
+
+body.dark-mode .tag-no {
+  background: rgba(21,189,230,.14);
+  color: #8be7ff;
+  border-color: rgba(21,189,230,.22);
+}
+
+/* FOOTER COMPLETO */
+body.dark-mode .footer {
+  background: linear-gradient(135deg, #07111c, #0d1d31) !important;
+}
+
+body.dark-mode .footer-main,
+body.dark-mode .footer-conf,
+body.dark-mode .footer-bottom {
+  background: transparent !important;
+}
+
+body.dark-mode .footer-links a,
+body.dark-mode .footer-copy,
+body.dark-mode .footer-links-bottom a,
+body.dark-mode .brand-desc,
+body.dark-mode .conf-text p {
+  color: rgba(233,241,251,.68) !important;
+}
+
+body.dark-mode .footer-links h4,
+body.dark-mode .conf-text strong {
+  color: #4995e0 !important;
+}
+
+/* LOGOS Y BLOQUES BLANCOS */
+body.dark-mode .footer-logo,
+body.dark-mode .nav-logo-box {
+  background: #0f1b2b !important;
+  border-color: rgba(255,255,255,.08) !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,.24) !important;
+}
+
+/* Si quieres que el logo NO tenga cajita clara en oscuro */
+body.dark-mode .nav-logo-box img,
+body.dark-mode .footer-logo {
+  filter: brightness(.95) contrast(1.05);
+}
+
+/* BOTONES */
+body.dark-mode .quiz-start-btn,
+body.dark-mode .disclaimer-accept-btn {
+  box-shadow: 0 10px 24px rgba(165,97,171,.28);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: 84px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+}
+/* =========================
+   MODO OSCURO - HOME SIN FONDOS BLANCOS
+========================= */
+
+/* fondo general */
+body.dark-mode,
+body.dark-mode html {
+  background: #07111c !important;
+}
+
+/* contenedor principal */
+body.dark-mode main,
+body.dark-mode .main-content,
+body.dark-mode .page-content,
+body.dark-mode .wrapper {
+  background: #07111c !important;
+}
+
+/* TODAS las secciones del index que estaban claras */
+body.dark-mode section:not(.hero) {
+  background: #0b1726 !important;
+}
+
+/* bloques específicos del home */
+body.dark-mode .purpose-section,
+body.dark-mode .proposito,
+body.dark-mode .proposito-section,
+body.dark-mode .features-section,
+body.dark-mode .cards-section,
+body.dark-mode .benefits-section,
+body.dark-mode .about-section,
+body.dark-mode .info-section,
+body.dark-mode .stats-section,
+body.dark-mode .cta-section,
+body.dark-mode .report-section,
+body.dark-mode .report-cta,
+body.dark-mode .explore-section,
+body.dark-mode .report-now-section,
+body.dark-mode .impact-section {
+  background: linear-gradient(180deg, #0b1726 0%, #0f1d2e 100%) !important;
+  color: #eaf2fb !important;
+}
+
+/* si tienes contenedores blancos internos */
+body.dark-mode .container,
+body.dark-mode .section-container,
+body.dark-mode .content-block,
+body.dark-mode .content-wrap {
+  background: transparent !important;
+}
+
+/* tarjetas internas */
+body.dark-mode .feature-card,
+body.dark-mode .info-card,
+body.dark-mode .benefit-card,
+body.dark-mode .report-card,
+body.dark-mode .stat-card,
+body.dark-mode .purpose-card,
+body.dark-mode .sec-card,
+body.dark-mode .prop-card,
+body.dark-mode .cifra-card {
+  background: #122235 !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  box-shadow: 0 14px 26px rgba(0,0,0,.22) !important;
+  color: #edf4fb !important;
+}
+
+/* títulos */
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode .section-title,
+body.dark-mode .purpose-title,
+body.dark-mode .feature-title {
+  color: #f4f8fc !important;
+}
+
+/* párrafos y textos */
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode .section-text,
+body.dark-mode .section-desc,
+body.dark-mode .feature-text,
+body.dark-mode .card-text {
+  color: rgba(233,241,251,.78) !important;
+}
+
+/* etiquetas o subtítulos morados/celestes */
+body.dark-mode .eyebrow,
+body.dark-mode .section-label,
+body.dark-mode .mini-label {
+  color: #b57bc0 !important;
+}
+
+/* botón flotante / CTA */
+body.dark-mode .floating-report-btn,
+body.dark-mode .report-now-btn,
+body.dark-mode .btn-report,
+body.dark-mode .btn-primary {
+  box-shadow: 0 10px 24px rgba(165,97,171,.28);
+}
+
+/* footer también oscuro */
+body.dark-mode footer,
+body.dark-mode .footer {
+  background: linear-gradient(135deg, #07111c, #0d1d31) !important;
+}
+
+/* por si algún div sigue blanco */
+body.dark-mode div[style*="background: white"],
+body.dark-mode div[style*="background:#fff"],
+body.dark-mode div[style*="background: #fff"],
+body.dark-mode div[style*="background-color: white"],
+body.dark-mode div[style*="background-color:#fff"],
+body.dark-mode div[style*="background-color: #fff"] {
+  background: #0f1b2b !important;
+}
   </style>
 </head>
 <body>
 
   <!-- ═══ NAVBAR ═══ -->
   <div id="navbar-container"></div>
+
+<button id="themeToggle" class="theme-toggle" aria-label="Cambiar modo nocturno" title="Cambiar modo nocturno">
+  <span class="theme-icon theme-sun">☀️</span>
+  <span class="theme-icon theme-moon">🌙</span>
+</button>
 
   <!-- ═══ HERO ═══ -->
   <section class="hero" id="inicio">
@@ -1157,6 +1536,26 @@
     el.style.transition = 'opacity .5s ease, transform .5s ease';
     observer.observe(el);
   });
+</script>
+*/modo oscuro*/
+<script>
+  (function () {
+    const toggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('inchcape-theme');
+
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+
+        const isDark = document.body.classList.contains('dark-mode');
+        localStorage.setItem('inchcape-theme', isDark ? 'dark' : 'light');
+      });
+    }
+  })();
 </script>
 </body>
 </html>

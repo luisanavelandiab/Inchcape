@@ -1298,12 +1298,543 @@ body {
     flex-direction: column;
   }
 }
+
+/* =========================
+   MODO NOCTURNO - INFORMATE
+========================= */
+.theme-toggle {
+  position: fixed;
+  top: 92px;
+  right: 22px;
+  z-index: 1200;
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(17,36,58,.92);
+  backdrop-filter: blur(12px);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0,0,0,.22);
+}
+
+.theme-icon {
+  position: absolute;
+  font-size: 20px;
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.theme-sun {
+  opacity: 0;
+  transform: scale(.8) rotate(-20deg);
+}
+
+.theme-moon {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}
+
+/* BASE */
+body.dark-mode {
+  background: #07111c !important;
+  color: #e9f1fb !important;
+}
+
+body.dark-mode .theme-toggle {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.18);
+}
+
+body.dark-mode .theme-sun {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}
+
+body.dark-mode .theme-moon {
+  opacity: 0;
+  transform: scale(.8) rotate(20deg);
+}
+
+body.dark-mode .wrapper,
+body.dark-mode main {
+  background: transparent !important;
+}
+
+/* HERO */
+body.dark-mode .hero {
+  background: linear-gradient(135deg, #06101a 0%, #0d1d31 100%) !important;
+}
+
+body.dark-mode .hero::before {
+  background-image:
+    linear-gradient(rgba(59,216,255,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,216,255,.06) 1px, transparent 1px);
+}
+
+body.dark-mode .hero::after {
+  background: radial-gradient(circle, rgba(165,97,171,.16) 0%, transparent 70%);
+}
+
+body.dark-mode .tab-btn {
+  color: rgba(255,255,255,.62) !important;
+}
+
+body.dark-mode .tab-btn:hover {
+  color: #ffffff !important;
+  background: rgba(255,255,255,.05) !important;
+}
+
+body.dark-mode .tab-btn.active {
+  color: #ffffff !important;
+  background: rgba(255,255,255,.08) !important;
+  border-bottom-color: var(--celeste) !important;
+}
+
+/* SECCIONES Y TARJETAS */
+body.dark-mode .tab-panel,
+body.dark-mode .section-block,
+body.dark-mode .compare-wrap,
+body.dark-mode .double-box,
+body.dark-mode .cases-grid {
+  background: transparent !important;
+}
+
+body.dark-mode .info-card,
+body.dark-mode .soft-box,
+body.dark-mode .case-card,
+body.dark-mode .quiz-box,
+body.dark-mode .mini-pill,
+body.dark-mode .case-note {
+  background: #0f1b2b !important;
+  border-color: rgba(255,255,255,.08) !important;
+  box-shadow: 0 14px 30px rgba(0,0,0,.24) !important;
+}
+
+body.dark-mode .compare-card.si {
+  background: #1b1220 !important;
+  border-color: rgba(165,97,171,.28) !important;
+  box-shadow: 0 14px 30px rgba(0,0,0,.24) !important;
+}
+
+body.dark-mode .compare-card.no {
+  background: #0d2029 !important;
+  border-color: rgba(21,189,230,.24) !important;
+  box-shadow: 0 14px 30px rgba(0,0,0,.24) !important;
+}
+
+body.dark-mode .phrase-card,
+body.dark-mode .bullet-list li {
+  background: #132235 !important;
+  border-color: rgba(255,255,255,.08) !important;
+  color: rgba(233,241,251,.84) !important;
+}
+
+body.dark-mode .case-avatar {
+  background: #132235 !important;
+}
+
+/* QUIZ */
+body.dark-mode .quiz-box {
+  background: linear-gradient(135deg, #0a1522 0%, #11243a 100%) !important;
+}
+
+body.dark-mode .quiz-opt {
+  background: rgba(255,255,255,.05) !important;
+  border-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .quiz-opt:hover:not([disabled]) {
+  background: rgba(255,255,255,.09) !important;
+}
+
+body.dark-mode .quiz-opt.selected {
+  background: rgba(21,189,230,.18) !important;
+  border-color: var(--celeste) !important;
+}
+
+body.dark-mode .quiz-opt.wrong {
+  background: rgba(220,80,80,.14) !important;
+  border-color: rgba(220,80,80,.32) !important;
+}
+
+body.dark-mode .quiz-feedback,
+body.dark-mode .quiz-start-pill {
+  background: rgba(255,255,255,.05) !important;
+  border-color: rgba(255,255,255,.10) !important;
+}
+
+/* TEXTOS */
+body.dark-mode .section-title,
+body.dark-mode .info-card h3,
+body.dark-mode .soft-box h4,
+body.dark-mode .compare-card h4,
+body.dark-mode .case-body h4,
+body.dark-mode .compare-head h3,
+body.dark-mode .quiz-start-title,
+body.dark-mode .disclaimer-title,
+body.dark-mode .hero-title {
+  color: #f4f8fc !important;
+}
+
+body.dark-mode .section-desc,
+body.dark-mode .soft-box p,
+body.dark-mode .info-card p,
+body.dark-mode .compare-card p,
+body.dark-mode .case-body p,
+body.dark-mode .case-role,
+body.dark-mode .case-type,
+body.dark-mode .compare-legend,
+body.dark-mode .mini-pill,
+body.dark-mode .case-note,
+body.dark-mode .quiz-start-sub,
+body.dark-mode .disclaimer-text,
+body.dark-mode .result-msg,
+body.dark-mode .hero p,
+body.dark-mode .quiz-counter {
+  color: rgba(233,241,251,.74) !important;
+}
+
+body.dark-mode .info-label,
+body.dark-mode .quiz-eyebrow,
+body.dark-mode .eyebrow,
+body.dark-mode .hero h1 span,
+body.dark-mode .hero-title span {
+  color: var(--celeste) !important;
+}
+
+body.dark-mode .tag-si {
+  background: rgba(165,97,171,.16) !important;
+  color: #d9a6df !important;
+  border-color: rgba(165,97,171,.24) !important;
+}
+
+body.dark-mode .tag-no {
+  background: rgba(21,189,230,.14) !important;
+  color: #8be7ff !important;
+  border-color: rgba(21,189,230,.22) !important;
+}
+
+/* NAVBAR Y FOOTER */
+body.dark-mode .nav-logo-box,
+body.dark-mode .footer-logo {
+  background: #0f1b2b !important;
+  border-color: rgba(255,255,255,.08) !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,.24) !important;
+}
+
+body.dark-mode .footer {
+  background: linear-gradient(135deg, #07111c, #0d1d31) !important;
+}
+
+body.dark-mode .footer-main,
+body.dark-mode .footer-conf,
+body.dark-mode .footer-bottom {
+  background: transparent !important;
+}
+
+body.dark-mode .footer-links a,
+body.dark-mode .footer-copy,
+body.dark-mode .footer-links-bottom a,
+body.dark-mode .brand-desc,
+body.dark-mode .conf-text p {
+  color: rgba(233,241,251,.68) !important;
+}
+
+body.dark-mode .footer-links h4,
+body.dark-mode .conf-text strong {
+  color: #f4f8fc !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: 84px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* =========================
+   MODO NOCTURNO - INFORMATE
+========================= */
+.theme-toggle {
+  position: fixed;
+  top: 92px;
+  right: 22px;
+  z-index: 1200;
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(17,36,58,.92);
+  backdrop-filter: blur(12px);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0,0,0,.22);
+}
+
+.theme-icon {
+  position: absolute;
+  font-size: 20px;
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.theme-sun {
+  opacity: 0;
+  transform: scale(.8) rotate(-20deg);
+}
+
+.theme-moon {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}
+
+/* BASE */
+body.dark-mode {
+  background: #07111c !important;
+  color: #e9f1fb !important;
+}
+
+body.dark-mode .theme-toggle {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.18);
+}
+
+body.dark-mode .theme-sun {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}
+
+body.dark-mode .theme-moon {
+  opacity: 0;
+  transform: scale(.8) rotate(20deg);
+}
+
+body.dark-mode .wrapper,
+body.dark-mode main {
+  background: transparent !important;
+}
+
+/* HERO */
+body.dark-mode .hero {
+  background: linear-gradient(135deg, #06101a 0%, #0d1d31 100%) !important;
+}
+
+body.dark-mode .hero::before {
+  background-image:
+    linear-gradient(rgba(59,216,255,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,216,255,.06) 1px, transparent 1px);
+}
+
+body.dark-mode .hero::after {
+  background: radial-gradient(circle, rgba(165,97,171,.16) 0%, transparent 70%);
+}
+
+body.dark-mode .tab-btn {
+  color: rgba(255,255,255,.62) !important;
+}
+
+body.dark-mode .tab-btn:hover {
+  color: #ffffff !important;
+  background: rgba(255,255,255,.05) !important;
+}
+
+body.dark-mode .tab-btn.active {
+  color: #ffffff !important;
+  background: rgba(255,255,255,.08) !important;
+  border-bottom-color: var(--celeste) !important;
+}
+
+/* SECCIONES Y TARJETAS */
+body.dark-mode .tab-panel,
+body.dark-mode .section-block,
+body.dark-mode .compare-wrap,
+body.dark-mode .double-box,
+body.dark-mode .cases-grid {
+  background: transparent !important;
+}
+
+body.dark-mode .info-card,
+body.dark-mode .soft-box,
+body.dark-mode .case-card,
+body.dark-mode .quiz-box,
+body.dark-mode .mini-pill,
+body.dark-mode .case-note {
+  background: #0f1b2b !important;
+  border-color: rgba(255,255,255,.08) !important;
+  box-shadow: 0 14px 30px rgba(0,0,0,.24) !important;
+}
+
+body.dark-mode .compare-card.si {
+  background: #1b1220 !important;
+  border-color: rgba(165,97,171,.28) !important;
+  box-shadow: 0 14px 30px rgba(0,0,0,.24) !important;
+}
+
+body.dark-mode .compare-card.no {
+  background: #0d2029 !important;
+  border-color: rgba(21,189,230,.24) !important;
+  box-shadow: 0 14px 30px rgba(0,0,0,.24) !important;
+}
+
+body.dark-mode .phrase-card,
+body.dark-mode .bullet-list li {
+  background: #132235 !important;
+  border-color: rgba(255,255,255,.08) !important;
+  color: rgba(233,241,251,.84) !important;
+}
+
+body.dark-mode .case-avatar {
+  background: #132235 !important;
+}
+
+/* QUIZ */
+body.dark-mode .quiz-box {
+  background: linear-gradient(135deg, #0a1522 0%, #11243a 100%) !important;
+}
+
+body.dark-mode .quiz-opt {
+  background: rgba(255,255,255,.05) !important;
+  border-color: rgba(255,255,255,.10) !important;
+}
+
+body.dark-mode .quiz-opt:hover:not([disabled]) {
+  background: rgba(255,255,255,.09) !important;
+}
+
+body.dark-mode .quiz-opt.selected {
+  background: rgba(21,189,230,.18) !important;
+  border-color: var(--celeste) !important;
+}
+
+body.dark-mode .quiz-opt.wrong {
+  background: rgba(220,80,80,.14) !important;
+  border-color: rgba(220,80,80,.32) !important;
+}
+
+body.dark-mode .quiz-feedback,
+body.dark-mode .quiz-start-pill {
+  background: rgba(255,255,255,.05) !important;
+  border-color: rgba(255,255,255,.10) !important;
+}
+
+/* TEXTOS */
+body.dark-mode .section-title,
+body.dark-mode .info-card h3,
+body.dark-mode .soft-box h4,
+body.dark-mode .compare-card h4,
+body.dark-mode .case-body h4,
+body.dark-mode .compare-head h3,
+body.dark-mode .quiz-start-title,
+body.dark-mode .disclaimer-title,
+body.dark-mode .hero-title {
+  color: #f4f8fc !important;
+}
+
+body.dark-mode .section-desc,
+body.dark-mode .soft-box p,
+body.dark-mode .info-card p,
+body.dark-mode .compare-card p,
+body.dark-mode .case-body p,
+body.dark-mode .case-role,
+body.dark-mode .case-type,
+body.dark-mode .compare-legend,
+body.dark-mode .mini-pill,
+body.dark-mode .case-note,
+body.dark-mode .quiz-start-sub,
+body.dark-mode .disclaimer-text,
+body.dark-mode .result-msg,
+body.dark-mode .hero p,
+body.dark-mode .quiz-counter {
+  color: rgba(233,241,251,.74) !important;
+}
+
+body.dark-mode .info-label,
+body.dark-mode .quiz-eyebrow,
+body.dark-mode .eyebrow,
+body.dark-mode .hero h1 span,
+body.dark-mode .hero-title span {
+  color: var(--celeste) !important;
+}
+
+body.dark-mode .tag-si {
+  background: rgba(165,97,171,.16) !important;
+  color: #d9a6df !important;
+  border-color: rgba(165,97,171,.24) !important;
+}
+
+body.dark-mode .tag-no {
+  background: rgba(21,189,230,.14) !important;
+  color: #8be7ff !important;
+  border-color: rgba(21,189,230,.22) !important;
+}
+
+/* NAVBAR Y FOOTER */
+body.dark-mode .nav-logo-box,
+body.dark-mode .footer-logo {
+  background: #0f1b2b !important;
+  border-color: rgba(255,255,255,.08) !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,.24) !important;
+}
+
+body.dark-mode .footer {
+  background: linear-gradient(135deg, #07111c, #0d1d31) !important;
+}
+
+body.dark-mode .footer-main,
+body.dark-mode .footer-conf,
+body.dark-mode .footer-bottom {
+  background: transparent !important;
+}
+
+body.dark-mode .footer-links a,
+body.dark-mode .footer-copy,
+body.dark-mode .footer-links-bottom a,
+body.dark-mode .brand-desc,
+body.dark-mode .conf-text p {
+  color: rgba(233,241,251,.68) !important;
+}
+
+body.dark-mode .footer-links h4,
+body.dark-mode .conf-text strong {
+  color: #f4f8fc !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: 84px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+}
   </style>
 </head>
 <body>
 
   <div id="navbar-container"></div>
-
+<button id="themeToggle" class="theme-toggle" aria-label="Cambiar modo nocturno" title="Cambiar modo nocturno">
+  <span class="theme-icon theme-sun">☀️</span>
+  <span class="theme-icon theme-moon">🌙</span>
+</button>
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-copy">
@@ -1313,6 +1844,7 @@ body {
           Identificar estas situaciones es el primer paso para cambiarlas. Aquí te lo explicamos
           con definiciones claras, ejemplos reales y una guía simple para reconocerlas.
         </p>
+        
       </div>
 
       <div class="tabs">
@@ -1869,5 +2401,24 @@ body {
       quizStart.classList.add('active');
     });
   </script>
+  <script>
+  (function () {
+    const toggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('inchcape-theme');
+
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        localStorage.setItem('inchcape-theme', isDark ? 'dark' : 'light');
+      });
+    }
+  })();
+</script>
+
 </body>
 </html>
